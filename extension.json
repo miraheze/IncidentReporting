@@ -1,0 +1,74 @@
+{
+	"name": "IncidentReporting",
+	"author": [
+		"John Lewis"
+	],
+	"url": "https://github.com/miraheze/IncidentReporting",
+	"version": "1.0.0",
+	"descriptionmsg": "incidentreporting-desc",
+	"type": "specialpage",
+	"AvailableRights": [
+		"viewincidents",
+		"editincidents"
+	],
+	"SpecialPages": {
+		"IncidentReports": "SpecialIncidentReports"
+	},
+	"LogActionsHandlers": {
+		"incidentreporting/edit": "LogFormatter",
+		"incidentreporting/publish": "LogFormatter"
+	},
+	"LogTypes": [
+		"incidentreporting"
+	],
+	"MessagesDirs": {
+		"IncidentReporting": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"IncidentReportingFormFactory": "includes/IncidentReportingFormFactory.php",
+		"IncidentReportingOOUIForm": "includes/IncidentReportingOOUIForm.php",
+		"IncidentReportingPager": "includes/IncidentReportingPager.php",
+		"SpecialIncidentReports": "includes/SpecialIncidentReports.php"
+	},
+	"ResourceModules": {
+		"ext.incidentreporting.oouiform": {
+			"scripts": [
+				"ext.incidentreporting.oouiform.edit.ooui.js",
+				"ext.incidentreporting.oouiform.ooui.js"
+			],
+			"styles": "ext.incidentreporting.oouiform.ooui.less",
+			"dependencies": [
+				"oojs-ui",
+				"mediawiki.editfont.styles"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "IncidentReporting/modules"
+	},
+	"config": {
+		"IncidentReportingDatabase": {
+			"description": "Database name where all data is stored.",
+			"public": true,
+			"value": false
+		},
+		"IncidentReportingServices": {
+			"description": "Human readable list of service components with page URLs. Set to false for no link. Format: 'name' => 'url'.",
+			"public": true,
+			"value": false
+		},
+		"IncidentReportingTaskUrl": {
+			"description": "Full url of task tracking software minus the task ID. e.g. https://phabricator.miraheze.org/",
+			"public": true,
+			"value": false
+		}
+	},
+	"manifest_version": 2
+}
