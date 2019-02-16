@@ -1,7 +1,7 @@
 <?php
 class SpecialIncidentReports extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'IncidentReports', 'viewincident' );
+		parent::__construct( 'IncidentReports', 'viewincidents' );
 	}
 
 	function execute( $par ) {
@@ -38,8 +38,8 @@ class SpecialIncidentReports extends SpecialPage {
 		Database $dbw,
 		bool $isPublished
 	) {
-		if ( !$isPublished && !$this->getContext()->getUser()->isAllowed( 'editincident' ) ) {
-			throw new PermissionsError( 'editincident' );
+		if ( !$isPublished && !$this->getContext()->getUser()->isAllowed( 'editincidents' ) ) {
+			throw new PermissionsError( 'editincidents' );
 		}
 
 		$out = $this->getOutput();
@@ -154,7 +154,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$this->getOutput()->addHTML( $pager->getNavigationBar() . $table . $pager->getNavigationBar() );
 
-		if ( $this->getContext()->getUser()->isAllowed( 'editincident' ) ) {
+		if ( $this->getContext()->getUser()->isAllowed( 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
 		}

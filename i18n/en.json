@@ -4,8 +4,8 @@
 			"John Lewis"
 		]
 	},
-	"action-editincident": "edit incidents",
-	"action-viewincident": "view incidents",
+	"action-editincidents": "edit incidents",
+	"action-viewincidents": "view incidents",
 	"incidentreporting-create": "Create Report",
 	"incidentreporting-desc": "Incident Report forms in MediaWiki.",
 	"incidentreporting-edit": "Submit Changes",

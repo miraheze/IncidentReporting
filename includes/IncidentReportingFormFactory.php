@@ -412,7 +412,7 @@ class IncidentReportingFormFactory {
 			'section' => 'main'
 		];
 
-		if ( $context->getUser()->isAllowed( 'editincident' ) ) {
+		if ( $context->getUser()->isAllowed( 'editincidents' ) ) {
 			$viewDescriptor['view'] = [
 				'type' => 'submit',
 				'default' => wfMessage( 'incidentreporting-view')->text(),
