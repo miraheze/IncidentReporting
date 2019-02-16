@@ -4,7 +4,10 @@ class IncidentReportingPager extends TablePager {
 	private static $causes = [];
 
 	function __construct( $type, $component, $services ) {
+		global $wgIncidentReportingDatabase;
+
 		parent::__construct( $this->getContext() );
+		$this->mDb = wfGetDB( DB_REPLICA, [], $wgIncidentReportingDatabase );
 		$this->type = $type;
 		$this->component = $component;
 
