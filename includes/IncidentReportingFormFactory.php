@@ -174,13 +174,13 @@ class IncidentReportingFormFactory {
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-outage-visible',
 				'section' => 'main',
-				'default' => wfMessage( 'incidentreporting-label-outage-formatted', ( $data->i_outage_visible / 60 ) )->text()
+				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_visible )->text()
 			],
 			'outage-total' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-outage-total',
 				'section' => 'main',
-				'default' => wfMessage( 'incidentreporting-label-outage-formatted', ( $data->i_outage_total / 60 ) )->text()
+				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_total )->text()
 			],
 			'cause' => [
 				'type' => 'info',
