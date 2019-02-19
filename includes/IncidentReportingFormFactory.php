@@ -520,7 +520,7 @@ class IncidentReportingFormFactory {
 			'i_aggravation' => ( $formData['control-aggravation'] ) ? $formData['aggravation'] : NULL,
 			'i_known' => ( $formData['control-known'] ) ? $formData['known'] : NULL,
 			'i_preventable' => ( $formData['control-preventable'] ) ? $formData['preventable'] : NULL,
-			'i_other' => ( $formData['control-other'] ) ? $fromData['other'] : NULL,
+			'i_other' => ( $formData['control-other'] ) ? $formData['other'] : NULL,
 			'i_responders' => $formData['responders'],
 			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : NULL
 		];
