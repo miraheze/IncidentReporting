@@ -222,6 +222,13 @@ class IncidentReportingFormFactory {
 				'raw' => true,
 				'default' => $data->i_preventable ?? wfMessage( 'incidentreporting-label-na' )->text()
 			],
+			'other' => [
+				'type' => 'info',
+				'label-message' => 'incidentreporting-label-other',
+				'section' => 'main',
+				'raw' => true,
+				'default' => $data->i_other ?? wfMessage( 'incidentreporting-label-na' )->text()
+			],
 			'responders' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-responders',
