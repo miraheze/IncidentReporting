@@ -24,7 +24,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$isPublished = ( $inc ) ? (bool)$inc->i_published : false;
 
-		if ( $par[0] == '' ) {
+		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
 			$edit = ( isset( $par[1] ) || (int)$par[0] == 0 ) ? true : false;

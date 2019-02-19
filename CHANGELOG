@@ -1,0 +1,8 @@
+== ChangeLog for IncidentReporting ==
+
+=== 1.0.1 (19-02-2019) ===
+* Fix Exception for non-existent incidents.
+* Add other box for useful information.
+
+=== 1.0.0 (16-02-2019) ===
+* Initial commit of code.

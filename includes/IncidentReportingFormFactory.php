@@ -146,6 +146,19 @@ class IncidentReportingFormFactory {
 				'default' => ( !is_null( $data ) ) ? $data->i_preventable : '',
 				'hide-if' => [ '!==', 'wpcontrol-preventable', '1' ]
 			],
+			'control-other' => [
+				'type' => 'check',
+				'label-message' => 'incidentreporting-label-other',
+				'section' => 'main',
+				'default' => ( !is_null( $data ) ) ? (bool)$data->i_other : false
+			],
+			'other' => [
+				'type' => 'textarea',
+				'label-message' => 'incidentreporting-label-explain',
+				'section' => 'main',
+				'default' => ( !is_null( $data ) ) ? $data->i_other : '',
+				'hide-if' => [ '!==', 'wpcontrol-other', '1' ]
+			],
 			'responders' => [
 				'type' => 'usersmultiselect',
 				'label-message' => 'incidentreporting-label-responders',
@@ -500,6 +513,7 @@ class IncidentReportingFormFactory {
 			'i_aggravation' => ( $formData['control-aggravation'] ) ? $formData['aggravation'] : NULL,
 			'i_known' => ( $formData['control-known'] ) ? $formData['known'] : NULL,
 			'i_preventable' => ( $formData['control-preventable'] ) ? $formData['preventable'] : NULL,
+			'i_other' => ( $formData['control-other'] ) ? $fromData['other'] : NULL,
 			'i_responders' => $formData['responders'],
 			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : NULL
 		];
