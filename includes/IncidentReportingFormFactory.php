@@ -645,7 +645,10 @@ class IncidentReportingFormFactory {
 				$outageVisible = $outageVisible + $workTime;
 			}
 
-			$outageTotal = $outageTotal + $workTime;
+			if ( $curState != 'up' ) {
+				$outageTotal = $outageTotal + $workTime;
+			}
+
 			$curState = $odata->log_state;
 			$curTime = $odata->log_timestamp;
 		}
