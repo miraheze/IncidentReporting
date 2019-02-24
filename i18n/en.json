@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Lewis"
+			"John Lewis",
+			"MacFan4000"
 		]
 	},
 	"action-editincidents": "edit incidents",
@@ -58,5 +59,7 @@
 	"incidentreporting-table-tasks": "Actionable Tasks",
 	"incidentreporting-table-published": "Date of Publishing",
 	"incidentreporting-view": "Edit Report",
-	"incidentreports": "Incident Reports"
+	"incidentreports": "Incident Reports",
+	"right-viewincidents": "View incident reports",
+	"right-editincidents": "Edit incident reports"
 }
