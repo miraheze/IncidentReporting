@@ -64,7 +64,7 @@ class IncidentReportingPager extends TablePager {
 				break;
 			case 'i_tasks':
 				$taskArray = json_decode( $row->i_tasks, true );
-				$formatted = count( $taskArray );
+				$formatted = is_array( $taskArray ) ? count( $taskArray ) : 0;
 				break;
 			case 'i_published':
 				$formatted = wfTimestamp( TS_RFC2822, (int)$row->i_published );
