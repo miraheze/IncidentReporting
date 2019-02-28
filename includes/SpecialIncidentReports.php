@@ -9,6 +9,8 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$out = $this->getOutput();
 		$this->setHeaders();
+		
+		$this->checkPermissions();
 
 		$par = explode( '/', $par );
 
