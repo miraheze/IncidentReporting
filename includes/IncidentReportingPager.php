@@ -15,10 +15,7 @@ class IncidentReportingPager extends TablePager {
 		foreach ( $services as $service => $url ) {
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$niceName]['name'] = $service;
-
-			if ( $url ) {
-				$irServices[$niceName]['url'] = $url;
-			}
+			$irServices[$niceName]['url'] = $url;
 		}
 
 		self::$services = $irServices;

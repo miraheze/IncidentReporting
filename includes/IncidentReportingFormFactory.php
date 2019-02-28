@@ -405,6 +405,7 @@ class IncidentReportingFormFactory {
 		// actionables
 		if ( $action == 'view' ) {
 			$aArray = json_decode( $data->i_tasks, true );
+			$tasks = [];
 
 			foreach ( $aArray as $task ) {
 				$tasks[] = '<a href="' . $wgIncidentReportingTaskUrl . $task . '">' . $task . '</a>';
@@ -522,7 +523,7 @@ class IncidentReportingFormFactory {
 			'i_preventable' => ( $formData['control-preventable'] ) ? $formData['preventable'] : NULL,
 			'i_other' => ( $formData['control-other'] ) ? $formData['other'] : NULL,
 			'i_responders' => $formData['responders'],
-			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : NULL
+			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : "[]"
 		];
 
 		if ( isset( $formData['publish'] ) && $formData['publish'] ) {

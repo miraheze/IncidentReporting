@@ -1,5 +1,8 @@
 == ChangeLog for IncidentReporting ==
 
+=== 1.0.2 (28-02-2019) ===
+* Fix minor log errors.
+
 === 1.0.1 (19-02-2019) ===
 * Fix Exception for non-existent incidents.
 * Add other box for useful information.
