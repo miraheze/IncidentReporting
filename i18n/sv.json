@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"action-editincidents": "redigera incidenter",
+	"incidentreporting-create": "Skapa rapport",
+	"incidentreporting-edit": "Skicka ändringar",
+	"incidentreporting-label-human": "Människa",
+	"incidentreporting-label-notpublished": "Rapporten har ännu inte publicerats!",
+	"incidentreporting-label-outage-formatted": "$1 minuter",
+	"incidentreporting-label-published": "Rapporten publicerades",
+	"incidentreporting-label-reviewers-info": "Granskade: $1. Inte granskade: $2.",
+	"incidentreporting-label-technical": "Teknisk",
+	"incidentreporting-log-actor-information": "Information",
+	"incidentreporting-log-actor-user": "Användare",
+	"incidentreporting-log-down": "Ned",
+	"incidentreporting-log-timestamp": "Händelse $1 - När inträffade denna händelse?",
+	"incidentreporting-log-up": "Upp",
+	"incidentreporting-log-user": "Händelse $1 - Vem gjorde detta?",
+	"incidentreporting-main": "Huvuddetaljer",
+	"incidentreporting-stats-component": "Visa statistik för tjänster",
+	"incidentreporting-stats-number": "Visa antal incidenter",
+	"incidentreporting-success": "Ändringar sparades",
+	"incidentreporting-table-all": "Visa alla",
+	"incidentreporting-table-id": "Incident-ID",
+	"incidentreporting-table-cause": "Orsak",
+	"incidentreporting-table-published": "Publiceringsdatum",
+	"incidentreporting-view": "Redigera rapport",
+	"incidentreports": "Incidentrapporter",
+	"right-editincidents": "Redigera incidentrapporter"
+}

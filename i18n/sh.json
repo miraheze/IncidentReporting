@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"action-editincidents": "uredi incidenti",
+	"action-viewincidents": "pregledaj incidenti",
+	"incidentreporting-create": "Napravi izvještaj",
+	"incidentreporting-desc": "Obrasci za izvještavanje incidenta u MediaWikiju.",
+	"incidentreporting-edit": "Podnesi izmjene",
+	"incidentreporting-label-actionables": "Sledeće naznake su zadatci za ispunjavanje",
+	"incidentreporting-label-cause": "Osnovni razlog incidenta",
+	"incidentreporting-label-human": "Čovjek",
+	"incidentreporting-label-na": "Odjeljak nije primjenljiv",
+	"incidentreporting-label-outage-formatted": "$1 minuta",
+	"incidentreporting-label-reviewers-info": "Pregledanih: $1. Nepregledanih: $2.",
+	"incidentreporting-label-technical": "Tehnički",
+	"incidentreporting-log-actor-information": "Informacije",
+	"incidentreporting-log-actor-user": "Korisnik",
+	"incidentreporting-log-partial": "Djelimični",
+	"incidentreporting-logs": "Evidencije incidenta",
+	"incidentreporting-main": "Glavni detalji",
+	"incidentreporting-stats": "Prikaži statistiku incidenta",
+	"incidentreporting-stats-component": "Prikaži statistiku za usluge",
+	"incidentreporting-stats-number": "Prikaži broj incidenta",
+	"incidentreporting-table-all": "Prikaži sve",
+	"incidentreporting-table-id": "Naznaka incidenta",
+	"incidentreporting-view": "Uredi izvještaj",
+	"incidentreports": "Izvještaji incidenta",
+	"right-viewincidents": "Pogl. izvještaji incidenta",
+	"right-editincidents": "Uredi izvještaji incidenta"
+}
