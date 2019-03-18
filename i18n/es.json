@@ -19,7 +19,7 @@
 	"incidentreporting-label-na": "Sección no aplicable",
 	"incidentreporting-label-no-actionables": "No se ha identificado ninguna acción para este incidente",
 	"incidentreporting-label-notpublished": "Todavía no se publica el informe.",
-	"incidentreporting-label-other": "Es allí cualquiera otra información cuál sería útil para este informe de incidente?",
+	"incidentreporting-label-other": "¿Existe otra información que resulte útil para este informe de incidente?",
 	"incidentreporting-label-outage-formatted": "$1 minutos",
 	"incidentreporting-label-outage-total": "Total Outage (Abajo a Arriba)",
 	"incidentreporting-label-outage-visible": "Visible Outage (Abajo a Parcial)",
