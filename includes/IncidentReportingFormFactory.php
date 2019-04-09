@@ -423,7 +423,7 @@ class IncidentReportingFormFactory {
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-actionables',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? implode( "\n", json_decode( $data->i_tasks ) ) : ''
+				'default' => ( !is_null( $data ) ) ? implode( "\n", json_decode( $data->i_tasks, true ) ) : ''
 			];
 		}
 
