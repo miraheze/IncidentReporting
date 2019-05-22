@@ -675,8 +675,8 @@ class IncidentReportingFormFactory {
 			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
 			$irLogEntry->setPerformer( $form->getContext()->getUser() );
 			$irLogEntry->setTarget( $form->getTitle() );
-			$irLogID = $farmerLogEntry->insert();
-			$irLogEntry->publish( $farmerLogID );
+			$irLogID = $irLogEntry->insert();
+			$irLogEntry->publish( $irLogID );
 		}
 
 		$out->addHTML( '<div class="successbox">' . wfMessage( 'incidentreporting-success' )->escaped() . '</div>' );
