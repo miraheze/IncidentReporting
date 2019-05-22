@@ -528,8 +528,6 @@ class IncidentReportingFormFactory {
 
 		if ( isset( $formData['publish'] ) && $formData['publish'] ) {
 			$dbIncident['i_published'] = $dbw->timestamp();
-		} else {
-			$dbIncident['i_published'] = NULL;
 		}
 
 		if ( $id != 0 ) {
@@ -665,12 +663,21 @@ class IncidentReportingFormFactory {
 			]
 		);
 
-		// Will log eventually after cutover
-//		$irLogEntry = new ManualLogEntry( 'incidentreporting', '' );
-//		$irLogEntry->setPerformer( $form->getContext()->getUser() );
-//		$irLogEntry->setTarget( $form->getTitle() );
-//		$irLogID = $farmerLogEntry->insert();
-//		$irLogEntry->publish( $farmerLogID );
+		$published = $dbw->selectRow(
+			'incidents',
+			'*',
+			[
+				'i_id' => $id
+			]
+		)->i_published;
+
+		if ( !is_null( $published ) ) {
+			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
+			$irLogEntry->setPerformer( $form->getContext()->getUser() );
+			$irLogEntry->setTarget( $form->getTitle() );
+			$irLogID = $farmerLogEntry->insert();
+			$irLogEntry->publish( $farmerLogID );
+		}
 
 		$out->addHTML( '<div class="successbox">' . wfMessage( 'incidentreporting-success' )->escaped() . '</div>' );
 

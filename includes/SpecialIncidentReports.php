@@ -1,15 +1,15 @@
 <?php
 class SpecialIncidentReports extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgIncidentReportingDatabase;
 
 		$out = $this->getOutput();
 		$this->setHeaders();
-		
+
 		$this->checkPermissions();
 
 		$par = explode( '/', $par );
@@ -34,7 +34,7 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 	}
 
-	function showForm(
+	public function showForm(
 		int $id,
 		bool $edit,
 		Database $dbw,
@@ -66,7 +66,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 	}
 
-	function showLanding( Database $dbw ) {
+	public function showLanding( Database $dbw ) {
 		global $wgIncidentReportingServices;
 
 		$type = $this->getRequest()->getText( 'type' );
@@ -163,13 +163,13 @@ class SpecialIncidentReports extends SpecialPage {
 
 	}
 
-	static function onSubmitRedirectToCreate( $formData ) {
+	public static function onSubmitRedirectToCreate( $formData ) {
 		header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/create' );
 
 		return true;
 	}
 
-	static function dummyProcess( $formData ) {
+	public static function dummyProcess( $formData ) {
 		return false;
 	}
 }

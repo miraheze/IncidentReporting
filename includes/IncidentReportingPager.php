@@ -3,7 +3,7 @@ class IncidentReportingPager extends TablePager {
 	private static $services = [];
 	private static $causes = [];
 
-	function __construct( $type, $component, $services ) {
+	public function __construct( $type, $component, $services ) {
 		global $wgIncidentReportingDatabase;
 
 		parent::__construct( $this->getContext() );
@@ -18,16 +18,16 @@ class IncidentReportingPager extends TablePager {
 			$irServices[$niceName]['url'] = $url;
 		}
 
-		self::$services = $irServices;
+		static::$services = $irServices;
 
-		self::$causes = [
+		static::$causes = [
 			'human' => wfMessage( 'incidentreporting-label-human' )->text(),
 			'technical' => wfMessage( 'incidentreporting-label-technical' )->text(),
 			'upstream' =>  wfMessage( 'incidentreporting-label-upstream' )->text()
 		];
 	}
 
-	function getFieldNames() {
+	public function getFieldNames() {
 		static $headers = null;
 
 		$headers = [
@@ -45,7 +45,7 @@ class IncidentReportingPager extends TablePager {
 		return $headers;
 	}
 
-	function formatValue( $name, $value ) {
+	public function formatValue( $name, $value ) {
 		$row = $this->mCurrentRow;
 
 		switch ( $name ) {
@@ -54,10 +54,10 @@ class IncidentReportingPager extends TablePager {
 				break;
 			case 'i_service':
 				$service = $row->i_service;
-				$formatted = ( self::$services[$service]['url'] ) ? Linker::makeExternalLink( self::$services[$service]['url'], self::$services[$service]['name'] ) : self::$services[$service]['name'];
+				$formatted = ( static::$services[$service]['url'] ) ? Linker::makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'] ) : static::$services[$service]['name'];
 				break;
 			case 'i_cause':
-				$formatted = self::$causes[$row->i_cause];
+				$formatted = static::$causes[$row->i_cause];
 				break;
 			case 'i_tasks':
 				$taskArray = json_decode( $row->i_tasks, true );
@@ -73,7 +73,7 @@ class IncidentReportingPager extends TablePager {
 		return $formatted;
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		global $wgRottenLinksBadCodes;
 
 		$info = [
@@ -104,11 +104,11 @@ class IncidentReportingPager extends TablePager {
 		return $info;
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'i_id';
 	}
 
-	function isFieldSortable( $name ) {
+	public function isFieldSortable( $name ) {
 		return true;
 	}
 }

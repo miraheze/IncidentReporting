@@ -15,8 +15,7 @@
 		"IncidentReports": "SpecialIncidentReports"
 	},
 	"LogActionsHandlers": {
-		"incidentreporting/edit": "LogFormatter",
-		"incidentreporting/publish": "LogFormatter"
+		"incidentreporting/modify": "LogFormatter"
 	},
 	"LogTypes": [
 		"incidentreporting"
