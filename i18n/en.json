@@ -62,7 +62,7 @@
 	"incidentreports": "Incident Reports",
 	"log-name-incidentreporting": "Incident report log",
 	"log-description-incidentreporting": "This log tracks incident reports.",
-	"logentry-incidentreporting-modify": "$1 modified incident report for $3",
+	"logentry-incidentreporting-modify": "$1 modified incident report for $4",
 	"right-viewincidents": "View incident reports",
 	"right-editincidents": "Edit incident reports"
 }
