@@ -60,6 +60,7 @@
 	"incidentreporting-table-published": "Date of Publishing",
 	"incidentreporting-view": "Edit Report",
 	"incidentreports": "Incident Reports",
+	"logentry-incidentreporting-modify": "$1 modified incident report for $2",
 	"right-viewincidents": "View incident reports",
 	"right-editincidents": "Edit incident reports"
 }
