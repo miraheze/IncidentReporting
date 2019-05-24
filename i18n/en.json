@@ -60,6 +60,9 @@
 	"incidentreporting-table-published": "Date of Publishing",
 	"incidentreporting-view": "Edit Report",
 	"incidentreports": "Incident Reports",
+	"log-name-incidentreporting": "Incident report log",
+	"log-description-incidentreporting": "This log tracks incident reports.",
+	"logentry-incidentreporting-modify": "$1 modified incident report for $2",
 	"right-viewincidents": "View incident reports",
 	"right-editincidents": "Edit incident reports"
 }

@@ -59,6 +59,9 @@
 	"incidentreporting-table-published": "Date of Publishing",
 	"incidentreporting-view": "Edit Report",
 	"incidentreports": "Incident Reports",
+	"log-name-incidentreporting": "Name of 'Incident report log'",
+	"log-description-incidentreporting": "Description of incident reporting log",
+	"logentry-incidentreporting-modify": "Used as a log message",
 	"right-viewincidents": "View incident reports",
 	"right-editincidents": "Edit incident reports"
 }
