@@ -29,7 +29,7 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
-			$edit = ( isset( $par[1] ) || (int)$par[0] == 0 ) ? true : false;
+			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->getContext()->getUser()->isAllowed( 'editincidents' ) ) ? true : false;
 			$this->showForm( (int)$par[0], $edit, $dbw, $isPublished );
 		}
 	}

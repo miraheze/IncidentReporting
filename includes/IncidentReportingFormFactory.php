@@ -53,9 +53,7 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					if ( !empty( $resp ) ) {
-						$responders[] = Linker::userLink( (int)User::newFromName( $resp )->getId(), $resp );
-					}
+					$responders[] = Linker::userLink( (int)User::newFromName( $resp )->getId(), $resp );
 				}
 			}
 		}
@@ -166,6 +164,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-responders',
 				'section' => 'main',
 				'default' => ( !is_null( $data ) ) ? $data->i_responders : '',
+				'required' => true,
 				'exitsts' => true
 			],
 			'review' => [
@@ -173,6 +172,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-reviewers',
 				'section' => 'main',
 				'default' => ( isset( $reviewers['all'] ) ) ? implode( "\n", $reviewers['all'] ) : '',
+				'required' => true,
 				'exists' => true
 			],
 		];
