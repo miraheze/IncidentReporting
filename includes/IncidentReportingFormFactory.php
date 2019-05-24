@@ -510,7 +510,7 @@ class IncidentReportingFormFactory {
 	) {
 		$out = $context->getOutput();
 
-		if ( $formData['view'] ) {
+		if ( isset( $formData['view'] ) && $formData['view'] ) {
 			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/' . $id . '/edit' );
 
 			return true;
