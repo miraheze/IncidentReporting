@@ -59,6 +59,7 @@
 	"incidentreporting-table-published": "Date of Publishing",
 	"incidentreporting-view": "Edit Report",
 	"incidentreports": "Incident Reports",
+	"logentry-incidentreporting-modify": "Used as a log message",
 	"right-viewincidents": "View incident reports",
 	"right-editincidents": "Edit incident reports"
 }
