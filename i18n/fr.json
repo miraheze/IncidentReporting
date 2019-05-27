@@ -60,6 +60,9 @@
 	"incidentreporting-table-published": "Date de publication",
 	"incidentreporting-view": "Modifier le rapport",
 	"incidentreports": "Rapports d’incident",
+	"log-name-incidentreporting": "Journal des rapports d'incidents",
+	"log-description-incidentreporting": "Ce journal enregistre les rapports d'incidents.",
+	"logentry-incidentreporting-modify": "$1 a modifié le rapport d'incident pour $3",
 	"right-viewincidents": "Afficher les rapports d’incident",
 	"right-editincidents": "Modifier les rapports d’incidents"
 }

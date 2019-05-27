@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"Mirzali"
 		]
 	},
 	"action-editincidents": "olayları düzenle",
@@ -59,6 +60,9 @@
 	"incidentreporting-table-published": "Yayın Tarihi",
 	"incidentreporting-view": "Raporu Düzenle",
 	"incidentreports": "Olay Raporları",
+	"log-name-incidentreporting": "Olay raporu günlüğü",
+	"log-description-incidentreporting": "Bu günlük, olay raporlarını izler.",
+	"logentry-incidentreporting-modify": "$3 için $1 değiştirilmiş olay raporu",
 	"right-viewincidents": "Olay raporlarını görüntüle",
 	"right-editincidents": "Olay raporlarını düzenle"
 }

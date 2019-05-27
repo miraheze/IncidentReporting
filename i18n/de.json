@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Mirzali"
 		]
 	},
 	"action-editincidents": "Vorfälle zu bearbeiten",
@@ -59,6 +60,9 @@
 	"incidentreporting-table-published": "Datum der Veröffentlichung",
 	"incidentreporting-view": "Bericht bearbeiten",
 	"incidentreports": "Vorfallsberichte",
+	"log-name-incidentreporting": "Ereignisprotokoll",
+	"log-description-incidentreporting": "Dieses Protokoll verfolgt Ereignisberichte.",
+	"logentry-incidentreporting-modify": "$1 geänderter Vorfallbericht für $3",
 	"right-viewincidents": "Vorfallsberichte ansehen",
 	"right-editincidents": "Vorfallsberichte bearbeiten"
 }
