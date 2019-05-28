@@ -508,7 +508,7 @@ class IncidentReportingFormFactory {
 		Database $dbw,
 		IContextSource $context
 	) {
-		if ( $formData['view'] ) {
+		if ( isset( $formData['view'] ) && $formData['view'] ) {
 			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/' . $id . '/edit' );
 
 			return true;

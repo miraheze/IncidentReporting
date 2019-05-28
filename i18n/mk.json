@@ -59,6 +59,9 @@
 	"incidentreporting-table-published": "Датум на објавување",
 	"incidentreporting-view": "Уреди пријава",
 	"incidentreports": "Пријави на инциденти",
+	"log-name-incidentreporting": "Дневник на пријавени инциденти",
+	"log-description-incidentreporting": "Овој дневник ги следи пријавените инциденти.",
+	"logentry-incidentreporting-modify": "$1 ја измени пријавата на инцидент за $3",
 	"right-viewincidents": "Погл. пријави на инциденти",
 	"right-editincidents": "Уреди пријави на инциденти"
 }
