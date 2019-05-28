@@ -7,9 +7,7 @@ class SpecialIncidentReports extends SpecialPage {
 	public function execute( $par ) {
 		global $wgIncidentReportingDatabase;
 
-		$out = $this->getOutput();
 		$this->setHeaders();
-
 		$this->checkPermissions();
 
 		$par = explode( '/', $par );
@@ -29,7 +27,7 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
-			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->getContext()->getUser()->isAllowed( 'editincidents' ) ) ? true : false;
+			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->getContext()->getUser()->isAllowed( 'editincidents' ) );
 			$this->showForm( (int)$par[0], $edit, $dbw, $isPublished );
 		}
 	}

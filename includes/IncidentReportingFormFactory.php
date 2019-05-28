@@ -3,8 +3,8 @@
 class IncidentReportingFormFactory {
 	public function getFormDescriptor(
 		Database $dbw,
-		int $id = 0,
-		bool $edit = false,
+		int $id,
+		bool $edit,
 		IContextSource $context
 	) {
 		global $wgIncidentReportingServices, $wgIncidentReportingTaskUrl;
@@ -23,7 +23,7 @@ class IncidentReportingFormFactory {
 		}
 
 		if ( $action == 'create' ) {
-			$data = NULL;
+			$data = null;
 		} else {
 			$data = $dbw->selectRow(
 				'incidents',
@@ -456,8 +456,8 @@ class IncidentReportingFormFactory {
 
 
 	public function getForm(
-		int $id = 0,
-		bool $edit = false,
+		int $id,
+		bool $edit,
 		Database $dbw,
 		IContextSource $context,
 		$formClass = IncidentReportingOOUIForm::class
@@ -504,12 +504,10 @@ class IncidentReportingFormFactory {
 	protected function submitForm(
 		array $formData,
 		HTMLForm $form,
-		int $id = 0,
+		int $id,
 		Database $dbw,
 		IContextSource $context
 	) {
-		$out = $context->getOutput();
-
 		if ( $formData['view'] ) {
 			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/' . $id . '/edit' );
 
@@ -520,10 +518,10 @@ class IncidentReportingFormFactory {
 		$dbIncident = [
 			'i_service' => $formData['service'],
 			'i_cause' => $formData['cause'],
-			'i_aggravation' => ( $formData['control-aggravation'] ) ? $formData['aggravation'] : NULL,
-			'i_known' => ( $formData['control-known'] ) ? $formData['known'] : NULL,
-			'i_preventable' => ( $formData['control-preventable'] ) ? $formData['preventable'] : NULL,
-			'i_other' => ( $formData['control-other'] ) ? $formData['other'] : NULL,
+			'i_aggravation' => ( $formData['control-aggravation'] ) ? $formData['aggravation'] : null,
+			'i_known' => ( $formData['control-known'] ) ? $formData['known'] : null,
+			'i_preventable' => ( $formData['control-preventable'] ) ? $formData['preventable'] : null,
+			'i_other' => ( $formData['control-other'] ) ? $formData['other'] : null,
 			'i_responders' => $formData['responders'],
 			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : "[]"
 		];
@@ -546,7 +544,6 @@ class IncidentReportingFormFactory {
 				$dbIncident
 			);
 
-			// Not a nice way but it's a way
 			$id = $dbw->selectRow(
 				'incidents',
 				'i_id',
@@ -576,7 +573,7 @@ class IncidentReportingFormFactory {
 					[
 						'r_incident' => $id,
 						'r_user' => $reviewer,
-						'r_timestamp' => NULL
+						'r_timestamp' => null
 					]
 				);
 			}
@@ -586,7 +583,7 @@ class IncidentReportingFormFactory {
 		$eventNumber = (int)$formData['logs-number'];
 
 		for ( $eId = 1; $eId < $eventNumber; $eId++ ) {
-			if ( $formData["{$eId}-timestamp"] == NULL ) {
+			if ( !(bool)$formData["{$eId}-timestamp"] ) {
 				continue;
 			}
 
@@ -636,8 +633,8 @@ class IncidentReportingFormFactory {
 
 		$outageTotal = 0;
 		$outageVisible = 0;
-		$curState = NULL;
-		$curTime = NULL;
+		$curState = null;
+		$curTime = null;
 
 		foreach ( $logData as $odata ) {
 			$workTime = ( ( !is_null( $curTime ) ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
@@ -681,7 +678,7 @@ class IncidentReportingFormFactory {
 			$irLogEntry->publish( $irLogID );
 		}
 
-		$out->addHTML( '<div class="successbox">' . wfMessage( 'incidentreporting-success' )->escaped() . '</div>' );
+		$context->getOutput()->addHTML( '<div class="successbox">' . wfMessage( 'incidentreporting-success' )->escaped() . '</div>' );
 
 		return true;
 	}
