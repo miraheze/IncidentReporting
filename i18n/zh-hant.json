@@ -59,6 +59,9 @@
 	"incidentreporting-table-published": "發佈日期",
 	"incidentreporting-view": "編輯報告",
 	"incidentreports": "突發事件報告",
+	"log-name-incidentreporting": "突發事件報告日誌",
+	"log-description-incidentreporting": "此日誌追蹤突發事件報告。",
+	"logentry-incidentreporting-modify": "$1更動了$3的突發事件報告",
 	"right-viewincidents": "檢視突發事件報告",
 	"right-editincidents": "編輯突發事件報告"
 }

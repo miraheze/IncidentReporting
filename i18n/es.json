@@ -26,8 +26,8 @@
 	"incidentreporting-label-preventable": "Era este incidente evitable?",
 	"incidentreporting-label-publish": "Es este informe a punto para ser publicado?",
 	"incidentreporting-label-published": "Informe publicado el",
-	"incidentreporting-label-responders": "Quién respondió a este incidente?",
-	"incidentreporting-label-reviewers": "Quién necesita revisar este informe?",
+	"incidentreporting-label-responders": "¿Quién respondió a este incidente?",
+	"incidentreporting-label-reviewers": "¿Quién necesita revisar este informe?",
 	"incidentreporting-label-reviewers-info": "Revisado: $1. No Revisado: $2",
 	"incidentreporting-label-service": "Componente de servicio afectado",
 	"incidentreporting-label-technical": "Técnica",
@@ -60,6 +60,7 @@
 	"incidentreporting-table-published": "Fecha de publicación",
 	"incidentreporting-view": "Editar informe",
 	"incidentreports": "Informes de incidente",
+	"log-name-incidentreporting": "Registro de informes de incidentes",
 	"right-viewincidents": "Informes de incidente de la vista",
 	"right-editincidents": "Edita informes de incidente"
 }
