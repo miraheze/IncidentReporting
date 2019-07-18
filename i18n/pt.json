@@ -59,6 +59,9 @@
 	"incidentreporting-table-published": "Data de publicação",
 	"incidentreporting-view": "Editar relatório",
 	"incidentreports": "Relatórios de incidentes",
+	"log-name-incidentreporting": "Registo de relatórios de incidentes",
+	"log-description-incidentreporting": "Este registo mantém os relatórios de incidentes.",
+	"logentry-incidentreporting-modify": "$1 modificou o relatório de incidente de $3",
 	"right-viewincidents": "Ver relatórios de incidentes",
 	"right-editincidents": "Editar relatórios de incidentes"
 }
