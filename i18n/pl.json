@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Railfail536"
+		]
+	},
+	"action-editincidents": "edytowania incydentów",
+	"action-viewincidents": "przeglądania incydentów",
+	"incidentreporting-create": "Stwórz zgłoszenie",
+	"incidentreporting-desc": "Formularz zgłaszania incydentów w MediaWiki",
+	"incidentreporting-edit": "Prześlij zmiany",
+	"incidentreporting-label-notpublished": "Zgłoszenie nie zostało jeszcze opublikowane!",
+	"incidentreporting-label-other": "Czy są jeszcze jakieś informacje, które mogłyby być użyteczne w tym zgłoszeniu?",
+	"incidentreporting-label-outage-formatted": "$1 {{PLURAL:$1|minuta|minuty|minut}}",
+	"incidentreporting-label-technical": "Techniczny",
+	"incidentreporting-log-actor-user": "Użytkownik",
+	"incidentreporting-success": "Zmiany zostały pomyślnie zapisane",
+	"incidentreporting-table-all": "Pokaż wszystkie",
+	"incidentreporting-table-id": "ID incydentu",
+	"incidentreporting-table-published": "Data publikacji",
+	"incidentreporting-view": "Edytuj zgłoszenie",
+	"incidentreports": "Zgłoszenia incydentów",
+	"log-name-incidentreporting": "Rejestr zgłoszeń incydentów",
+	"log-description-incidentreporting": "Ten rejestr śledzi zgłoszenia incydentów.",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|zmodyfikował|zmodyfikowała|zmodyfikował(a)}} zgłoszenie incydentu dla $3",
+	"right-viewincidents": "Podgląd zgłoszeń incydentów",
+	"right-editincidents": "Edytowanie zgłoszeń incydentów"
+}
