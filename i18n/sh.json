@@ -59,6 +59,9 @@
 	"incidentreporting-table-published": "Datum objave",
 	"incidentreporting-view": "Uredi izvještaj",
 	"incidentreports": "Izvještaji incidenta",
+	"log-name-incidentreporting": "Evidencija pirjavljenih incidenata",
+	"log-description-incidentreporting": "Ova evidencija slijedi prijavljene incidente.",
+	"logentry-incidentreporting-modify": "$1 izmijenio/la je izvještaj incidenta za $3",
 	"right-viewincidents": "Pogl. izvještaji incidenta",
 	"right-editincidents": "Uredi izvještaji incidenta"
 }
