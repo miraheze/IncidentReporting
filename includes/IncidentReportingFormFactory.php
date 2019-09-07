@@ -654,7 +654,7 @@ class IncidentReportingFormFactory {
 		$dbw->update(
 			'incidents',
 			[
-				'i_outage_total' => $outageTotal,
+				'i_outage_total' => round( $outageTotal ),
 				'i_outage_visible' => $outageVisible
 			],
 			[
