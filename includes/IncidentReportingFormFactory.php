@@ -655,7 +655,7 @@ class IncidentReportingFormFactory {
 			'incidents',
 			[
 				'i_outage_total' => round( $outageTotal ),
-				'i_outage_visible' => $outageVisible
+				'i_outage_visible' => round( $outageVisible )
 			],
 			[
 				'i_id' => $id
