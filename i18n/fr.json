@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Thibaut120094"
 		]
 	},
 	"action-editincidents": "modifier les incidents",
 	"action-viewincidents": "afficher les incidents",
 	"incidentreporting-create": "Créer un rapport",
-	"incidentreporting-desc": "Formulaires de rapport d’incident dans MédiaWiki.",
+	"incidentreporting-desc": "Formulaires de rapport d’incident dans MediaWiki.",
 	"incidentreporting-edit": "Soumettre les modifications",
 	"incidentreporting-label-actionables": "Les ID suivants sont des tâches actionnables",
 	"incidentreporting-label-aggravation": "Cet incident a-t-il été aggravé par quelque chose (comme une investigation, des utilisateurs, etc.) ?",
