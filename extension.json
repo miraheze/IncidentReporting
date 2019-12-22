@@ -4,7 +4,7 @@
 		"John Lewis"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"descriptionmsg": "incidentreporting-desc",
 	"type": "specialpage",
 	"AvailableRights": [

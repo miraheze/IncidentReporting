@@ -1,5 +1,8 @@
 == ChangeLog for IncidentReporting ==
 
+=== 1.1.0 (22-12-2019) ===
+* Add support for MediaWiki 1.34
+
 === 1.0.3 (07-09-2019) ===
 * Round $outageTotal and $outageVisible
 
