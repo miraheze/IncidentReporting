@@ -673,7 +673,7 @@ class IncidentReportingFormFactory {
 		if ( !is_null( $published ) ) {
 			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
 			$irLogEntry->setPerformer( $form->getContext()->getUser() );
-			$irLogEntry->setTarget( $form->getPageTitle() );
+			$irLogEntry->setTarget( $form->getTitle() );
 			$irLogID = $irLogEntry->insert();
 			$irLogEntry->publish( $irLogID );
 		}
