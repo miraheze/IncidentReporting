@@ -282,7 +282,7 @@ class IncidentReportingFormFactory {
 						'section' => 'logs',
 						'subsection' => (string)$ldata->log_id,
 						'raw' => true,
-						'default' => $context->getOutput()->parse( $ldata->log_action )
+						'default' => $context->getOutput()->parseAsInterface( $ldata->log_action )
 					];
 				}
 			} else {
