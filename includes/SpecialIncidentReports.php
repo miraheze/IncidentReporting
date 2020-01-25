@@ -27,7 +27,7 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
-			$mwService = MediaWikiServices::getInstance()->getPermissionManager();
+			$mwService = MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
 			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $mwService->userHasRight( $this->getContext()->getUser(), 'editincidents' ) );
 			$this->showForm( (int)$par[0], $edit, $dbw, $isPublished );
 		}
@@ -39,7 +39,7 @@ class SpecialIncidentReports extends SpecialPage {
 		MaintainableDBConnRef $dbw,
 		bool $isPublished
 	) {
-		$mwService = MediaWikiServices::getInstance()->getPermissionManager();
+		$mwService = MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
 		if ( !$isPublished && !$mwService->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			throw new PermissionsError( 'editincidents' );
 		}
@@ -156,7 +156,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$this->getOutput()->addHTML( $pager->getNavigationBar() . $table . $pager->getNavigationBar() );
 
-		$mwService = MediaWikiServices::getInstance()->getPermissionManager();
+		$mwService = MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
 		if ( $mwService->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
