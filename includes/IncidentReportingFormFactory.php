@@ -435,7 +435,8 @@ class IncidentReportingFormFactory {
 			'section' => 'main'
 		];
 
-		if ( $context->getUser()->isAllowed( 'editincidents' ) ) {
+		$mwService = MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
+		if ( $mwService->userHasRight( $context->getUser(), 'editincidents' ) ) {
 			$viewDescriptor['view'] = [
 				'type' => 'submit',
 				'default' => wfMessage( 'incidentreporting-view')->text(),
