@@ -63,6 +63,6 @@
 	"log-name-incidentreporting": "Журнал звітування про інциденти",
 	"log-description-incidentreporting": "Цей журнал відстежує звіти про інциденти.",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$1|змінив|змінила}} звіт про інцидент для $3",
-	"right-viewincidents": "перегляд звітів про інциденти",
-	"right-editincidents": "редагування звітів про інциденти"
+	"right-viewincidents": "Перегляд звітів про інциденти",
+	"right-editincidents": "Редагування звітів про інциденти"
 }
