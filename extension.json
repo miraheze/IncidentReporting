@@ -4,7 +4,7 @@
 		"John Lewis"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"descriptionmsg": "incidentreporting-desc",
 	"type": "specialpage",
 	"requires": {
@@ -71,6 +71,9 @@
 			"public": true,
 			"value": false
 		}
+	},
+	"ConfigRegistry" : {
+		"incidentreporting": "GlobalVarConfig::newInstance"
 	},
 	"manifest_version": 2
 }

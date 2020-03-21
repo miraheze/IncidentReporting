@@ -1,6 +1,11 @@
 == ChangeLog for IncidentReporting ==
 
-=== 1.1.1 (15-01-2019) ===
+=== 1.1.2 (21-03-2020) ===
+* Display log events based on timestamp not on added form order (by ID)
+* Correct log link from $id/edit to just $id
+* Convert to ConfigRegistry
+
+=== 1.1.1 (15-01-2020) ===
 * Replace deprecated OutputPage::parse(), which will be removed from MW
 
 === 1.1.0 (22-12-2019) ===

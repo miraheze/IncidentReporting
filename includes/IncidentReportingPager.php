@@ -1,15 +1,18 @@
 <?php
+
+use MediaWiki\MediaWikiService;
+
 class IncidentReportingPager extends TablePager {
 	private static $services = [];
 	private static $causes = [];
+	private $config = null;
 
 	public function __construct( $type, $component, $services ) {
-		global $wgIncidentReportingDatabase;
-
 		parent::__construct( $this->getContext() );
-		$this->mDb = wfGetDB( DB_REPLICA, [], $wgIncidentReportingDatabase );
 		$this->type = $type;
 		$this->component = $component;
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+		$this->mDb = wfGetDB( DB_REPLICA, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$irServices = [];
 		foreach ( $services as $service => $url ) {
@@ -74,8 +77,6 @@ class IncidentReportingPager extends TablePager {
 	}
 
 	public function getQueryInfo() {
-		global $wgRottenLinksBadCodes;
-
 		$info = [
 			'tables' => [
 				'incidents'

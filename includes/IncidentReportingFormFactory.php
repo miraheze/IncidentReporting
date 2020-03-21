@@ -1,14 +1,20 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class IncidentReportingFormFactory {
+	private $config = null;
+
+	public function __construct() {
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+	}
+
 	public function getFormDescriptor(
 		MaintainableDBConnRef $dbw,
 		int $id,
 		bool $edit,
 		IContextSource $context
 	) {
-		global $wgIncidentReportingServices, $wgIncidentReportingTaskUrl;
-
 		OutputPage::setupOOUI(
 			strtolower( $context->getSkin()->getSkinName() ),
 			$context->getLanguage()->getDir()
@@ -36,7 +42,7 @@ class IncidentReportingFormFactory {
 
 		$irServices = [];
 		$irServicesUrl = [];
-		foreach ( $wgIncidentReportingServices as $service => $url ) {
+		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 
@@ -270,6 +276,10 @@ class IncidentReportingFormFactory {
 			'*',
 			[
 				'log_incident' => $id
+			],
+			__METHOD__,
+			[
+				'ORDER BY' => 'log_timestamp ASC'
 			]
 		);
 
@@ -410,7 +420,7 @@ class IncidentReportingFormFactory {
 			$tasks = [];
 
 			foreach ( $aArray as $task ) {
-				$tasks[] = '<a href="' . $wgIncidentReportingTaskUrl . $task . '">' . $task . '</a>';
+				$tasks[] = '<a href="' . $this->config->get( 'IncidentReportingTaskUrl' ) . $task . '">' . $task . '</a>';
 			}
 
 			$viewDescriptor['actionables'] = [
@@ -628,6 +638,10 @@ class IncidentReportingFormFactory {
 			'*',
 			[
 				'log_incident' => $id
+			],
+			__METHOD__,
+			[
+				'ORDER BY' => 'log_timestamp ASC'
 			]
 		);
 
@@ -671,9 +685,11 @@ class IncidentReportingFormFactory {
 		)->i_published;
 
 		if ( !is_null( $published ) ) {
+			$mainTitle = substr( $form->getTitle()->getText(), 0, -5 );
+
 			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
 			$irLogEntry->setPerformer( $form->getContext()->getUser() );
-			$irLogEntry->setTarget( $form->getTitle() );
+			$irLogEntry->setTarget( Title::newFromText( $mainTitle, NS_SPECIAL ) );
 			$irLogID = $irLogEntry->insert();
 			$irLogEntry->publish( $irLogID );
 		}

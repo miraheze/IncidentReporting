@@ -1,18 +1,22 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 class SpecialIncidentReports extends SpecialPage {
+	private $config = null;
+
 	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
 	}
 
 	public function execute( $par ) {
-		global $wgIncidentReportingDatabase;
-
 		$this->setHeaders();
 		$this->checkPermissions();
 
 		$par = explode( '/', $par );
 
-		$dbw = wfGetDB( DB_MASTER, [], $wgIncidentReportingDatabase );
+		$dbw = wfGetDB( DB_MASTER, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$inc = $dbw->selectRow(
 			'incidents',
@@ -65,8 +69,6 @@ class SpecialIncidentReports extends SpecialPage {
 	}
 
 	public function showLanding( MaintainableDBConnRef $dbw ) {
-		global $wgIncidentReportingServices;
-
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
 //		$stats = $this->getRequest()->getText( 'stats' );
@@ -77,7 +79,7 @@ class SpecialIncidentReports extends SpecialPage {
 			wfMessage( 'incidentreporting-table-all' )->text() => ''
 		];
 
-		foreach ( $wgIncidentReportingServices as $service => $url ) {
+		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
 		        $niceName = str_replace( ' ', '-', strtolower( $service ) );
 		        $irServices[$service] = $niceName;
 		}
@@ -149,7 +151,7 @@ class SpecialIncidentReports extends SpecialPage {
 //			];
 //		}
 
-		$pager = new IncidentReportingPager( $type, $component, $wgIncidentReportingServices );
+		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 		$table = $pager->getBody();
 
 		$this->getOutput()->addHTML( $pager->getNavigationBar() . $table . $pager->getNavigationBar() );
