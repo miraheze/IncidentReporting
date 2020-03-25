@@ -4,10 +4,12 @@ use MediaWiki\MediaWikiServices;
 
 class SpecialIncidentReports extends SpecialPage {
 	private $config = null;
+	private $permissionManager = null;
 
 	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
 		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 	}
 
 	public function execute( $par ) {
@@ -31,7 +33,7 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
-			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->getContext()->getUser()->isAllowed( 'editincidents' ) );
+			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) );
 			$this->showForm( (int)$par[0], $edit, $dbw, $isPublished );
 		}
 	}
@@ -42,7 +44,7 @@ class SpecialIncidentReports extends SpecialPage {
 		MaintainableDBConnRef $dbw,
 		bool $isPublished
 	) {
-		if ( !$isPublished && !$this->getContext()->getUser()->isAllowed( 'editincidents' ) ) {
+		if ( !$isPublished && !$this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			throw new PermissionsError( 'editincidents' );
 		}
 
@@ -156,7 +158,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$this->getOutput()->addHTML( $pager->getNavigationBar() . $table . $pager->getNavigationBar() );
 
-		if ( $this->getContext()->getUser()->isAllowed( 'editincidents' ) ) {
+		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
 		}
