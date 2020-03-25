@@ -33,7 +33,6 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $par[0] == '' || ( (int)$par[0] != 0 && !$inc ) ) {
 			$this->showLanding( $dbw );
 		} else {
-			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->getContext()->getUser()->isAllowed( 'editincidents' ) );
 			$edit = ( ( isset( $par[1] ) || (int)$par[0] == 0 ) && $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) );
 			$this->showForm( (int)$par[0], $edit, $dbw, $isPublished );
 		}
