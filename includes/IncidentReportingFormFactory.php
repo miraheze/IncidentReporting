@@ -7,6 +7,7 @@ class IncidentReportingFormFactory {
 
 	public function __construct() {
 		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 	}
 
 	public function getFormDescriptor(
@@ -445,7 +446,7 @@ class IncidentReportingFormFactory {
 			'section' => 'main'
 		];
 
-		if ( $context->getUser()->isAllowed( 'editincidents' ) ) {
+		if ( $this->permissionManager->userHasRight( $context->getUser(), 'editincidents' ) ) {
 			$viewDescriptor['view'] = [
 				'type' => 'submit',
 				'default' => wfMessage( 'incidentreporting-view')->text(),
