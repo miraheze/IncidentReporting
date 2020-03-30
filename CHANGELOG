@@ -1,5 +1,8 @@
 == ChangeLog for IncidentReporting ==
 
+=== 1.1.3 (30-03-2020) ===
+* Fix typo in class name.
+
 === 1.1.2 (21-03-2020) ===
 * Display log events based on timestamp not on added form order (by ID)
 * Correct log link from $id/edit to just $id
