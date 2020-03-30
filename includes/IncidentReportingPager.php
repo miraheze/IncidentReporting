@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\MediaWikiService;
+use MediaWiki\MediaWikiServices;
 
 class IncidentReportingPager extends TablePager {
 	private static $services = [];
@@ -11,7 +11,7 @@ class IncidentReportingPager extends TablePager {
 		parent::__construct( $this->getContext() );
 		$this->type = $type;
 		$this->component = $component;
-		$this->config = MediaWikiService::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
 		$this->mDb = wfGetDB( DB_REPLICA, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$irServices = [];
