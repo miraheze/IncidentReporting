@@ -61,7 +61,9 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = Linker::userLink( (int)User::newFromName( $resp )->getId(), $resp );
+					if ( $resp ) { 
+						$responders[] = Linker::userLink( (int)User::newFromName( $resp )->getId(), $resp );
+					}
 				}
 			}
 		}
