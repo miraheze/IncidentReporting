@@ -154,9 +154,8 @@ class SpecialIncidentReports extends SpecialPage {
 //		}
 
 		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
-		$table = $pager->getBody();
+		$table = $pager->getFullOutput();
 
-		$this->getOutput()->addHTML( $pager->getNavigationBar() . $table . $pager->getNavigationBar() );
 
 		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
