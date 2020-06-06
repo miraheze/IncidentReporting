@@ -154,14 +154,13 @@ class SpecialIncidentReports extends SpecialPage {
 //		}
 
 		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
-		$table = $pager->getFullOutput();
 
+		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 
 		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
 		}
-
 	}
 
 	public static function onSubmitRedirectToCreate( $formData ) {
