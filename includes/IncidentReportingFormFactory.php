@@ -521,7 +521,7 @@ class IncidentReportingFormFactory {
 		IContextSource $context
 	) {
 		if ( isset( $formData['view'] ) && $formData['view'] ) {
-			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/' . $id . '/edit' );
+			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $id . '/edit' );
 
 			return true;
 		}

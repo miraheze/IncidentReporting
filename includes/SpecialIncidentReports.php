@@ -165,7 +165,7 @@ class SpecialIncidentReports extends SpecialPage {
 	}
 
 	public static function onSubmitRedirectToCreate( $formData ) {
-		header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullUrl() . '/create' );
+		header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/create' );
 
 		return true;
 	}
