@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"MacFan4000"
+			"MacFan4000",
+			"Mar(c)"
 		]
 	},
 	"action-editincidents": "edit incidents",
@@ -12,7 +13,7 @@
 	"incidentreporting-label-actionables": "Used as a ;abel for tasks field",
 	"incidentreporting-label-aggravation": "label for incident aggravation field",
 	"incidentreporting-label-cause": "label for cause field",
-	"incidentreporting-label-explain": "label for explaination field",
+	"incidentreporting-label-explain": "label for explanation field",
 	"incidentreporting-label-human": "Human",
 	"incidentreporting-label-known": "label for known problem checkbox",
 	"incidentreporting-label-na": "used as text for n/a checkbox",
