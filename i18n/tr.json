@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
-			"Mirzali"
+			"Mirzali",
+			"MuratTheTurkish"
 		]
 	},
 	"action-editincidents": "olayları düzenle",
@@ -44,7 +45,7 @@
 	"incidentreporting-log-up": "Yukarı",
 	"incidentreporting-log-user": "Olay $1 - Bunu kim yaptı?",
 	"incidentreporting-logs": "Olay Günlükleri",
-	"incidentreporting-main": "Ana Detaylar",
+	"incidentreporting-main": "Ana Ayrıntılar",
 	"incidentreporting-stats": "Olay İstatistiklerini Göster",
 	"incidentreporting-stats-component": "Hizmet İstatistiklerini Göster",
 	"incidentreporting-stats-number": "Olay Sayısını Göster",
