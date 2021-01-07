@@ -28,6 +28,9 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"IncidentReportingAliases": "IncidentReporting.i18n.alias.php"
+	},
 	"AutoloadClasses": {
 		"IncidentReportingFormFactory": "includes/IncidentReportingFormFactory.php",
 		"IncidentReportingOOUIForm": "includes/IncidentReportingOOUIForm.php",
