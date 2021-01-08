@@ -29,7 +29,7 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"IncidentReportingAliases": "IncidentReporting.i18n.alias.php"
+		"IncidentReportingAliases": "includes/IncidentReportingAliases.php"
 	},
 	"AutoloadClasses": {
 		"IncidentReportingFormFactory": "includes/IncidentReportingFormFactory.php",
