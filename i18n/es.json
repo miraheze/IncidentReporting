@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"Jakeukalane",
 			"MacFan4000"
 		]
 	},
@@ -61,6 +62,8 @@
 	"incidentreporting-view": "Editar informe",
 	"incidentreports": "Informes de incidente",
 	"log-name-incidentreporting": "Registro de informes de incidentes",
+	"log-description-incidentreporting": "Este registro guarda los informes de incidentes.",
+	"logentry-incidentreporting-modify": "$1 modificó el informe de incidente para $3",
 	"right-viewincidents": "Informes de incidente de la vista",
 	"right-editincidents": "Edita informes de incidente"
 }
