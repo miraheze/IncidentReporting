@@ -1,5 +1,8 @@
 == ChangeLog for IncidentReporting ==
 
+=== 1.1.4 (12-03-2021) ===
+* add license-name
+
 === 1.1.3 (30-03-2020) ===
 * Fix typo in class name.
 
