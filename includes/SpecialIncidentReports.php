@@ -74,7 +74,7 @@ class SpecialIncidentReports extends SpecialPage {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
 		$stats = $this->getRequest()->getText( 'stats' );
-//		$selector = $this->getRequest()->getText( 'selector' );
+		$selector = $this->getRequest()->getText( 'selector' );
 		$quantity = $this->getRequest()->getText( 'quantity' );
 
 		$irServices = [
@@ -112,16 +112,16 @@ class SpecialIncidentReports extends SpecialPage {
 				'default' => (bool)$stats,
 				'name' => 'stats'
 			],
-//			'statistics-selector' => [
-//				'type' => 'select',
-//				'options' => [
-//					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
-//					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
-//				],
-//				'hide-if' => [ '!==', 'stats', '1' ],
-//				'default' => $selector,
-//				'name' => 'selector'
-//			],
+			'statistics-selector' => [
+				'type' => 'select',
+				'options' => [
+					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
+					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
+				],
+				'hide-if' => [ '!==', 'stats', '1' ],
+				'default' => $selector,
+				'name' => 'selector'
+			],
 			'statistics-quantity' => [
 				'type' => 'select',
 				'options' => [
