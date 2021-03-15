@@ -1,15 +1,16 @@
 {
 	"name": "IncidentReporting",
 	"author": [
-		"John Lewis"
+		"John Lewis",
+		"Universal Omega"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"descriptionmsg": "incidentreporting-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"AvailableRights": [
 		"viewincidents",
