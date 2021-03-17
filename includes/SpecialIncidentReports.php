@@ -91,20 +91,20 @@ class SpecialIncidentReports extends SpecialPage {
 			$irServices[$service] = $niceName;
 		}
 
-		$all = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
+		$showAll = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'type' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-cause',
-				'options' => $types + $all,
+				'options' => $types + $showAll,
 				'default' => '',
 				'name' => 'type'
 			],
 			'component' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-service',
-				'options' => $irServices + $all,
+				'options' => $irServices + $showAll,
 				'default' => '',
 				'name' => 'component'
 			],
@@ -164,13 +164,15 @@ class SpecialIncidentReports extends SpecialPage {
 		if ( $selector === 'type' ) {
 			$where = 'i_cause';
 			$foreach = $types;
+			$all = ( $type === '' );
 		} elseif ( $selector === 'component' ) {
 			$where = 'i_service';
 			$foreach = $irServices;
+			$all = ( $component === '' );
 		}
 
 		if ( $field ) {
-			if ( $component === '' || $type === '' ) {
+			if ( $all ) {
 				foreach ( $foreach as $label => $key ) {
 						$statsData = $dbw->selectFieldValues(
 							'incidents',
