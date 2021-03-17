@@ -242,7 +242,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 
-		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'createwiki' ) ) {
+		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
 		}
