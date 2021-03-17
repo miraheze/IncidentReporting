@@ -73,6 +73,7 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showLanding( MaintainableDBConnRef $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
+		$published = $this->getRequest()->getText( 'published' );
 		$stats = $this->getRequest()->getText( 'stats' );
 		$selector = $this->getRequest()->getText( 'selector' );
 		$quantity = $this->getRequest()->getText( 'quantity' );
@@ -133,6 +134,12 @@ class SpecialIncidentReports extends SpecialPage {
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $quantity,
 				'name' => 'quantity'
+			],
+			'statistics-published' => [
+				'type' => 'date',
+				'hide-if' => [ '!==', 'stats', '1' ],
+				'default' => $published,
+				'name' => 'published'
 			]
 		];
 		
@@ -166,8 +173,10 @@ class SpecialIncidentReports extends SpecialPage {
 				foreach ( $foreach as $label => $key ) {
 						$statsData = $dbw->selectFieldValues(
 							'incidents',
-							$field,
-							[ $where => $key ]
+							$field, [ 
+								$where => $key,
+								'i_published >= ' . $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) )
+							]
 						);
 
 						$formDescriptor += [
@@ -199,8 +208,10 @@ class SpecialIncidentReports extends SpecialPage {
 				if ( in_array( $key, $foreach ) ) {
 					$statsData = $dbw->selectFieldValues(
 						'incidents',
-						$field,
-						[ $where => $key ]
+						$field, [ 
+							$where => $key,
+							'i_published >= ' . $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) )
+						]
 					);
 
 					$formDescriptor += [
