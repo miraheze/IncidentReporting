@@ -73,87 +73,175 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showLanding( MaintainableDBConnRef $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
-//		$stats = $this->getRequest()->getText( 'stats' );
-//		$selector = $this->getRequest()->getText( 'selector' );
-//		$quantity = $this->getRequest()->getText( 'quantity' );
+		$published = $this->getRequest()->getText( 'published' );
+		$stats = $this->getRequest()->getText( 'stats' );
+		$selector = $this->getRequest()->getText( 'selector' );
+		$quantity = $this->getRequest()->getText( 'quantity' );
 
-		$irServices = [
-			wfMessage( 'incidentreporting-table-all' )->text() => ''
+		$types = [
+			wfMessage( 'incidentreporting-label-human' )->text() => 'human',
+			wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
+			wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
 		];
 
+		$irServices = [];
+
 		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
-		        $niceName = str_replace( ' ', '-', strtolower( $service ) );
-		        $irServices[$service] = $niceName;
+			$niceName = str_replace( ' ', '-', strtolower( $service ) );
+			$irServices[$service] = $niceName;
 		}
+
+		$showAll = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'type' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-cause',
-				'options' => [
-					wfMessage( 'incidentreporting-label-human' )->text() => 'human',
-					wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
-					wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
-					wfMessage( 'incidentreporting-table-all' )->text() => ''
-				],
+				'options' => $types + $showAll,
 				'default' => '',
 				'name' => 'type'
 			],
 			'component' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-service',
-				'options' => $irServices,
+				'options' => $irServices + $showAll,
 				'default' => '',
 				'name' => 'component'
 			],
-//			'statistics' => [
-//				'type' => 'check',
-//				'label-message' => 'incidentreporting-stats',
-//				'default' => (bool)$stats,
-//				'name' => 'stats'
-//			],
-//			'statistics-selector' => [
-//				'type' => 'select',
-//				'options' => [
-//					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
-//					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
-//				],
-//				'hide-if' => [ '!==', 'stats', '1' ],
-//				'default' => $selector,
-//				'name' => 'selector'
-//			],
-//			'statistics-quantity' => [
-//				'type' => 'select',
-//				'options' => [
-//					wfMessage( 'incidentreporting-stats-number' )->text() => 'num',
-//					wfMessage( 'incidentreporting-stats-visible' )->text() => 'visible',
-//					wfMessage( 'incidentreporting-stats-total' )->text() => 'total'
-//				],
-//				'hide-if' => [ '!==', 'stats', '1' ],
-//				'default' => $quantity,
-//				'name' => $quantity
-//			]
+			'statistics' => [
+				'type' => 'check',
+				'label-message' => 'incidentreporting-stats',
+				'default' => (bool)$stats,
+				'name' => 'stats'
+			],
+			'statistics-selector' => [
+				'type' => 'select',
+				'options' => [
+					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
+					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
+				],
+				'hide-if' => [ '!==', 'stats', '1' ],
+				'default' => $selector,
+				'name' => 'selector'
+			],
+			'statistics-quantity' => [
+				'type' => 'select',
+				'options' => [
+					wfMessage( 'incidentreporting-stats-number' )->text() => 'num',
+					wfMessage( 'incidentreporting-stats-visible' )->text() => 'visible',
+					wfMessage( 'incidentreporting-stats-total' )->text() => 'total'
+				],
+				'hide-if' => [ '!==', 'stats', '1' ],
+				'default' => $quantity,
+				'name' => 'quantity'
+			],
+			'statistics-published' => [
+				'type' => 'date',
+				'label-message' => 'incidentreporting-stats-published',
+				'default' => '',
+				'hide-if' => [ '!==', 'stats', '1' ],
+				'default' => $published,
+				'name' => 'published'
+			]
 		];
+		
+		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
+
+
+		switch ( $quantity ) {
+			case 'num':
+				$field = 'i_id';
+				break;
+			case 'visible':
+				$field = 'i_outage_visible';
+				break;
+			case 'total':
+				$field = 'i_outage_total';
+				break;
+			default:
+				$field = false;
+		}
+        
+		if ( $selector === 'type' ) {
+			$where = 'i_cause';
+			$foreach = $types;
+			$all = ( $type === '' );
+		} elseif ( $selector === 'component' ) {
+			$where = 'i_service';
+			$foreach = $irServices;
+			$all = ( $component === '' );
+		}
+
+		if ( $field ) {
+			if ( $all ) {
+				foreach ( $foreach as $label => $key ) {
+						$statsData = $dbw->selectFieldValues(
+							'incidents',
+							$field, [ 
+								$where => $key,
+								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
+							]
+						);
+
+						$formDescriptor += [
+							"statistics-out-quantity-{$key}" => [
+								'type' => 'info',
+								'label' => $label,
+							]
+						];
+
+						if ( $quantity === 'num' ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
+						} else {
+							foreach ( $statsData as $value ) {
+								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
+							}
+
+							if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
+								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
+							}
+						}
+					}
+			} else {
+				if ( $selector === 'type' ) {
+					$key = $type;
+				} elseif ( $selector === 'component' ) {
+					$key = $component;
+				}
+
+				if ( in_array( $key, $foreach ) ) {
+					$statsData = $dbw->selectFieldValues(
+						'incidents',
+						$field, [ 
+							$where => $key,
+							'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
+						]
+					);
+
+					$formDescriptor += [
+						"statistics-out-quantity-{$key}" => [
+							'type' => 'info',
+							'label' => array_flip( $foreach )[$key],
+						],
+					];
+
+					if ( $quantity === 'num' ) {
+						$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
+					} else {
+						foreach ( $statsData as $value ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
+						}
+
+						if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
+						}
+					}
+				}
+			}
+		}
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm->setSubmitCallback( [ $this, 'dummyProcess' ] )->setMethod( 'get' )->prepareForm()->show();
-
-//		$statsDescriptor = [];
-//
-//		$statsData = $dbw->select(
-//			'incidents',
-//			'*'
-//		];
-//
-//		foreach ( $statsOut as $selector => $quantity ) {
-//			$statDescriptor[] = [
-//				'type' => 'info',
-//				'label' => $selector,
-//				'default' => $quantity
-//			];
-//		}
-
-		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 
