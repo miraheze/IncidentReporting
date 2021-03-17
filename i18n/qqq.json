@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"MacFan4000",
-			"Mar(c)"
+			"Mar(c)",
+			"Universal Omega"
 		]
 	},
 	"action-editincidents": "edit incidents",
@@ -48,6 +49,7 @@
 	"incidentreporting-stats": "Show Incident Statistics",
 	"incidentreporting-stats-component": "Show Statistics for Services",
 	"incidentreporting-stats-number": "Show Number of Incidents",
+	"incidentreporting-stats-published": "Show statistics for incidents published on or after...",
 	"incidentreporting-stats-total": "Show Total Outage Times",
 	"incidentreporting-stats-type": "Show Statistics for Cause",
 	"incidentreporting-stats-visible": "Show Visible Outage Times",
