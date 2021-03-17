@@ -137,6 +137,7 @@ class SpecialIncidentReports extends SpecialPage {
 			],
 			'statistics-published' => [
 				'type' => 'date',
+				'label-message' => 'incidentreporting-stats-published',
 				'default' => '',
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $published,
