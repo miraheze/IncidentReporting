@@ -77,32 +77,33 @@ class SpecialIncidentReports extends SpecialPage {
 		$selector = $this->getRequest()->getText( 'selector' );
 		$quantity = $this->getRequest()->getText( 'quantity' );
 
-		$irServices = [
-			wfMessage( 'incidentreporting-table-all' )->text() => ''
+		$types = [
+			wfMessage( 'incidentreporting-label-human' )->text() => 'human',
+			wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
+			wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
 		];
 
+		$irServices = [];
+
 		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
-		        $niceName = str_replace( ' ', '-', strtolower( $service ) );
-		        $irServices[$service] = $niceName;
+			$niceName = str_replace( ' ', '-', strtolower( $service ) );
+			$irServices[$service] = $niceName;
 		}
+
+		$all = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'type' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-cause',
-				'options' => [
-					wfMessage( 'incidentreporting-label-human' )->text() => 'human',
-					wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
-					wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
-					wfMessage( 'incidentreporting-table-all' )->text() => ''
-				],
+				'options' => $types + $all,
 				'default' => '',
 				'name' => 'type'
 			],
 			'component' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-service',
-				'options' => $irServices,
+				'options' => $irServices + $all,
 				'default' => '',
 				'name' => 'component'
 			],
@@ -134,6 +135,9 @@ class SpecialIncidentReports extends SpecialPage {
 				'name' => 'quantity'
 			]
 		];
+		
+		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
+
 
 		switch ( $quantity ) {
 			case 'num':
@@ -148,38 +152,85 @@ class SpecialIncidentReports extends SpecialPage {
 			default:
 				$field = false;
 		}
+        
+		if ( $selector === 'type' ) {
+			$where = 'i_cause';
+			$foreach = $types;
+		} elseif ( $selector === 'component' ) {
+			$where = 'i_service';
+			$foreach = $irServices;
+		}
 
 		if ( $field ) {
-			$statsData = $dbw->selectFieldValues(
-				'incidents',
-				$field
-			);
+			if ( $component === '' || $type === '' ) {
+				foreach ( $foreach as $label => $key ) {
+						$statsData = $dbw->selectFieldValues(
+							'incidents',
+							$field,
+							[ $where => $key ]
+						);
 
-			$formDescriptor += [
-				'statistics-out-quantity' => [
-					'type' => 'info',
-					'label' => $quantity,
+						$formDescriptor += [
+							"statistics-out-quantity-{$key}" => [
+								'type' => 'info',
+								'label' => $label,
+							]
+						];
 
-				]
-			];
+						if ( $quantity === 'num' ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
+						} else {
+							foreach ( $statsData as $value ) {
+								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
+							}
 
-			if ( $quantity === 'num' ) {
-				$formDescriptor['statistics-out-quantity'] += [ 'default' => count( $statsData ) ];
+							if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
+								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
+							}
+						}
+					}
 			} else {
-				foreach ( $statsData as $value ) {
-					$formDescriptor['statistics-out-quantity'] += [ 'default' => @$value += $value ];
+				if ( $selector === 'type' ) {
+					$key = $type;
+				} elseif ( $selector === 'component' ) {
+					$key = $component;
+				}
+
+				if ( in_array( $key, $foreach ) ) {
+					$statsData = $dbw->selectFieldValues(
+						'incidents',
+						$field,
+						[ $where => $key ]
+					);
+
+					$formDescriptor += [
+						"statistics-out-quantity-{$key}" => [
+							'type' => 'info',
+							'label' => array_flip( $foreach )[$key],
+						],
+					];
+
+					if ( $quantity === 'num' ) {
+						$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
+					} else {
+						foreach ( $statsData as $value ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
+						}
+
+						if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
+							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
+						}
+					}
 				}
 			}
 		}
-		
+
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm->setSubmitCallback( [ $this, 'dummyProcess' ] )->setMethod( 'get' )->prepareForm()->show();
 
-		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
-
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 
-		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
+		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'createwiki' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
 			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
 		}
