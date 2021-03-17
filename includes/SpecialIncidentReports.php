@@ -137,6 +137,7 @@ class SpecialIncidentReports extends SpecialPage {
 			],
 			'statistics-published' => [
 				'type' => 'date',
+				'default' => '',
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $published,
 				'name' => 'published'
@@ -175,7 +176,7 @@ class SpecialIncidentReports extends SpecialPage {
 							'incidents',
 							$field, [ 
 								$where => $key,
-								'i_published >= ' . $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) )
+								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 							]
 						);
 
@@ -210,7 +211,7 @@ class SpecialIncidentReports extends SpecialPage {
 						'incidents',
 						$field, [ 
 							$where => $key,
-							'i_published >= ' . $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) )
+							'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 						]
 					);
 
