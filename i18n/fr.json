@@ -3,6 +3,7 @@
 		"authors": [
 			"Gomoko",
 			"Thibaut120094",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -49,6 +50,7 @@
 	"incidentreporting-stats": "Afficher les statistiques de l’incident",
 	"incidentreporting-stats-component": "Afficher les statistiques pour les services",
 	"incidentreporting-stats-number": "Afficher le nombre d’incidents",
+	"incidentreporting-stats-published": "Afficher les statistiques des incidents publiés depuis le...",
 	"incidentreporting-stats-total": "Afficher le temps total d’interruption",
 	"incidentreporting-stats-type": "Afficher les statistiques pour la cause",
 	"incidentreporting-stats-visible": "Afficher les durées d’interruption visibles",

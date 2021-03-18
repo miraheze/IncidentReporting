@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kkairri",
+			"Shirayuki"
+		]
+	},
+	"action-editincidents": "インシデントを編集",
+	"action-viewincidents": "インシデントを閲覧",
+	"incidentreporting-create": "レポートを作成",
+	"incidentreporting-label-notpublished": "レポートはまだ公開されていません！",
+	"incidentreporting-label-outage-formatted": "$1 分",
+	"incidentreporting-log-actor-information": "情報",
+	"incidentreporting-log-actor-user": "利用者",
+	"incidentreporting-stats": "インシデント統計を表示",
+	"incidentreporting-stats-component": "サービス統計を表示",
+	"incidentreporting-stats-number": "インシデントの数を表示",
+	"incidentreporting-stats-total": "合計停止時間を表示",
+	"incidentreporting-table-all": "すべて表示",
+	"incidentreports": "インシデントレポート",
+	"log-name-incidentreporting": "インシデントレポート記録",
+	"log-description-incidentreporting": "この記録はインシデントレポートを追跡します。",
+	"logentry-incidentreporting-modify": "$1 が $3 のインシデントレポートを修正しました",
+	"right-viewincidents": "インシデントレポートを閲覧",
+	"right-editincidents": "インシデントレポートを編集"
+}

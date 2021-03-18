@@ -47,6 +47,7 @@
 	"incidentreporting-stats": "顯示突發事件統計",
 	"incidentreporting-stats-component": "顯示服務的統計",
 	"incidentreporting-stats-number": "顯示突發事件數目",
+	"incidentreporting-stats-published": "顯示在此或之後所發布的突發事件統計資訊…",
 	"incidentreporting-stats-total": "顯示總停機時間",
 	"incidentreporting-stats-type": "顯示起因統計",
 	"incidentreporting-stats-visible": "顯示可見的停機時間",
