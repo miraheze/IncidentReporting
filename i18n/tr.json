@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
+			"Joseph",
 			"Mirzali",
 			"MuratTheTurkish"
 		]
@@ -49,6 +50,7 @@
 	"incidentreporting-stats": "Olay İstatistiklerini Göster",
 	"incidentreporting-stats-component": "Hizmet İstatistiklerini Göster",
 	"incidentreporting-stats-number": "Olay Sayısını Göster",
+	"incidentreporting-stats-published": "Bu tarihte ve daha sonra yayınlanmış olayların istatistiğini göster...",
 	"incidentreporting-stats-total": "Toplam Kesinti Süresini Göster",
 	"incidentreporting-stats-type": "Sebep İstatistiklerini Göster",
 	"incidentreporting-stats-visible": "Görünür Kesinti Süresini Göster",
