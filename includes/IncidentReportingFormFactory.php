@@ -696,7 +696,7 @@ class IncidentReportingFormFactory {
 			$irLogEntry->publish( $irLogID );
 		}
 
-		$context->getOutput()->addHTML( '<div class="successbox">' . wfMessage( 'incidentreporting-success' )->escaped() . '</div>' );
+		$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->escaped() ) );
 
 		return true;
 	}
