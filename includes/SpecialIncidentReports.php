@@ -191,7 +191,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 						if ( $quantity === 'num' ) {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
-								'default' => count( $statsData->i_id )
+								'default' => count( $statsData['i_id'] )
 							];
 						} else {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
