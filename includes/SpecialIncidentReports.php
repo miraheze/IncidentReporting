@@ -172,17 +172,16 @@ class SpecialIncidentReports extends SpecialPage {
 			$all = ( $component === '' );
 		}
 
+		$statsData = $dbw->selectField(
+			'incidents',
+			'*', [ 
+				'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
+			]
+		);
+
 		if ( $field ) {
 			if ( $all ) {
 				foreach ( $foreach as $label => $key ) {
-						$statsData = $dbw->selectFieldValues(
-							'incidents',
-							$field, [ 
-								$where => $key,
-								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
-							]
-						);
-
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
 								'type' => 'info',
@@ -192,11 +191,11 @@ class SpecialIncidentReports extends SpecialPage {
 
 						if ( $quantity === 'num' ) {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
-								'default' => count( $statsData )
+								'default' => count( $statsData->i_id )
 							];
 						} else {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
-								'default' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text()
+								'default' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData->$field ) )->text()
 							];
 						}
 					}
