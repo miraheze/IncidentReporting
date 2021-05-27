@@ -183,14 +183,13 @@ class SpecialIncidentReports extends SpecialPage {
 							]
 						);
 
-						$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->escaped();
+						$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
 								'type' => 'info',
 								'label' => $label,
 								'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
-								'raw' => true,
 							]
 						];
 					}
@@ -211,14 +210,13 @@ class SpecialIncidentReports extends SpecialPage {
 					);
 
 					$label = array_flip( $foreach )[$key];
-					$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->escaped();
+					$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
 							'type' => 'info',
 							'label' => $label,
 							'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
-							'raw' => true,
 						],
 					];
 				}
