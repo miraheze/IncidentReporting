@@ -185,7 +185,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
-								'type' => 'info',
+								'type' => 'text',
 								'label' => $label,
 							]
 						];
@@ -218,7 +218,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
-							'type' => 'info',
+							'type' => 'text',
 							'label' => array_flip( $foreach )[$key],
 						],
 					];
