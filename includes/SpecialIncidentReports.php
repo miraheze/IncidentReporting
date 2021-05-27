@@ -192,11 +192,11 @@ class SpecialIncidentReports extends SpecialPage {
 
 						if ( $quantity === 'num' ) {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
-								'help' => count( $statsData )
+								'default' => count( $statsData )
 							];
 						} else {
 							$formDescriptor["statistics-out-quantity-{$key}"] += [
-								'help' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text()
+								'default' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text()
 							];
 						}
 					}
@@ -225,11 +225,11 @@ class SpecialIncidentReports extends SpecialPage {
 
 					if ( $quantity === 'num' ) {
 						$formDescriptor["statistics-out-quantity-{$key}"] += [
-							'help' => count( $statsData )
+							'default' => count( $statsData )
 						];
 					} else {
 						$formDescriptor["statistics-out-quantity-{$key}"] += [
-							'help' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text()
+							'default' => wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text()
 						];
 					}
 				}
