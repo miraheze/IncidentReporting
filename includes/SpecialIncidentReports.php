@@ -172,14 +172,14 @@ class SpecialIncidentReports extends SpecialPage {
 			$all = ( $component === '' );
 		}
 
-		$statsData = $dbw->selectField(
-			'incidents',
-			'*', [ 
-				'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
-			]
-		);
-
 		if ( $field ) {
+			$statsData = $dbw->selectField(
+				'incidents',
+				$field, [ 
+					'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
+				]
+			);
+
 			if ( $all ) {
 				foreach ( $foreach as $label => $key ) {
 						$formDescriptor += [
