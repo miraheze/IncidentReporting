@@ -189,7 +189,7 @@ class SpecialIncidentReports extends SpecialPage {
 							"statistics-out-quantity-{$key}" => [
 								'type' => 'info',
 								'label' => $label,
-								'default' => $quantity === 'num' ? count( $statsData ) : $minutes,
+								'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 								'raw' => true,
 							]
 						];
@@ -217,7 +217,7 @@ class SpecialIncidentReports extends SpecialPage {
 						"statistics-out-quantity-{$key}" => [
 							'type' => 'info',
 							'label' => $label,
-							'default' => $quantity === 'num' ? count( $statsData ) : $minutes,
+							'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 							'raw' => true,
 						],
 					];
