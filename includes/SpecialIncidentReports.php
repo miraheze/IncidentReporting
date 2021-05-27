@@ -188,7 +188,7 @@ class SpecialIncidentReports extends SpecialPage {
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
 								'type' => 'info',
-								'label' => $label . "\n" . $quantity === 'num' ? count( $statsData ) : $minutes,
+								'label' => $label . '<br />' . $quantity === 'num' ? count( $statsData ) : $minutes,
 							]
 						];
 					}
@@ -214,7 +214,7 @@ class SpecialIncidentReports extends SpecialPage {
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
 							'type' => 'info',
-							'label' => $label . "\n" . $quantity === 'num' ? count( $statsData ) : $minutes,
+							'label' => $label . '<br />' . $quantity === 'num' ? count( $statsData ) : $minutes,
 						],
 					];
 				}
