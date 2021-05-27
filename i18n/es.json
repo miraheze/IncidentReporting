@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agent",
 			"Fitoschido",
 			"Jakeukalane",
 			"MacFan4000"
@@ -49,6 +50,7 @@
 	"incidentreporting-stats": "Estadística de Incidente del espectáculo",
 	"incidentreporting-stats-component": "Estadística de espectáculo para Servicios",
 	"incidentreporting-stats-number": "Número de espectáculo de Incidentes",
+	"incidentreporting-stats-published": "Enseñar estadísticas sobre incidentes publicados en o antes...",
 	"incidentreporting-stats-total": "El espectáculo Total Outage Tiempo",
 	"incidentreporting-stats-type": "Estadística de espectáculo para Causa",
 	"incidentreporting-stats-visible": "El espectáculo Visible Outage Tiempo",
