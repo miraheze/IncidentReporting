@@ -73,10 +73,10 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showLanding( MaintainableDBConnRef $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
-		/* $published = $this->getRequest()->getText( 'published' );
+		$published = $this->getRequest()->getText( 'published' );
 		$stats = $this->getRequest()->getText( 'stats' );
 		$selector = $this->getRequest()->getText( 'selector' );
-		$quantity = $this->getRequest()->getText( 'quantity' ); */
+		$quantity = $this->getRequest()->getText( 'quantity' );
 
 		$types = [
 			wfMessage( 'incidentreporting-label-human' )->text() => 'human',
@@ -108,7 +108,7 @@ class SpecialIncidentReports extends SpecialPage {
 				'default' => '',
 				'name' => 'component'
 			],
-			/* 'statistics' => [
+			'statistics' => [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-stats',
 				'default' => (bool)$stats,
@@ -142,13 +142,13 @@ class SpecialIncidentReports extends SpecialPage {
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $published,
 				'name' => 'published'
-			] */
+			]
 		];
 		
 		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
 
-		/* switch ( $quantity ) {
+		switch ( $quantity ) {
 			case 'num':
 				$field = 'i_id';
 				break;
@@ -183,24 +183,15 @@ class SpecialIncidentReports extends SpecialPage {
 							]
 						);
 
+						$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
 								'type' => 'info',
 								'label' => $label,
+								'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 							]
 						];
-
-						if ( $quantity === 'num' ) {
-							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
-						} else {
-							foreach ( $statsData as $value ) {
-								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
-							}
-
-							if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
-								$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
-							}
-						}
 					}
 			} else {
 				if ( $selector === 'type' ) {
@@ -218,27 +209,19 @@ class SpecialIncidentReports extends SpecialPage {
 						]
 					);
 
+					$label = array_flip( $foreach )[$key];
+					$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
 							'type' => 'info',
-							'label' => array_flip( $foreach )[$key],
+							'label' => $label,
+							'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 						],
 					];
-
-					if ( $quantity === 'num' ) {
-						$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => count( $statsData ) ];
-					} else {
-						foreach ( $statsData as $value ) {
-							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => @$value += $value ];
-						}
-
-						if ( !isset( $formDescriptor["statistics-out-quantity-{$key}"]['default'] ) ) {
-							$formDescriptor["statistics-out-quantity-{$key}"] += [ 'default' => '0' ];
-						}
-					}
 				}
 			}
-		} */
+		}
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm->setSubmitCallback( [ $this, 'dummyProcess' ] )->setMethod( 'get' )->prepareForm()->show();
