@@ -1,5 +1,9 @@
 == ChangeLog for IncidentReporting ==
 
+=== 1.1.6 (DD-MM-2021) ===
+* Require MediaWiki 1.36.0
+* DB_MASTER -> DB_PRIMARY
+
 === 1.1.5 (17-03-2021) ===
 * Introduce stats for IncidentReports
 

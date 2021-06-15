@@ -18,7 +18,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$par = explode( '/', $par );
 
-		$dbw = wfGetDB( DB_MASTER, [], $this->config->get( 'IncidentReportingDatabase' ) );
+		$dbw = wfGetDB( DB_PRIMARY, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$inc = $dbw->selectRow(
 			'incidents',
