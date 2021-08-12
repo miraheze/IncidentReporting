@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Elroy",
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
+	"action-editincidents": "incidenten bewerken",
+	"action-viewincidents": "incidenten bekijken",
 	"incidentreporting-create": "Rapport maken",
 	"incidentreporting-edit": "Wijzigingen opslaan",
 	"incidentreporting-label-human": "Menselijk",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Piramidion",
 			"Vlad5250"
 		]
@@ -48,6 +49,7 @@
 	"incidentreporting-stats": "Показати статистику інцидентів",
 	"incidentreporting-stats-component": "Показати статистику для сервісів",
 	"incidentreporting-stats-number": "Показати кількість інцидентів",
+	"incidentreporting-stats-published": "Показати статистику інцидентів, опублікованих після...",
 	"incidentreporting-stats-total": "Показати загальний обсяг неробочого часу",
 	"incidentreporting-stats-type": "Показати статистику для причини",
 	"incidentreporting-stats-visible": "Показати видимий обсяг неробочого часу",
