@@ -3,6 +3,7 @@
 		"authors": [
 			"MacFan4000",
 			"Mar(c)",
+			"McDutchie",
 			"Universal Omega"
 		]
 	},
@@ -37,12 +38,12 @@
 	"incidentreporting-log-actor": "Event $1 - Is this a user or information?",
 	"incidentreporting-log-actor-information": "Information",
 	"incidentreporting-log-actor-user": "User",
-	"incidentreporting-log-down": "Down",
+	"incidentreporting-log-down": "Server operation status indicating that the server is out of order.",
 	"incidentreporting-log-header": "$1 at $2 - Service was $3",
-	"incidentreporting-log-partial": "Partial",
+	"incidentreporting-log-partial": "Server operation status indicating that the server is operating partially.",
 	"incidentreporting-log-state": "Event $1 - What was the service state at this event?",
 	"incidentreporting-log-timestamp": "Event $1 - When did this event occur?",
-	"incidentreporting-log-up": "Up",
+	"incidentreporting-log-up": "Server operation status indicating that the server is operating normally.",
 	"incidentreporting-log-user": "Event $1 - Who did this?",
 	"incidentreporting-logs": "Incident Logs",
 	"incidentreporting-main": "Main Details",
