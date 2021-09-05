@@ -165,6 +165,10 @@ class SpecialIncidentReports extends SpecialPage {
 			default:
 				$field = false;
 		}
+
+
+		$foreach = [];
+		$all = false;
         
 		if ( $selector === 'type' ) {
 			$where = 'i_cause';
