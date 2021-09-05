@@ -62,7 +62,7 @@ class SpecialIncidentReports extends SpecialPage {
 		$sectionTitles = $htmlForm->getFormSections();
 
 		$sectTabs = [];
-		foreach( $sectionTitles as $key ) {
+		foreach ( $sectionTitles as $key ) {
 			$sectTabs[] = [
 				'name' => $key,
 				'label' => $htmlForm->getLegend( $key )
@@ -72,7 +72,6 @@ class SpecialIncidentReports extends SpecialPage {
 		$out->addJsConfigVars( 'wgIncidentReportingOOUIFormTabs', $sectTabs );
 
 		$htmlForm->show();
-
 	}
 
 	public function showLanding( DBConnRef $dbw ) {
@@ -149,9 +148,8 @@ class SpecialIncidentReports extends SpecialPage {
 				'name' => 'published'
 			]
 		];
-		
-		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
+		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
 		switch ( $quantity ) {
 			case 'num':
@@ -167,10 +165,9 @@ class SpecialIncidentReports extends SpecialPage {
 				$field = false;
 		}
 
-
 		$foreach = [];
 		$all = false;
-        
+
 		if ( $selector === 'type' ) {
 			$where = 'i_cause';
 			$foreach = $types;
@@ -186,7 +183,7 @@ class SpecialIncidentReports extends SpecialPage {
 				foreach ( $foreach as $label => $key ) {
 						$statsData = $dbw->selectFieldValues(
 							'incidents',
-							$field, [ 
+							$field, [
 								$where => $key,
 								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 							]
@@ -201,7 +198,7 @@ class SpecialIncidentReports extends SpecialPage {
 								'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 							]
 						];
-					}
+				}
 			} else {
 				$key = '';
 				if ( $selector === 'type' ) {
@@ -213,7 +210,7 @@ class SpecialIncidentReports extends SpecialPage {
 				if ( in_array( $key, $foreach ) ) {
 					$statsData = $dbw->selectFieldValues(
 						'incidents',
-						$field, [ 
+						$field, [
 							$where => $key,
 							'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 						]
@@ -240,7 +237,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
-			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
+			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] )->prepareForm()->show();
 		}
 	}
 

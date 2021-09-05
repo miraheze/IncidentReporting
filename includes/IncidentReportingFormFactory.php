@@ -66,7 +66,7 @@ class IncidentReportingFormFactory {
 
 		$responders = [];
 
-		if ( !is_null( $data ) ) {
+		if ( $data !== null ) {
 			$respArray = explode( "\n", $data->i_responders );
 
 			if ( count( $respArray ) != 0 ) {
@@ -111,7 +111,7 @@ class IncidentReportingFormFactory {
 				'type' => 'select',
 				'label-message' => 'incidentreporting-label-service',
 				'options' => $irServices,
-				'default' => ( !is_null( $data ) ) ? $data->i_service : '',
+				'default' => ( $data !== null ) ? $data->i_service : '',
 				'section' => 'main'
 			],
 			'cause' => [
@@ -123,65 +123,65 @@ class IncidentReportingFormFactory {
 					wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream'
 				],
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_cause : 'human'
+				'default' => ( $data !== null ) ? $data->i_cause : 'human'
 			],
 			'control-aggravation' => [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-label-aggravation',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? (bool)$data->i_aggravation : false
+				'default' => ( $data !== null ) ? (bool)$data->i_aggravation : false
 			],
 			'aggravation' => [
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_aggravation : '',
+				'default' => ( $data !== null ) ? $data->i_aggravation : '',
 				'hide-if' => [ '!==', 'wpcontrol-aggravation', '1' ]
 			],
 			'control-known' => [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-label-known',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? (bool)$data->i_known : false
+				'default' => ( $data !== null ) ? (bool)$data->i_known : false
 			],
 			'known' => [
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_known : '',
+				'default' => ( $data !== null ) ? $data->i_known : '',
 				'hide-if' => [ '!==', 'wpcontrol-known', '1' ]
 			],
 			'control-preventable' => [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-label-preventable',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? (bool)$data->i_preventable : false
+				'default' => ( $data !== null ) ? (bool)$data->i_preventable : false
 			],
 			'preventable' => [
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_preventable : '',
+				'default' => ( $data !== null ) ? $data->i_preventable : '',
 				'hide-if' => [ '!==', 'wpcontrol-preventable', '1' ]
 			],
 			'control-other' => [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-label-other',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? (bool)$data->i_other : false
+				'default' => ( $data !== null ) ? (bool)$data->i_other : false
 			],
 			'other' => [
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_other : '',
+				'default' => ( $data !== null ) ? $data->i_other : '',
 				'hide-if' => [ '!==', 'wpcontrol-other', '1' ]
 			],
 			'responders' => [
 				'type' => 'usersmultiselect',
 				'label-message' => 'incidentreporting-label-responders',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? $data->i_responders : '',
+				'default' => ( $data !== null ) ? $data->i_responders : '',
 				'required' => true,
 				'exitsts' => true
 			],
@@ -267,16 +267,16 @@ class IncidentReportingFormFactory {
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-published',
 				'section' => 'main',
-				'default' => ( !is_null( $data->i_published ) ) ? wfTimestamp( TS_RFC2822, (int)$data->i_published ) : wfMessage( 'incidentreporting-label-notpublished' )->text()
+				'default' => ( $data->i_published !== null ) ? wfTimestamp( TS_RFC2822, (int)$data->i_published ) : wfMessage( 'incidentreporting-label-notpublished' )->text()
 			]
 		];
 
-		if ( is_null( $data ) || is_null( $data->i_published ) ) {
+		if ( $data === null || $data->i_published === null ) {
 			$buildDescriptor['publish'] = [
 				'type' => 'check',
 				'label-message' => 'incidentreporting-label-publish',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? (bool)$data->i_published : false,
+				'default' => ( $data !== null ) ? (bool)$data->i_published : false,
 				'disabled' => !$edit
 			];
 		}
@@ -447,7 +447,7 @@ class IncidentReportingFormFactory {
 				'type' => 'textarea',
 				'label-message' => 'incidentreporting-label-actionables',
 				'section' => 'main',
-				'default' => ( !is_null( $data ) ) ? implode( "\n", json_decode( $data->i_tasks, true ) ) : ''
+				'default' => ( $data !== null ) ? implode( "\n", json_decode( $data->i_tasks, true ) ) : ''
 			];
 		}
 
@@ -460,7 +460,7 @@ class IncidentReportingFormFactory {
 		if ( $this->permissionManager->userHasRight( $context->getUser(), 'editincidents' ) ) {
 			$viewDescriptor['view'] = [
 				'type' => 'submit',
-				'default' => wfMessage( 'incidentreporting-view')->text(),
+				'default' => wfMessage( 'incidentreporting-view' )->text(),
 				'section' => 'main'
 			];
 		}
@@ -475,7 +475,6 @@ class IncidentReportingFormFactory {
 
 		return $formDescriptor;
 	}
-
 
 	public function getForm(
 		int $id,
@@ -663,9 +662,9 @@ class IncidentReportingFormFactory {
 		$curTime = null;
 
 		foreach ( $logData as $odata ) {
-			$workTime = ( ( !is_null( $curTime ) ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
+			$workTime = ( ( $curTime !== null ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
 
-			if ( $odata->log_state == 'down'  || ( $odata->log_state != 'down' && $curState == 'down' ) ) {
+			if ( $odata->log_state == 'down' || ( $odata->log_state != 'down' && $curState == 'down' ) ) {
 				$outageVisible += $workTime;
 			}
 
@@ -696,7 +695,7 @@ class IncidentReportingFormFactory {
 			]
 		)->i_published;
 
-		if ( !is_null( $published ) ) {
+		if ( $published !== null ) {
 			$mainTitle = substr( $form->getTitle()->getText(), 0, -5 );
 
 			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );

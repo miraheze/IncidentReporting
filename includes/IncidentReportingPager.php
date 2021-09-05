@@ -14,7 +14,7 @@ class IncidentReportingPager extends TablePager {
 
 	/** @var string */
 	private $type;
-	
+
 	/** @var Config */
 	private $config;
 
@@ -37,7 +37,7 @@ class IncidentReportingPager extends TablePager {
 		static::$causes = [
 			'human' => $this->msg( 'incidentreporting-label-human' )->text(),
 			'technical' => $this->msg( 'incidentreporting-label-technical' )->text(),
-			'upstream' =>  $this->msg( 'incidentreporting-label-upstream' )->text()
+			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->text()
 		];
 	}
 
