@@ -4,10 +4,16 @@ use MediaWiki\MediaWikiServices;
 
 class IncidentReportingPager extends TablePager {
 	/** @var array */
-	private static $services = [];
+	private static $services;
 
 	/** @var array */
-	private static $causes = [];
+	private static $causes;
+
+	/** @var string */
+	private $component;
+
+	/** @var string */
+	private $type;
 	
 	/** @var Config */
 	private $config;
