@@ -248,7 +248,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-responders',
 				'section' => 'main',
 				'raw' => true,
-				'default' => implode( "\n", $responders )
+				'default' => ( !is_null( $data ) ) ? implode( "\n", $responders ) : ''
 			],
 			'review' => [
 				'type' => 'info',
