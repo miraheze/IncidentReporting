@@ -2,7 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use Wikimedia\Rdbms\MaintainableDBConnRef;
+use Wikimedia\Rdbms\DBConnRef;
 
 class SpecialIncidentReports extends SpecialPage {
 	/** @var Config */
@@ -46,7 +46,7 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showForm(
 		int $id,
 		bool $edit,
-		MaintainableDBConnRef $dbw,
+		DBConnRef $dbw,
 		bool $isPublished
 	) {
 		if ( !$isPublished && !$this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
@@ -75,7 +75,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 	}
 
-	public function showLanding( MaintainableDBConnRef $dbw ) {
+	public function showLanding( DBConnRef $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
 		$published = $this->getRequest()->getText( 'published' );
