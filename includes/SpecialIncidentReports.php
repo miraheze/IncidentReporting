@@ -1,10 +1,14 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 
 class SpecialIncidentReports extends SpecialPage {
-	private $config = null;
-	private $permissionManager = null;
+	/** @var Config */
+	private $config;
+
+	/** @var PermissionManager */
+	private $permissionManager;
 
 	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
@@ -79,9 +83,9 @@ class SpecialIncidentReports extends SpecialPage {
 		$quantity = $this->getRequest()->getText( 'quantity' );
 
 		$types = [
-			wfMessage( 'incidentreporting-label-human' )->text() => 'human',
-			wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
-			wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
+			$this->msg( 'incidentreporting-label-human' )->text() => 'human',
+			$this->msg( 'incidentreporting-label-technical' )->text() => 'technical',
+			$this->msg( 'incidentreporting-label-upstream' )->text() => 'upstream',
 		];
 
 		$irServices = [];
@@ -91,7 +95,7 @@ class SpecialIncidentReports extends SpecialPage {
 			$irServices[$service] = $niceName;
 		}
 
-		$showAll = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
+		$showAll = [ $this->msg( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'type' => [
@@ -117,8 +121,8 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-selector' => [
 				'type' => 'select',
 				'options' => [
-					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
-					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
+					$this->msg( 'incidentreporting-stats-type' )->text() => 'type',
+					$this->msg( 'incidentreporting-stats-component' )->text() => 'component',
 				],
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $selector,
@@ -127,9 +131,9 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-quantity' => [
 				'type' => 'select',
 				'options' => [
-					wfMessage( 'incidentreporting-stats-number' )->text() => 'num',
-					wfMessage( 'incidentreporting-stats-visible' )->text() => 'visible',
-					wfMessage( 'incidentreporting-stats-total' )->text() => 'total'
+					$this->msg( 'incidentreporting-stats-number' )->text() => 'num',
+					$this->msg( 'incidentreporting-stats-visible' )->text() => 'visible',
+					$this->msg( 'incidentreporting-stats-total' )->text() => 'total'
 				],
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $quantity,
@@ -183,7 +187,7 @@ class SpecialIncidentReports extends SpecialPage {
 							]
 						);
 
-						$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+						$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
@@ -210,7 +214,7 @@ class SpecialIncidentReports extends SpecialPage {
 					);
 
 					$label = array_flip( $foreach )[$key];
-					$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+					$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
