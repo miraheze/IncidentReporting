@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use Wikimedia\Rdbms\MaintainableDBConnRef;
 
 class SpecialIncidentReports extends SpecialPage {
 	/** @var Config */
@@ -202,6 +203,7 @@ class SpecialIncidentReports extends SpecialPage {
 						];
 					}
 			} else {
+				$key = '';
 				if ( $selector === 'type' ) {
 					$key = $type;
 				} elseif ( $selector === 'component' ) {
