@@ -1,10 +1,14 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 
 class IncidentReportingFormFactory {
-	private $config = null;
-	private $permissionManager = null;
+	/** @var Config */
+	private $config;
+
+	/** @var PermissionManager */
+	private $permissionManager;
 
 	public function __construct() {
 		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
