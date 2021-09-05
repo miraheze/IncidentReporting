@@ -3,6 +3,10 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 
+/**
+ * @phan-file-suppress SecurityCheck-XSS
+ * @phan-file-suppress SecurityCheck-DoubleEscaped
+ */
 class IncidentReportingFormFactory {
 	/** @var Config */
 	private $config;
@@ -59,9 +63,10 @@ class IncidentReportingFormFactory {
 
 		$revServices = array_flip( $irServices );
 
+		$responders = [];
+
 		if ( !is_null( $data ) ) {
 			$respArray = explode( "\n", $data->i_responders );
-			$responders = [];
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
@@ -248,7 +253,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-responders',
 				'section' => 'main',
 				'raw' => true,
-				'default' => ( !is_null( $data ) ) ? implode( "\n", $responders ) : ''
+				'default' => implode( "\n", $responders )
 			],
 			'review' => [
 				'type' => 'info',
