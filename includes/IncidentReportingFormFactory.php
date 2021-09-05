@@ -65,7 +65,7 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = Linker::userLink( (int)User::newFromName( $resp )->getId(), $resp );
+					$responders[] = Linker::userLink( User::newFromName( $resp )->getId(), $resp );
 				}
 			}
 		}
@@ -183,7 +183,7 @@ class IncidentReportingFormFactory {
 				'type' => 'usersmultiselect',
 				'label-message' => 'incidentreporting-label-reviewers',
 				'section' => 'main',
-				'default' => ( isset( $reviewers['all'] ) ) ? implode( "\n", $reviewers['all'] ) : '',
+				'default' => implode( "\n", $reviewers['all'] ),
 				'required' => true,
 				'exists' => true
 			],
@@ -660,11 +660,11 @@ class IncidentReportingFormFactory {
 			$workTime = ( ( !is_null( $curTime ) ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
 
 			if ( $odata->log_state == 'down'  || ( $odata->log_state != 'down' && $curState == 'down' ) ) {
-				$outageVisible = $outageVisible + $workTime;
+				$outageVisible += $workTime;
 			}
 
 			if ( $curState != 'up' ) {
-				$outageTotal = $outageTotal + $workTime;
+				$outageTotal += $workTime;
 			}
 
 			$curState = $odata->log_state;
