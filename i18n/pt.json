@@ -47,6 +47,7 @@
 	"incidentreporting-stats": "Mostrar estatísticas de incidentes",
 	"incidentreporting-stats-component": "Mostrar estatísticas para serviços",
 	"incidentreporting-stats-number": "Mostrar número de incidentes",
+	"incidentreporting-stats-published": "Mostrar estatísticas dos incidentes publicados a ou após...",
 	"incidentreporting-stats-total": "Mostrar tempos totais de interrupção",
 	"incidentreporting-stats-type": "Mostrar estatísticas da causa",
 	"incidentreporting-stats-visible": "Mostrar tempos de interrupção visíveis",
