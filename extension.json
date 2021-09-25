@@ -77,7 +77,7 @@
 			"value": false
 		}
 	},
-	"ConfigRegistry" : {
+	"ConfigRegistry": {
 		"incidentreporting": "GlobalVarConfig::newInstance"
 	},
 	"manifest_version": 2

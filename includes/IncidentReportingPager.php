@@ -3,9 +3,20 @@
 use MediaWiki\MediaWikiServices;
 
 class IncidentReportingPager extends TablePager {
-	private static $services = [];
-	private static $causes = [];
-	private $config = null;
+	/** @var array */
+	private static $services;
+
+	/** @var array */
+	private static $causes;
+
+	/** @var string */
+	private $component;
+
+	/** @var string */
+	private $type;
+
+	/** @var Config */
+	private $config;
 
 	public function __construct( $type, $component, $services ) {
 		parent::__construct( $this->getContext() );
@@ -24,9 +35,9 @@ class IncidentReportingPager extends TablePager {
 		static::$services = $irServices;
 
 		static::$causes = [
-			'human' => wfMessage( 'incidentreporting-label-human' )->text(),
-			'technical' => wfMessage( 'incidentreporting-label-technical' )->text(),
-			'upstream' =>  wfMessage( 'incidentreporting-label-upstream' )->text()
+			'human' => $this->msg( 'incidentreporting-label-human' )->text(),
+			'technical' => $this->msg( 'incidentreporting-label-technical' )->text(),
+			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->text()
 		];
 	}
 

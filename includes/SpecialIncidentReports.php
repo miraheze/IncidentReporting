@@ -1,10 +1,15 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
+use Wikimedia\Rdbms\DBConnRef;
 
 class SpecialIncidentReports extends SpecialPage {
-	private $config = null;
-	private $permissionManager = null;
+	/** @var Config */
+	private $config;
+
+	/** @var PermissionManager */
+	private $permissionManager;
 
 	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
@@ -41,7 +46,7 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showForm(
 		int $id,
 		bool $edit,
-		MaintainableDBConnRef $dbw,
+		DBConnRef $dbw,
 		bool $isPublished
 	) {
 		if ( !$isPublished && !$this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
@@ -57,7 +62,7 @@ class SpecialIncidentReports extends SpecialPage {
 		$sectionTitles = $htmlForm->getFormSections();
 
 		$sectTabs = [];
-		foreach( $sectionTitles as $key ) {
+		foreach ( $sectionTitles as $key ) {
 			$sectTabs[] = [
 				'name' => $key,
 				'label' => $htmlForm->getLegend( $key )
@@ -67,10 +72,9 @@ class SpecialIncidentReports extends SpecialPage {
 		$out->addJsConfigVars( 'wgIncidentReportingOOUIFormTabs', $sectTabs );
 
 		$htmlForm->show();
-
 	}
 
-	public function showLanding( MaintainableDBConnRef $dbw ) {
+	public function showLanding( DBConnRef $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
 		$published = $this->getRequest()->getText( 'published' );
@@ -79,9 +83,9 @@ class SpecialIncidentReports extends SpecialPage {
 		$quantity = $this->getRequest()->getText( 'quantity' );
 
 		$types = [
-			wfMessage( 'incidentreporting-label-human' )->text() => 'human',
-			wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
-			wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream',
+			$this->msg( 'incidentreporting-label-human' )->text() => 'human',
+			$this->msg( 'incidentreporting-label-technical' )->text() => 'technical',
+			$this->msg( 'incidentreporting-label-upstream' )->text() => 'upstream',
 		];
 
 		$irServices = [];
@@ -91,7 +95,7 @@ class SpecialIncidentReports extends SpecialPage {
 			$irServices[$service] = $niceName;
 		}
 
-		$showAll = [ wfMessage( 'incidentreporting-table-all' )->text() => '' ];
+		$showAll = [ $this->msg( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'type' => [
@@ -117,8 +121,8 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-selector' => [
 				'type' => 'select',
 				'options' => [
-					wfMessage( 'incidentreporting-stats-type' )->text() => 'type',
-					wfMessage( 'incidentreporting-stats-component' )->text() => 'component',
+					$this->msg( 'incidentreporting-stats-type' )->text() => 'type',
+					$this->msg( 'incidentreporting-stats-component' )->text() => 'component',
 				],
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $selector,
@@ -127,9 +131,9 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-quantity' => [
 				'type' => 'select',
 				'options' => [
-					wfMessage( 'incidentreporting-stats-number' )->text() => 'num',
-					wfMessage( 'incidentreporting-stats-visible' )->text() => 'visible',
-					wfMessage( 'incidentreporting-stats-total' )->text() => 'total'
+					$this->msg( 'incidentreporting-stats-number' )->text() => 'num',
+					$this->msg( 'incidentreporting-stats-visible' )->text() => 'visible',
+					$this->msg( 'incidentreporting-stats-total' )->text() => 'total'
 				],
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $quantity,
@@ -144,9 +148,8 @@ class SpecialIncidentReports extends SpecialPage {
 				'name' => 'published'
 			]
 		];
-		
-		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
+		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
 
 		switch ( $quantity ) {
 			case 'num':
@@ -161,7 +164,10 @@ class SpecialIncidentReports extends SpecialPage {
 			default:
 				$field = false;
 		}
-        
+
+		$foreach = [];
+		$all = false;
+
 		if ( $selector === 'type' ) {
 			$where = 'i_cause';
 			$foreach = $types;
@@ -177,13 +183,13 @@ class SpecialIncidentReports extends SpecialPage {
 				foreach ( $foreach as $label => $key ) {
 						$statsData = $dbw->selectFieldValues(
 							'incidents',
-							$field, [ 
+							$field, [
 								$where => $key,
 								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 							]
 						);
 
-						$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+						$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
@@ -192,8 +198,9 @@ class SpecialIncidentReports extends SpecialPage {
 								'default' => $quantity === 'num' ? (string)count( $statsData ) : $minutes,
 							]
 						];
-					}
+				}
 			} else {
+				$key = '';
 				if ( $selector === 'type' ) {
 					$key = $type;
 				} elseif ( $selector === 'component' ) {
@@ -203,14 +210,14 @@ class SpecialIncidentReports extends SpecialPage {
 				if ( in_array( $key, $foreach ) ) {
 					$statsData = $dbw->selectFieldValues(
 						'incidents',
-						$field, [ 
+						$field, [
 							$where => $key,
 							'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
 						]
 					);
 
 					$label = array_flip( $foreach )[$key];
-					$minutes = wfMessage( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
+					$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [
@@ -230,7 +237,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
-			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] ) ->prepareForm()->show();
+			$createForm->setMethod( 'post' )->setFormIdentifier( 'createForm' )->setSubmitTextMsg( 'incidentreporting-create' )->setSubmitCallback( [ $this, 'onSubmitRedirectToCreate' ] )->prepareForm()->show();
 		}
 	}
 
