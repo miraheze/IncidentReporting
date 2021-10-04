@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"MacFan4000",
 			"Mar(c)",
 			"McDutchie",
@@ -22,7 +23,7 @@
 	"incidentreporting-label-no-actionables": "No actions have been identified for this incident",
 	"incidentreporting-label-notpublished": "Report is not published yet!",
 	"incidentreporting-label-other": "label for other field",
-	"incidentreporting-label-outage-formatted": "$1 minutes",
+	"incidentreporting-label-outage-formatted": "$1 minutes\n\n{{Identical|Minute}}",
 	"incidentreporting-label-outage-total": "label for outage time field",
 	"incidentreporting-label-outage-visible": "labelf or visable outage time field",
 	"incidentreporting-label-preventable": "label for preventable checkbox",
@@ -36,7 +37,7 @@
 	"incidentreporting-label-upstream": "Upstream",
 	"incidentreporting-log-action": "Event $1 - What happened?",
 	"incidentreporting-log-actor": "Event $1 - Is this a user or information?",
-	"incidentreporting-log-actor-information": "Information",
+	"incidentreporting-log-actor-information": "Information\n\n{{Identical|Information}}",
 	"incidentreporting-log-actor-user": "User",
 	"incidentreporting-log-down": "Server operation status indicating that the server is out of order.",
 	"incidentreporting-log-header": "$1 at $2 - Service was $3",
