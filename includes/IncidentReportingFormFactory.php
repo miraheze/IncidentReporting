@@ -62,6 +62,8 @@ class IncidentReportingFormFactory {
 			}
 		}
 
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+
 		$revServices = array_flip( $irServices );
 
 		$responders = [];
@@ -71,7 +73,7 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = Linker::userLink( User::newFromName( $resp )->getId(), $resp );
+					$responders[] = Linker::userLink( $userFactory->newFromName( $resp )->getId(), $resp );
 				}
 			}
 		}
@@ -93,9 +95,9 @@ class IncidentReportingFormFactory {
 
 			foreach ( $dbReviewers as $db ) {
 				if ( $db->r_timestamp ) {
-					$reviewers['reviewed'][] = Linker::userLink( User::newFromName( $db->r_user )->getId(), $db->r_user );
+					$reviewers['reviewed'][] = Linker::userLink( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user );
 				} else {
-					$reviewers['unreviewed'][] = Linker::userLink( User::newFromName( $db->r_user )->getId(), $db->r_user );
+					$reviewers['unreviewed'][] = Linker::userLink( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user );
 				}
 
 				$reviewers['all'][] = $db->r_user;
