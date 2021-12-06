@@ -142,7 +142,6 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-published' => [
 				'type' => 'date',
 				'label-message' => 'incidentreporting-stats-published',
-				'default' => '',
 				'hide-if' => [ '!==', 'stats', '1' ],
 				'default' => $published,
 				'name' => 'published'
@@ -166,6 +165,8 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 
 		$foreach = [];
+
+		$where = false;
 		$all = false;
 
 		if ( $selector === 'type' ) {
@@ -178,7 +179,7 @@ class SpecialIncidentReports extends SpecialPage {
 			$all = ( $component === '' );
 		}
 
-		if ( $field ) {
+		if ( $field && $where ) {
 			if ( $all ) {
 				foreach ( $foreach as $label => $key ) {
 						$statsData = $dbw->selectFieldValues(
