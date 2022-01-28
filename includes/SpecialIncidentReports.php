@@ -232,7 +232,7 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
-		$htmlForm->setSubmitCallback( [ $this, 'dummyProcess' ] )->setMethod( 'get' )->prepareForm()->show();
+		$htmlForm->setMethod( 'get' )->prepareForm()->displayForm( false );
 
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 
@@ -246,9 +246,5 @@ class SpecialIncidentReports extends SpecialPage {
 		header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/create' );
 
 		return true;
-	}
-
-	public static function dummyProcess( $formData ) {
-		return false;
 	}
 }
