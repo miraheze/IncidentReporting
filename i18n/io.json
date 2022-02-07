@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"incidentreporting-create": "Krear raporto",
+	"incidentreporting-edit": "Sendar modifikuri",
+	"incidentreporting-label-human": "Homala",
+	"incidentreporting-label-outage-formatted": "$1 minuti",
+	"incidentreporting-label-outage-total": "Quanto di interupti (Infra a Supra)",
+	"incidentreporting-label-technical": "Teknikala",
+	"incidentreporting-log-action": "Evento $1 - Quo eventis?",
+	"incidentreporting-log-actor-information": "Informo",
+	"incidentreporting-log-actor-user": "Uzero",
+	"incidentreporting-log-down": "Irar adinfre",
+	"incidentreporting-log-header": "$1 che $2 - Servado esis $3",
+	"incidentreporting-log-partial": "Partala",
+	"incidentreporting-log-state": "Evento $1 - Qual esis la stando di ca servado en ca evento?",
+	"incidentreporting-log-timestamp": "Evento $1 - Kande ol eventis?",
+	"incidentreporting-log-up": "Adsupre",
+	"incidentreporting-log-user": "Evento $1 - Quo facis to?",
+	"incidentreporting-logs": "Etiketi pri incidenti",
+	"incidentreporting-main": "Precipua detali",
+	"incidentreporting-stats": "Montrez statistiki pri incidenti",
+	"incidentreporting-stats-component": "Montrez statistiki pri servadi",
+	"incidentreporting-stats-number": "Montrez quanto di incidenti",
+	"incidentreporting-stats-published": "Montrez statistiki pri incidenti publikigita ye o pose...",
+	"incidentreporting-stats-total": "Montrez totala tempo di interupti",
+	"incidentreporting-stats-type": "Montrez statistiki pri motivi",
+	"incidentreporting-table-all": "Montrez omni",
+	"incidentreporting-table-cause": "Motivo"
+}
