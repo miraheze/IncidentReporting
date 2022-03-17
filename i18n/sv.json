@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
 	"action-editincidents": "redigera incidenter",
+	"action-viewincidents": "visa olyckor",
 	"incidentreporting-create": "Skapa rapport",
 	"incidentreporting-edit": "Skicka ändringar",
 	"incidentreporting-label-human": "Människa",
