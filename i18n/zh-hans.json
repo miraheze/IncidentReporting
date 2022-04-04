@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
-			"GuoPC"
+			"GuoPC",
+			"StarrySky"
 		]
 	},
 	"action-editincidents": "编辑事件",
@@ -31,6 +32,7 @@
 	"incidentreporting-label-reviewers-info": "已审核：$1。未审核：$2。",
 	"incidentreporting-label-service": "受影响的服务组件",
 	"incidentreporting-label-technical": "技术性",
+	"incidentreporting-label-upstream": "上游",
 	"incidentreporting-log-action": "事件$1 - 发生了什么？",
 	"incidentreporting-log-actor": "事件$1 - 这是用户还是信息？",
 	"incidentreporting-log-actor-information": "信息",
