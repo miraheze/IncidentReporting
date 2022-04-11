@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"YaronSh"
+		]
+	},
+	"action-editincidents": "עריכת תקריות",
+	"action-viewincidents": "הצגת תקריות",
+	"incidentreporting-create": "יצירת דוח",
+	"incidentreporting-desc": "טופסי דיווח תקריות במדיה־ויקי.",
+	"incidentreporting-edit": "הגשת שינויים",
+	"incidentreporting-log-actor-information": "מידע",
+	"incidentreporting-log-down": "מושבת",
+	"incidentreporting-log-partial": "חלקי",
+	"incidentreporting-log-up": "פעיל",
+	"incidentreporting-log-user": "אירוע $1 - מי עשה את זה?",
+	"incidentreporting-logs": "דוחות תקריות",
+	"incidentreporting-main": "פרטים עיקריים",
+	"incidentreporting-stats": "הצגת סטטיסטיקת תקריות",
+	"incidentreporting-stats-component": "הצגת סטטיסטיקה לשירותים",
+	"incidentreporting-stats-number": "הצגת מספר תקריות",
+	"incidentreporting-stats-published": "הצגת סטטיסטיקה לתקריות שפורסמו בתאריך או אחרי…",
+	"incidentreporting-table-all": "להציג הכול",
+	"incidentreporting-table-id": "מזהה תקרית",
+	"incidentreporting-table-service": "השירות הושפע",
+	"incidentreporting-table-cause": "גורם",
+	"incidentreporting-table-tasks": "משימות לביצוע",
+	"incidentreporting-table-published": "תאריך הפרסום",
+	"incidentreporting-view": "עריכת דוח",
+	"incidentreports": "דוחות תקריות",
+	"log-name-incidentreporting": "יומן דוחות תקריות",
+	"log-description-incidentreporting": "יומן זה מתעד את דוחות התקריות.",
+	"logentry-incidentreporting-modify": "יומן התקריות עבור $3 נערך על ידי $1",
+	"right-viewincidents": "הצגת דוחות תקריות",
+	"right-editincidents": "עריכת דוחות תקריות"
+}
