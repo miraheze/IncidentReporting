@@ -53,23 +53,10 @@ class SpecialIncidentReports extends SpecialPage {
 			throw new PermissionsError( 'editincidents' );
 		}
 
-		$out = $this->getOutput();
-
-		$out->addModules( 'ext.incidentreporting.oouiform' );
+		$this->getOutput()->addModules( [ 'ext.incidentreporting.oouiform' ] );
 
 		$formFactory = new IncidentReportingFormFactory();
 		$htmlForm = $formFactory->getForm( $id, $edit, $dbw, $this->getContext() );
-		$sectionTitles = $htmlForm->getFormSections();
-
-		$sectTabs = [];
-		foreach ( $sectionTitles as $key ) {
-			$sectTabs[] = [
-				'name' => $key,
-				'label' => $htmlForm->getLegend( $key )
-			];
-		}
-
-		$out->addJsConfigVars( 'wgIncidentReportingOOUIFormTabs', $sectTabs );
 
 		$htmlForm->show();
 	}
