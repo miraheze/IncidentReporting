@@ -42,18 +42,11 @@
 	},
 	"ResourceModules": {
 		"ext.incidentreporting.oouiform": {
-			"scripts": [
-				"ext.incidentreporting.oouiform.edit.ooui.js",
-				"ext.incidentreporting.oouiform.ooui.js"
-			],
+			"scripts": "ext.incidentreporting.oouiform.ooui.js",
 			"styles": "ext.incidentreporting.oouiform.ooui.less",
+			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
-				"oojs-ui",
-				"mediawiki.editfont.styles"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
+				"mediawiki.storage"
 			]
 		}
 	},
