@@ -47,7 +47,7 @@
 			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
 				"mediawiki.storage",
-				"oojs-ui"
+				"oojs-ui-widgets"
 			]
 		}
 	},
