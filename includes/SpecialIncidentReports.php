@@ -53,7 +53,13 @@ class SpecialIncidentReports extends SpecialPage {
 			throw new PermissionsError( 'editincidents' );
 		}
 
-		$this->getOutput()->addModules( [ 'ext.incidentreporting.oouiform' ] );
+		$out = $this->getOutput();
+
+		$out->addModules( [ 'ext.incidentreporting.oouiform' ] );
+		$out->addModuleStyles( [
+			'mediawiki.widgets.TagMultiselectWidget.styles',
+			'oojs-ui-widgets.styles',
+		] );
 
 		$formFactory = new IncidentReportingFormFactory();
 		$htmlForm = $formFactory->getForm( $id, $edit, $dbw, $this->getContext() );
