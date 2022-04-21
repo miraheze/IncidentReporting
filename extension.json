@@ -46,7 +46,8 @@
 			"styles": "ext.incidentreporting.oouiform.ooui.less",
 			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
-				"mediawiki.storage"
+				"mediawiki.storage",
+				"oojs-ui"
 			]
 		}
 	},
