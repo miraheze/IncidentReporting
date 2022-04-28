@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator",
 			"YaronSh"
 		]
@@ -32,15 +33,15 @@
 	"incidentreporting-label-service": "חלק השירות שהושפע",
 	"incidentreporting-label-technical": "טכני",
 	"incidentreporting-label-upstream": "קוד מקור חיצוני (Upstream)",
-	"incidentreporting-log-action": "אירוע $1 - מה קרה?",
-	"incidentreporting-log-actor": "אירוע $1 - האם זה משמש או מידע?",
+	"incidentreporting-log-action": "אירוע $1 – מה קרה?",
+	"incidentreporting-log-actor": "אירוע $1 – האם זה משתמש או מידע?",
 	"incidentreporting-log-actor-information": "מידע",
 	"incidentreporting-log-actor-user": "משתמש",
 	"incidentreporting-log-down": "מושבת",
-	"incidentreporting-log-header": "$1 בתוך $2 - השירות היה $3",
+	"incidentreporting-log-header": "$1 בתוך $2 – השירות היה $3",
 	"incidentreporting-log-partial": "חלקי",
-	"incidentreporting-log-state": "אירוע $1 - מה היה מצב השירות באירוע הזה?",
-	"incidentreporting-log-timestamp": "אירוע $1 - מתי האירוע הזה התרחש?",
+	"incidentreporting-log-state": "אירוע $1 – מה היה מצב השירות באירוע הזה?",
+	"incidentreporting-log-timestamp": "אירוע $1 – מתי האירוע הזה התרחש?",
 	"incidentreporting-log-up": "פעיל",
 	"incidentreporting-log-user": "אירוע $1 - מי עשה את זה?",
 	"incidentreporting-logs": "דוחות תקריות",

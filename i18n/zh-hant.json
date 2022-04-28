@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"action-editincidents": "編輯突發事件",
@@ -51,7 +52,7 @@
 	"incidentreporting-stats-total": "顯示總停機時間",
 	"incidentreporting-stats-type": "顯示起因統計",
 	"incidentreporting-stats-visible": "顯示可見的停機時間",
-	"incidentreporting-success": "更改保存成功",
+	"incidentreporting-success": "已成功儲存變更",
 	"incidentreporting-table-all": "顯示全部",
 	"incidentreporting-table-id": "突發事件 ID",
 	"incidentreporting-table-service": "影響服務",
