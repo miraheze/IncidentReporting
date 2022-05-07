@@ -51,7 +51,7 @@
 		 * @param {boolean} [noHash] A hash will be set according to the current
 		 *  open section. Use this flag to suppress this.
 		 */
-		function switchIncidentReportsTab( name, noHash ) {
+		function switchIncidentReportingTab( name, noHash ) {
 			if ( noHash ) {
 				switchingNoHash = true;
 			}
@@ -68,15 +68,15 @@
 			var hash = location.hash,
 				matchedElement, $parentSection;
 			if ( hash.match( /^#mw-section-[\w-]+$/ ) ) {
-				mw.storage.session.remove( 'incidentreports-prevTab' );
-				switchIncidentReportsTab( hash.slice( 1 ) );
+				mw.storage.session.remove( 'incidentreporting-prevTab' );
+				switchIncidentReportingTab( hash.slice( 1 ) );
 			} else if ( hash.match( /^#mw-[\w-]+$/ ) ) {
 				matchedElement = document.getElementById( hash.slice( 1 ) );
 				$parentSection = $( matchedElement ).closest( '.incidentreporting-section-fieldset' );
 				if ( $parentSection.length ) {
-					mw.storage.session.remove( 'incidentreports-prevTab' );
+					mw.storage.session.remove( 'incidentreporting-prevTab' );
 					// Switch to proper tab and scroll to selected item.
-					switchIncidentReportsTab( $parentSection.attr( 'id' ), true );
+					switchIncidentReportingTab( $parentSection.attr( 'id' ), true );
 					matchedElement.scrollIntoView();
 				}
 			}
@@ -87,23 +87,23 @@
 			if ( hash.match( /^#mw-[\w-]+/ ) ) {
 				detectHash();
 			} else if ( hash === '' ) {
-				switchIncidentReportsTab( $( '[id*=mw-section-]' ).attr( 'id' ), true );
+				switchIncidentReportingTab( $( '[id*=mw-section-]' ).attr( 'id' ), true );
 			}
 		} )
 			// Run the function immediately to select the proper tab on startup.
 			.trigger( 'hashchange' );
 
 		// Restore the active tab after saving
-		previousTab = mw.storage.session.get( 'incidentreports-prevTab' );
+		previousTab = mw.storage.session.get( 'incidentreporting-prevTab' );
 		if ( previousTab ) {
-			switchIncidentReportsTab( previousTab, true );
+			switchIncidentReportingTab( previousTab, true );
 			// Deleting the key, the tab states should be reset until we press Save
-			mw.storage.session.remove( 'incidentreports-prevTab' );
+			mw.storage.session.remove( 'incidentreporting-prevTab' );
 		}
 
 		$( '#incidentreporting-form' ).on( 'submit', function () {
 			var value = tabs.getCurrentTabPanelName();
-			mw.storage.session.set( 'incidentreports-prevTab', value );
+			mw.storage.session.set( 'incidentreporting-prevTab', value );
 		} );
 	} );
 }() );
