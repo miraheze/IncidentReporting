@@ -56,10 +56,12 @@ class SpecialIncidentReports extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules( [ 'ext.incidentreporting.oouiform' ] );
+
 		$out->addModuleStyles( [
 			'ext.incidentreporting.oouiform.styles',
 			'mediawiki.widgets.TagMultiselectWidget.styles',
 		] );
+
 		$out->addModuleStyles( [ 'oojs-ui-widgets.styles' ] );
 
 		$formFactory = new IncidentReportingFormFactory();
