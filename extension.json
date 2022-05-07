@@ -43,12 +43,15 @@
 	"ResourceModules": {
 		"ext.incidentreporting.oouiform": {
 			"scripts": "ext.incidentreporting.oouiform.ooui.js",
-			"styles": "ext.incidentreporting.oouiform.ooui.less",
 			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
 				"mediawiki.storage",
 				"oojs-ui-widgets"
 			]
+		},
+		"ext.incidentreporting.oouiform.styles": {
+			"targets": [ "desktop", "mobile" ],
+			"styles": "ext.incidentreporting.oouiform.ooui.less"
 		}
 	},
 	"ResourceFileModulePaths": {
