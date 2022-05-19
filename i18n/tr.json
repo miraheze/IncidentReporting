@@ -4,7 +4,8 @@
 			"Hedda",
 			"Joseph",
 			"Mirzali",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"SaldırganSincap"
 		]
 	},
 	"action-editincidents": "olayları düzenle",
@@ -65,7 +66,7 @@
 	"incidentreports": "Olay Raporları",
 	"log-name-incidentreporting": "Olay raporu günlüğü",
 	"log-description-incidentreporting": "Bu günlük, olay raporlarını izler.",
-	"logentry-incidentreporting-modify": "$3 için $1 değiştirilmiş olay raporu",
+	"logentry-incidentreporting-modify": "$1, $3 için olay raporu değiştirdi",
 	"right-viewincidents": "Olay raporlarını görüntüle",
 	"right-editincidents": "Olay raporlarını düzenle"
 }
