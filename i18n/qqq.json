@@ -5,11 +5,12 @@
 			"MacFan4000",
 			"Mar(c)",
 			"McDutchie",
+			"Shirayuki",
 			"Universal Omega"
 		]
 	},
-	"action-editincidents": "edit incidents",
-	"action-viewincidents": "view incidents",
+	"action-editincidents": "{{doc-action|editincidents}}",
+	"action-viewincidents": "{{doc-action|viewincidents}}",
 	"incidentreporting-create": "Text for create buttton",
 	"incidentreporting-desc": "Incident Report forms in MediaWiki.",
 	"incidentreporting-edit": "Submit button text",
@@ -67,6 +68,6 @@
 	"log-name-incidentreporting": "Name of 'Incident report log'",
 	"log-description-incidentreporting": "Description of incident reporting log",
 	"logentry-incidentreporting-modify": "Used as a log message",
-	"right-viewincidents": "View incident reports",
-	"right-editincidents": "Edit incident reports"
+	"right-viewincidents": "{{doc-right|viewincidents}}",
+	"right-editincidents": "{{doc-right|editincidents}}"
 }
