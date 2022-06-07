@@ -55,7 +55,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$out = $this->getOutput();
 
-		$out->addModules( 'ext.incidentreporting.oouiform' );
+		$out->addModules( [ 'ext.incidentreporting.oouiform' ] );
 
 		$formFactory = new IncidentReportingFormFactory();
 		$htmlForm = $formFactory->getForm( $id, $edit, $dbw, $this->getContext() );
