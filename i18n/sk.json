@@ -7,7 +7,7 @@
 	"action-editincidents": "upraviť incidenty",
 	"action-viewincidents": "zobraziť incidenty",
 	"incidentreporting-create": "Vytvoriť hlásenie",
-	"incidentreporting-desc": "Formy hlásení incidentov v MédiaWiki.",
+	"incidentreporting-desc": "Formy hlásení incidentov v MediaWiki.",
 	"incidentreporting-edit": "Odoslať zmeny",
 	"incidentreporting-label-actionables": "Nasledovné ID sú žalovateľné úlohy",
 	"incidentreporting-label-aggravation": "Bol tento incident niečím zhoršený? (ako vyšetrovanie, používatelia, atď.)",
