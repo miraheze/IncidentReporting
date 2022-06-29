@@ -6,8 +6,8 @@
 			"しぃ"
 		]
 	},
-	"action-editincidents": "インシデントを編集",
-	"action-viewincidents": "インシデントを閲覧",
+	"action-editincidents": "インシデントの編集",
+	"action-viewincidents": "インシデントの閲覧",
 	"incidentreporting-create": "レポートを作成",
 	"incidentreporting-desc": "MediaWikiのインシデントレポートフォーム",
 	"incidentreporting-edit": "変更の提出",
