@@ -10,7 +10,7 @@
 	"license-name": "GPL-3.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.38.0"
 	},
 	"AvailableRights": [
 		"viewincidents",
@@ -42,19 +42,16 @@
 	},
 	"ResourceModules": {
 		"ext.incidentreporting.oouiform": {
-			"scripts": [
-				"ext.incidentreporting.oouiform.edit.ooui.js",
-				"ext.incidentreporting.oouiform.ooui.js"
-			],
-			"styles": "ext.incidentreporting.oouiform.ooui.less",
+			"scripts": "ext.incidentreporting.oouiform.ooui.js",
+			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
-				"oojs-ui",
-				"mediawiki.editfont.styles"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
+				"mediawiki.storage",
+				"oojs-ui-widgets"
 			]
+		},
+		"ext.incidentreporting.oouiform.styles": {
+			"targets": [ "desktop", "mobile" ],
+			"styles": "ext.incidentreporting.oouiform.ooui.less"
 		}
 	},
 	"ResourceFileModulePaths": {

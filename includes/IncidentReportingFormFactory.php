@@ -489,7 +489,7 @@ class IncidentReportingFormFactory {
 
 		$htmlForm = new $formClass( $formDescriptor, $context, 'incidentreporting' );
 
-		$htmlForm->setId( 'mw-baseform-ir' );
+		$htmlForm->setId( 'incidentreporting-form' );
 		$htmlForm->suppressDefaultSubmit();
 		$htmlForm->setSubmitCallback(
 			function ( array $formData, HTMLForm $form ) use ( $id, $dbw, $context ) {
