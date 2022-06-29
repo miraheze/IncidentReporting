@@ -1,5 +1,9 @@
 ## ChangeLog for IncidentReporting
 
+### 1.1.7 (29-06-2022)
+* Require MediaWiki 1.38.0
+* Modernise IncidentReportingOOUIForm
+
 ### 1.1.6 (14-06-2021)
 * Require MediaWiki 1.36.0
 * DB_MASTER -> DB_PRIMARY
