@@ -112,7 +112,7 @@ class SpecialIncidentReports extends SpecialPage {
 				'type' => 'check',
 				'label-message' => 'incidentreporting-stats',
 				'default' => (bool)$stats,
-				'name' => 'statistics'
+				'name' => 'stats'
 			],
 			'statistics-selector' => [
 				'type' => 'select',
