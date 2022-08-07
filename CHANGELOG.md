@@ -1,5 +1,8 @@
 ## ChangeLog for IncidentReporting
 
+### 1.1.8 (07-08-2022)
+* Fix hide-if values to avoid DomainException
+
 ### 1.1.7 (29-06-2022)
 * Require MediaWiki 1.38.0
 * Modernise IncidentReportingOOUIForm
