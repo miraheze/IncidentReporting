@@ -120,7 +120,7 @@ class SpecialIncidentReports extends SpecialPage {
 					$this->msg( 'incidentreporting-stats-type' )->text() => 'type',
 					$this->msg( 'incidentreporting-stats-component' )->text() => 'component',
 				],
-				'hide-if' => [ '!==', 'stats', '1' ],
+				'hide-if' => [ '!==', 'statistics', '1' ],
 				'default' => $selector,
 				'name' => 'selector'
 			],
@@ -131,14 +131,14 @@ class SpecialIncidentReports extends SpecialPage {
 					$this->msg( 'incidentreporting-stats-visible' )->text() => 'visible',
 					$this->msg( 'incidentreporting-stats-total' )->text() => 'total'
 				],
-				'hide-if' => [ '!==', 'stats', '1' ],
+				'hide-if' => [ '!==', 'statistics', '1' ],
 				'default' => $quantity,
 				'name' => 'quantity'
 			],
 			'statistics-published' => [
 				'type' => 'date',
 				'label-message' => 'incidentreporting-stats-published',
-				'hide-if' => [ '!==', 'stats', '1' ],
+				'hide-if' => [ '!==', 'statistics', '1' ],
 				'default' => $published,
 				'name' => 'published'
 			]
