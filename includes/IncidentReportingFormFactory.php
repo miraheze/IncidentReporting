@@ -138,7 +138,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
 				'default' => ( $data !== null ) ? $data->i_aggravation : '',
-				'hide-if' => [ '!==', 'wpcontrol-aggravation', '1' ]
+				'hide-if' => [ '!==', 'control-aggravation', '1' ]
 			],
 			'control-known' => [
 				'type' => 'check',
@@ -151,7 +151,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
 				'default' => ( $data !== null ) ? $data->i_known : '',
-				'hide-if' => [ '!==', 'wpcontrol-known', '1' ]
+				'hide-if' => [ '!==', 'control-known', '1' ]
 			],
 			'control-preventable' => [
 				'type' => 'check',
@@ -164,7 +164,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
 				'default' => ( $data !== null ) ? $data->i_preventable : '',
-				'hide-if' => [ '!==', 'wpcontrol-preventable', '1' ]
+				'hide-if' => [ '!==', 'control-preventable', '1' ]
 			],
 			'control-other' => [
 				'type' => 'check',
@@ -177,7 +177,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-explain',
 				'section' => 'main',
 				'default' => ( $data !== null ) ? $data->i_other : '',
-				'hide-if' => [ '!==', 'wpcontrol-other', '1' ]
+				'hide-if' => [ '!==', 'control-other', '1' ]
 			],
 			'responders' => [
 				'type' => 'usersmultiselect',
@@ -349,7 +349,7 @@ class IncidentReportingFormFactory {
 						'section' => 'logs',
 						'subsection' => (string)$logId,
 						'default' => $ldata->log_actor,
-						'hide-if' => [ '!==', "wp{$logId}-actor", 'user' ]
+						'hide-if' => [ '!==', "{$logId}-actor", 'user' ]
 					];
 					$buildLog["{$logId}-action"] = [
 						'type' => 'text',
