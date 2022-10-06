@@ -56,7 +56,7 @@
 	"incidentreporting-stats-visible": "Afficher les durées d’interruption visibles",
 	"incidentreporting-success": "Modifications bien enregistrées",
 	"incidentreporting-table-all": "Afficher tout",
-	"incidentreporting-table-id": "ID de l’incident",
+	"incidentreporting-table-id": "Identifiant d’incident",
 	"incidentreporting-table-service": "Service affecté",
 	"incidentreporting-table-cause": "Cause",
 	"incidentreporting-table-tasks": "Tâches actionnables",
