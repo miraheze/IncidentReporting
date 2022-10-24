@@ -47,6 +47,7 @@
 	"incidentreporting-stats": "Prikaži statistiku incidenta",
 	"incidentreporting-stats-component": "Prikaži statistiku za usluge",
 	"incidentreporting-stats-number": "Prikaži broj incidenta",
+	"incidentreporting-stats-published": "Prikaži statistiku za incidente objavljenu na ili nakon...",
 	"incidentreporting-stats-total": "Prikaži ukupno trajanje prekida",
 	"incidentreporting-stats-type": "Prikaži statistiku za počinitelje",
 	"incidentreporting-stats-visible": "Prikaži vremena vidljivih prekida",
