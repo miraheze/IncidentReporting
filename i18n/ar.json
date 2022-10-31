@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد"
 		]
 	},
@@ -47,6 +48,7 @@
 	"incidentreporting-stats": "عرض إحصائيات الحوادث",
 	"incidentreporting-stats-component": "عرض إحصائيات الخدمات",
 	"incidentreporting-stats-number": "إظهار عدد الحوادث",
+	"incidentreporting-stats-published": "إظهار إحصائيات الحوادث المنشورة في أو بعد ...",
 	"incidentreporting-stats-total": "إظهار مجموع أوقات الانقطاع",
 	"incidentreporting-stats-type": "عرض إحصائيات الأسباب",
 	"incidentreporting-stats-visible": "إظهار أوقات انقطاع المرئية",
