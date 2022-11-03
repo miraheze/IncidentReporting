@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Metalhead64",
 			"Mirzali"
 		]
@@ -48,6 +49,7 @@
 	"incidentreporting-stats": "Vorfallsstatistiken anzeigen",
 	"incidentreporting-stats-component": "Statistiken für Dienste anzeigen",
 	"incidentreporting-stats-number": "Anzahl der Vorfälle anzeigen",
+	"incidentreporting-stats-published": "Statistiken für Vorfälle anzeigen, die am oder nach...",
 	"incidentreporting-stats-total": "Ausfallzeiten insgesamt anzeigen",
 	"incidentreporting-stats-type": "Statistiken anzeigen für die Ursache",
 	"incidentreporting-stats-visible": "Zeiten sichtbarer Ausfälle anzeigen",
