@@ -3,13 +3,14 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Beta16",
-			"Executive"
+			"Executive",
+			"McDutchie"
 		]
 	},
 	"action-editincidents": "Incidenti di modifica",
 	"action-viewincidents": "Vedere incidenti",
 	"incidentreporting-create": "Crea un Rapporto",
-	"incidentreporting-desc": "Rapporto di Incidente si forma in MediaWiki.",
+	"incidentreporting-desc": "Moduli di segnalazione degli incidenti in MediaWiki.",
 	"incidentreporting-edit": "Invia Cambiamenti",
 	"incidentreporting-label-actionables": "I seguenti IDs sono comandi eseguibili",
 	"incidentreporting-label-aggravation": "È questo incidente stato aggravato da qualunque cosa? (Come ad esempio investigazioni, utenti etc.)",
