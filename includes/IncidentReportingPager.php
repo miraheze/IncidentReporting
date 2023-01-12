@@ -23,7 +23,10 @@ class IncidentReportingPager extends TablePager {
 		$this->type = $type;
 		$this->component = $component;
 		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
-		$this->mDb = wfGetDB( DB_REPLICA, [], $this->config->get( 'IncidentReportingDatabase' ) );
+
+		$this->mDb = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
+			->getMainLB( $this->config->get( 'IncidentReportingDatabase' ) )
+			->getMaintenanceConnectionRef( DB_REPLICA, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$irServices = [];
 		foreach ( $services as $service => $url ) {
