@@ -23,7 +23,9 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$par = explode( '/', $par );
 
-		$dbw = wfGetDB( DB_PRIMARY, [], $this->config->get( 'IncidentReportingDatabase' ) );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
+			->getMainLB( $this->config->get( 'IncidentReportingDatabase' ) )
+			->getMaintenanceConnectionRef( DB_PRIMARY, [], $this->config->get( 'IncidentReportingDatabase' ) );
 
 		$inc = $dbw->selectRow(
 			'incidents',
