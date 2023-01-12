@@ -5,7 +5,7 @@
 		"Universal Omega"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.1.8",
+	"version": "1.1.9",
 	"descriptionmsg": "incidentreporting-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "specialpage",
