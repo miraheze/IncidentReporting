@@ -1,5 +1,8 @@
 ## ChangeLog for IncidentReporting
 
+### 1.1.9 (12-01-2023)
+* Replace deprecated wfGetDB()
+
 ### 1.1.8 (07-08-2022)
 * Fix hide-if values to avoid DomainException
 
