@@ -5,6 +5,7 @@
 			"Joseph",
 			"Mirzali",
 			"MuratTheTurkish",
+			"Rapsar",
 			"SaldırganSincap"
 		]
 	},
@@ -62,7 +63,7 @@
 	"incidentreporting-table-cause": "Sebep",
 	"incidentreporting-table-tasks": "İşlem Görevleri",
 	"incidentreporting-table-published": "Yayın Tarihi",
-	"incidentreporting-view": "Raporu Düzenle",
+	"incidentreporting-view": "Raporu değiştir",
 	"incidentreports": "Olay Raporları",
 	"log-name-incidentreporting": "Olay raporu günlüğü",
 	"log-description-incidentreporting": "Bu günlük, olay raporlarını izler.",
