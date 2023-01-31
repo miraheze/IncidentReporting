@@ -54,6 +54,9 @@ class IncidentReportingFormFactory {
 		$irServices = [];
 		$irServicesUrl = [];
 		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
+			if ( in_array( $services, $this->config->get( 'IncidentReportingInactiveServices' ), true ) ) {
+				continue;
+			}
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 
