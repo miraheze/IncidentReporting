@@ -1,6 +1,6 @@
 ## ChangeLog for IncidentReporting
 
-### 1.1.10 (31-01-2023)
+### 1.2.0 (31-01-2023)
 * Add new setting, $wgIncidentReportingInactiveServices. 
 
 ### 1.1.9 (12-01-2023)
