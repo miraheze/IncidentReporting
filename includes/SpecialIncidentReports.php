@@ -89,6 +89,9 @@ class SpecialIncidentReports extends SpecialPage {
 		$irServices = [];
 
 		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
+			if ( in_array( $service, $this->config->get( 'IncidentReportingInactiveServices'  ) ) ) {
+				continue;
+			}
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 		}
