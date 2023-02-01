@@ -112,7 +112,7 @@ class IncidentReportingFormFactory {
 			'service' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-label-service',
-				'options' => array_diff_key( $irServices, array_flip( str_replace( ' ', '-', array_map( 'strtolower', $this->config->get( 'IncidentReportingInactiveServices' ) ) ) ) ),
+				'options' => array_diff_key( $irServices, array_flip( $this->config->get( 'IncidentReportingInactiveServices' ) ) ),
 				'default' => ( $data !== null ) ? $data->i_service : '',
 				'section' => 'main'
 			],
