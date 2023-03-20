@@ -47,6 +47,7 @@
 	"incidentreporting-stats": "Vis hendelsesstatistikk",
 	"incidentreporting-stats-component": "Vis tjenestestatistikk",
 	"incidentreporting-stats-number": "Vis antall hendelser",
+	"incidentreporting-stats-published": "Vis statistikk for hendelser publisert på denne datoen og nyere",
 	"incidentreporting-stats-total": "Vis total nedetid",
 	"incidentreporting-stats-type": "Vis årsaksstatistikk",
 	"incidentreporting-stats-visible": "Vis synlige nedetider",
