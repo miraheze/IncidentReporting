@@ -21,7 +21,7 @@
 	"incidentreporting-label-na": "Раздел не применим",
 	"incidentreporting-label-no-actionables": "Никаких действий в связи с этим инцидентом предпринято не было",
 	"incidentreporting-label-notpublished": "Отчёт ещё не опубликован!",
-	"incidentreporting-label-other": "Есть какая-либо другая информация, которая была бы полезна для этого отчета об инциденте?",
+	"incidentreporting-label-other": "Есть какая-либо другая информация, которая была бы полезна для этого отчёта об инциденте?",
 	"incidentreporting-label-outage-formatted": "$1 {{PLURAL:$1|минута|минуты|минут}}",
 	"incidentreporting-label-outage-total": "Все сбои (снизу вверх)",
 	"incidentreporting-label-outage-visible": "Видимые сбои (до частичных)",
