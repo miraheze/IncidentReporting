@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"action-editincidents": "уреди инциденте",
+	"action-viewincidents": "прегледај инциденте",
+	"incidentreporting-create": "Направи извјештај",
+	"incidentreporting-desc": "Обрасци за извјештавање инцидента у МедијаВикију.",
+	"incidentreporting-edit": "Пошаљи измјене",
+	"incidentreporting-label-actionables": "Следеће назнаке су задаци који се могу извршити",
+	"incidentreporting-label-aggravation": "Постоји ли ишта што је отежало овај инцидент? (нпр. истраживање, корисници итд.)",
+	"incidentreporting-label-cause": "Основни узрок инцидента",
+	"incidentreporting-label-explain": "Објасните зашто је горе наведено релевантно",
+	"incidentreporting-label-human": "Човјек",
+	"incidentreporting-label-known": "Јесте ли упознати с проблемима с овом услугом?",
+	"incidentreporting-label-na": "Одјељак није примјенљив",
+	"incidentreporting-label-no-actionables": "Нисам утврдио радње за овај инцидент",
+	"incidentreporting-label-notpublished": "Извјештај још није објављен!",
+	"incidentreporting-label-other": "Имате ли друге информације које би биле корисне за извјештај?",
+	"incidentreporting-label-outage-formatted": "$1 минута",
+	"incidentreporting-label-outage-total": "Укупан прекид (од почетка до краја)",
+	"incidentreporting-label-outage-visible": "Видљиви прекид (од почетка до делимичног)",
+	"incidentreporting-label-preventable": "Да ли се овај инцидент могао спријечити?",
+	"incidentreporting-label-publish": "Да ли је овај извјештај спреман за објављивање?"
+}
