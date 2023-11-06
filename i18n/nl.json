@@ -11,7 +11,7 @@
 	"incidentreporting-create": "Rapport aanmaken",
 	"incidentreporting-desc": "Formulieren voor het melden van incidenten in MediaWiki.",
 	"incidentreporting-edit": "Wijzigingen opslaan",
-	"incidentreporting-label-actionables": "De volgende ID's zijn uitvoerbare taken",
+	"incidentreporting-label-actionables": "De volgende ID’s zijn uitvoerbare taken",
 	"incidentreporting-label-aggravation": "Is dit incident door iets verergerd? (Zoals onderzoeken, gebruikers enz.)",
 	"incidentreporting-label-cause": "Grondoorzaak voorval",
 	"incidentreporting-label-explain": "Leg uit waarom het bovenstaande relevant is",
