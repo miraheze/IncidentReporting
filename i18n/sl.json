@@ -63,7 +63,7 @@
 	"incidentreports": "Poročila o incidentih",
 	"log-name-incidentreporting": "Dnevnik poročil o incidentih",
 	"log-description-incidentreporting": "Ta dnevnik sledi poročila o incidentih.",
-	"logentry-incidentreporting-modify": "$1 je spremenil/a poročilo o incidentu za $3",
+	"logentry-incidentreporting-modify": "$1 je spremenil_a poročilo o incidentu za $3",
 	"right-viewincidents": "Ogled poročil o incidentih",
 	"right-editincidents": "Urejanje poročil o incidentih"
 }
