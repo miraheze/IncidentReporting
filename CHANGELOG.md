@@ -1,5 +1,8 @@
 ## ChangeLog for IncidentReporting
 
+### 1.2.0 (01-01-2024)
+* Add configuration variable, $wgIncidentReportingInactiveServices
+
 ### 1.1.9 (12-01-2023)
 * Replace deprecated wfGetDB()
 

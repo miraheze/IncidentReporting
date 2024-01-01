@@ -5,7 +5,7 @@
 		"Universal Omega"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.1.9",
+	"version": "1.2.0",
 	"descriptionmsg": "incidentreporting-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "specialpage",
@@ -67,7 +67,12 @@
 		"IncidentReportingServices": {
 			"description": "Human readable list of service components with page URLs. Set to false for no link. Format: 'name' => 'url'.",
 			"public": true,
-			"value": false
+			"value": []
+		},
+		"IncidentReportingInactiveServices": {
+			"description": "Same as $wgIncidentReportingServices but for inactive services. Services in this array won't appear when creating incident reports.",
+			"public": true,
+			"value": []
 		},
 		"IncidentReportingTaskUrl": {
 			"description": "Full url of task tracking software minus the task ID. e.g. https://phabricator.miraheze.org/",

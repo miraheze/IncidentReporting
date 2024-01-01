@@ -88,7 +88,14 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$irServices = [];
 
-		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
+		$servicesConfig = array_merge(
+			$this->config->get( 'IncidentReportingServices' ),
+			$this->config->get( 'IncidentReportingInactiveServices' )
+		);
+
+		ksort( $servicesConfig );
+
+		foreach ( $servicesConfig as $service => $url ) {
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 		}
@@ -146,7 +153,7 @@ class SpecialIncidentReports extends SpecialPage {
 			]
 		];
 
-		$pager = new IncidentReportingPager( $type, $component, $this->config->get( 'IncidentReportingServices' ) );
+		$pager = new IncidentReportingPager( $type, $component, $servicesConfig );
 
 		switch ( $quantity ) {
 			case 'num':
