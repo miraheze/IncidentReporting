@@ -53,7 +53,15 @@ class IncidentReportingFormFactory {
 
 		$irServices = [];
 		$irServicesUrl = [];
-		foreach ( $this->config->get( 'IncidentReportingServices' ) as $service => $url ) {
+
+		$servicesConfig = array_merge(
+			$this->config->get( 'IncidentReportingServices' ),
+			$this->config->get( 'IncidentReportingInactiveServices' )
+		);
+
+		ksort( $servicesConfig );
+
+		foreach ( $servicesConfig as $service => $url ) {
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 
@@ -112,7 +120,7 @@ class IncidentReportingFormFactory {
 			'service' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-label-service',
-				'options' => $irServices,
+				'options' => array_diff_key( $irServices, $this->config->get( 'IncidentReportingInactiveServices' ) ),
 				'default' => ( $data !== null ) ? $data->i_service : '',
 				'section' => 'main'
 			],
