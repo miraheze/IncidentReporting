@@ -103,6 +103,10 @@ class SpecialIncidentReports extends SpecialPage {
 		$showAll = [ $this->msg( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
+			'info' => [
+				'type' => 'info',
+				'default' => $this->msg( 'incidentreporting-header-info' )->text(),
+			],
 			'type' => [
 				'type' => 'select',
 				'label-message' => 'incidentreporting-table-cause',
