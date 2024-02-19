@@ -237,7 +237,12 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
-		$htmlForm->setMethod( 'get' )->prepareForm()->displayForm( false );
+		$htmlForm
+			->setMethod( 'get' )
+			->setWrapperLegendMsg( 'incidentreporting-header' )
+			->setSubmitTextMsg( 'search' )
+			->prepareForm()
+			->displayForm( false );
 
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 

@@ -14,6 +14,8 @@
 	"incidentreporting-create": "Text for create buttton",
 	"incidentreporting-desc": "Incident Report forms in MediaWiki.",
 	"incidentreporting-edit": "Submit button text",
+	"incidentreporting-header": "Legend header for Special:IncidentReporting",
+	"incidentreporting-header-info": "Information text under legend header.",
 	"incidentreporting-label-actionables": "Used as a ;abel for tasks field",
 	"incidentreporting-label-aggravation": "label for incident aggravation field",
 	"incidentreporting-label-cause": "label for cause field",
