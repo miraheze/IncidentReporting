@@ -12,7 +12,7 @@
 	"incidentreporting-desc": "Incident Report forms in MediaWiki.",
 	"incidentreporting-edit": "Submit Changes",
 	"incidentreporting-header": "Sort incident reports",
-	"incidentreporting-header-info": "You can sort incident reports by cause and service affected. You can also see select to see statistics about incidents.",
+	"incidentreporting-header-info": "You can sort incident reports by cause and service affected. You can also choose to see statistics about incidents.",
 	"incidentreporting-label-actionables": "The following IDs are actionable tasks",
 	"incidentreporting-label-aggravation": "Has this incident been aggravated by anything? (Such as investigating, users etc.)",
 	"incidentreporting-label-cause": "Basic Incident Cause",
