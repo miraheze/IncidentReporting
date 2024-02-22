@@ -10,6 +10,8 @@
 	"incidentreporting-create": "建立報告",
 	"incidentreporting-desc": "在 MediaWiki 的突發事件報告表單。",
 	"incidentreporting-edit": "提交更改",
+	"incidentreporting-header": "排序突發事件報告",
+	"incidentreporting-header-info": "您可以依照原因與受影響的服務，來對突發事件報告進行排序。您也可以選擇查看有關突發事件的統計資料。",
 	"incidentreporting-label-actionables": "以下 ID 是可操作任務",
 	"incidentreporting-label-aggravation": "此突發是否因為任何情況而增劇？（例如調查、使用者等等其它。）",
 	"incidentreporting-label-cause": "基本突發事件起因",

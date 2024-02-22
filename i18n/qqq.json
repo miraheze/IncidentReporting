@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"Amire80",
 			"MacFan4000",
 			"Mar(c)",
 			"McDutchie",
@@ -69,7 +70,7 @@
 	"incidentreports": "Incident Reports",
 	"log-name-incidentreporting": "Name of 'Incident report log'",
 	"log-description-incidentreporting": "Description of incident reporting log",
-	"logentry-incidentreporting-modify": "Used as a log message",
+	"logentry-incidentreporting-modify": "{{logentry}}\nUsed as a log message",
 	"right-viewincidents": "{{doc-right|viewincidents}}",
 	"right-editincidents": "{{doc-right|editincidents}}"
 }

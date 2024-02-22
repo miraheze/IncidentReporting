@@ -9,6 +9,8 @@
 	"incidentreporting-create": "Направи пријава",
 	"incidentreporting-desc": "Обрасци за пријавување на инциденти во МедијаВики.",
 	"incidentreporting-edit": "Поднеси измени",
+	"incidentreporting-header": "Подреди пријави",
+	"incidentreporting-header-info": "Можете да подредувате пријави за инциденти по причинител или засегната услуга. Можете и да ја погледате стастистиката за инциденти.",
 	"incidentreporting-label-actionables": "Следниве назнаки се задачи за исполнување",
 	"incidentreporting-label-aggravation": "Дали нешто го има заострено инцидентов? (на пр. иследување, корисници итн.)",
 	"incidentreporting-label-cause": "Основна причина за инцидентот",

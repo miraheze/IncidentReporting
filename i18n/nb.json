@@ -9,6 +9,8 @@
 	"incidentreporting-create": "Opprett rapport",
 	"incidentreporting-desc": "Hendelsesrapportskjemaer i MediaWiki.",
 	"incidentreporting-edit": "Send inn endringer",
+	"incidentreporting-header": "Sorter hendelsesrapporter",
+	"incidentreporting-header-info": "Du kan sortere hendelsesrapportene etter årsak og berørt tjeneste. Du kan også velge å se statistikk om hendelsene.",
 	"incidentreporting-label-actionables": "Følgende ID-er er oppgaver som kan handles på",
 	"incidentreporting-label-aggravation": "Har denne hendelsen blitt gjort verre av noe? (Som f.eks. undersøkelsen av den, brukere osv.)",
 	"incidentreporting-label-cause": "Grunnleggende årsak for hendelsen",

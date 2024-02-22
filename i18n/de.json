@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Justman10000",
 			"Metalhead64",
 			"Mirzali"
@@ -11,6 +12,8 @@
 	"incidentreporting-create": "Bericht erstellen",
 	"incidentreporting-desc": "Ergänzt Formulare für Vorfallsberichte in MediaWiki.",
 	"incidentreporting-edit": "Änderungen übermitteln",
+	"incidentreporting-header": "Vorfallberichte sortieren",
+	"incidentreporting-header-info": "Du kannst Vorfallberichte nach Ursache und betroffenem Dienst sortieren. Du kannst dir auch Statistiken zu Vorfällen anzeigen lassen.",
 	"incidentreporting-label-actionables": "Die folgenden Kennungen sind einklagbare Aufgaben",
 	"incidentreporting-label-aggravation": "Hat sich dieser Vorfall durch etwas verschärft (wie Untersuchungen, Benutzer etc.)?",
 	"incidentreporting-label-cause": "Grundlegende Ursache des Vorfalls",
