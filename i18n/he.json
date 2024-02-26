@@ -66,7 +66,7 @@
 	"incidentreports": "דו\"חות תקרית",
 	"log-name-incidentreporting": "יומן דו\"חות תקרית",
 	"log-description-incidentreporting": "היומן הזה עוקב אחר דו\"חות תקרית.",
-	"logentry-incidentreporting-modify": "$1 שינה|שינתה את דו\"ח התקרית עבור $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|שינה|שינתה}} את דו\"ח התקרית עבור $3",
 	"right-viewincidents": "הצגת דו\"חות תקרית",
 	"right-editincidents": "עריכת דו\"חות תקרית"
 }

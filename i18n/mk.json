@@ -64,7 +64,7 @@
 	"incidentreports": "Пријави на инциденти",
 	"log-name-incidentreporting": "Дневник на пријавени инциденти",
 	"log-description-incidentreporting": "Овој дневник ги следи пријавените инциденти.",
-	"logentry-incidentreporting-modify": "$1 ја измени пријавата на инцидент за $3",
+	"logentry-incidentreporting-modify": "$1 ја {{GENDER:$2|измени}} пријавата на инцидент за $3",
 	"right-viewincidents": "Погл. пријави на инциденти",
 	"right-editincidents": "Уреди пријави на инциденти"
 }
