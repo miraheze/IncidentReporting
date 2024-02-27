@@ -13,7 +13,7 @@
 		}
 	],
 	"support": {
-		"issues": "https://phabricator.miraheze.org/tag/incidentreporting/",
+		"issues": "https://issue-tracker.miraheze.org/tag/incidentreporting/",
 		"wiki": "https://www.mediawiki.org/wiki/Extension:IncidentReporting"
 	},
 	"require": {
