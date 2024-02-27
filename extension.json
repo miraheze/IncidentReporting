@@ -75,7 +75,7 @@
 			"value": []
 		},
 		"IncidentReportingTaskUrl": {
-			"description": "Full url of task tracking software minus the task ID. e.g. https://phabricator.miraheze.org/",
+			"description": "Full url of task tracking software minus the task ID. e.g. https://issue-tracker.miraheze.org/",
 			"public": true,
 			"value": false
 		}
