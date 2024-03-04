@@ -62,7 +62,7 @@
 	"incidentreports": "Reportos de incidentes",
 	"log-name-incidentreporting": "Registro de reportos de incidentes",
 	"log-description-incidentreporting": "Iste registro tracia le reportos de incidentes.",
-	"logentry-incidentreporting-modify": "$1 ha modificate le reporto de incidente pro $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|ha modificate}} le reporto de incidente pro $3",
 	"right-viewincidents": "Vider reportos de incidentes",
 	"right-editincidents": "Modificar reportos de incidentes"
 }
