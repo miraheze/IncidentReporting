@@ -3,7 +3,8 @@
 		"authors": [
 			"Elroy",
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"action-editincidents": "incidenten bewerken",
@@ -64,7 +65,7 @@
 	"incidentreports": "Incidentmeldingen",
 	"log-name-incidentreporting": "Logboek incidentrapport",
 	"log-description-incidentreporting": "Dit logboek houdt incidentrapporten bij.",
-	"logentry-incidentreporting-modify": "$1 heeft het incidentrapport voor $3 gewijzigd",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|heeft}} het incidentrapport voor $3 gewijzigd",
 	"right-viewincidents": "Incidentrapporten bekijken",
 	"right-editincidents": "Incidentrapporten wijzigen"
 }
