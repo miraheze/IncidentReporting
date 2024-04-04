@@ -9,6 +9,8 @@
 	"incidentreporting-create": "Crear reporto",
 	"incidentreporting-desc": "Formularios de reportage de incidentes in MediaWiki.",
 	"incidentreporting-edit": "Submitter cambiamentos",
+	"incidentreporting-header": "Ordinar reportos de incidente",
+	"incidentreporting-header-info": "Es possibile ordinar le reportos de incidente per causa e servicio affectate. Le statisticas sur incidentes es tamben disponibile.",
 	"incidentreporting-label-actionables": "Le sequente IDs es cargas actionabile",
 	"incidentreporting-label-aggravation": "Ha iste incidente essite aggravate per alcun cosa (como investigationes, usatores, etc.)?",
 	"incidentreporting-label-cause": "Causa basic del incidente",
