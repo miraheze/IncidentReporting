@@ -3,6 +3,7 @@
 		"authors": [
 			"Kkairri",
 			"Shirayuki",
+			"Waki285",
 			"しぃ"
 		]
 	},
@@ -11,6 +12,8 @@
 	"incidentreporting-create": "レポートを作成",
 	"incidentreporting-desc": "MediaWikiのインシデントレポートフォーム",
 	"incidentreporting-edit": "変更の提出",
+	"incidentreporting-header": "インシデントレポートの並び替え",
+	"incidentreporting-header-info": "インシデントレポートは、原因および影響を受けたサービス別に並べ替えることができます。また、インシデントの統計を表示することもできます。",
 	"incidentreporting-label-actionables": "以下のIDは実行可能なタスクです。",
 	"incidentreporting-label-aggravation": "今回の事件は、何かの拍子に悪化したのでしょうか? (調査、利用者など)",
 	"incidentreporting-label-cause": "基本的なインシデントの原因",
@@ -64,7 +67,7 @@
 	"incidentreports": "インシデントレポート",
 	"log-name-incidentreporting": "インシデントレポート記録",
 	"log-description-incidentreporting": "この記録はインシデントレポートを追跡します。",
-	"logentry-incidentreporting-modify": "$1 が $3 のインシデントレポートを修正しました",
+	"logentry-incidentreporting-modify": "$1 が $3 のインシデントレポートを{{GENDER:$2|編集しました}}",
 	"right-viewincidents": "インシデントレポートを閲覧",
 	"right-editincidents": "インシデントレポートを編集"
 }
