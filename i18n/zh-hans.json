@@ -3,7 +3,8 @@
 		"authors": [
 			"A Chinese Wikipedian",
 			"GuoPC",
-			"StarrySky"
+			"StarrySky",
+			"沈澄心"
 		]
 	},
 	"action-editincidents": "编辑事件",
@@ -11,6 +12,7 @@
 	"incidentreporting-create": "创建报告",
 	"incidentreporting-desc": "MediaWiki上的事件报告表单。",
 	"incidentreporting-edit": "提交更改",
+	"incidentreporting-header": "排序事件报告",
 	"incidentreporting-label-actionables": "以下ID是可操作任务。",
 	"incidentreporting-label-aggravation": "此事件是否因任何情况而恶化？（如调查、用户等）",
 	"incidentreporting-label-cause": "基本事件起因",
@@ -64,7 +66,7 @@
 	"incidentreports": "事件报告",
 	"log-name-incidentreporting": "事件报告日志",
 	"log-description-incidentreporting": "这个日志追踪事件报告。",
-	"logentry-incidentreporting-modify": "$1因$3修改了事件报告",
+	"logentry-incidentreporting-modify": "$1因$3{{GENDER:$2|修改}}了事件报告",
 	"right-viewincidents": "查看事件报告",
 	"right-editincidents": "编辑事件报告"
 }
