@@ -13,7 +13,7 @@
 	"incidentreporting-desc": "Ergänzt Formulare für Vorfallsberichte in MediaWiki.",
 	"incidentreporting-edit": "Änderungen übermitteln",
 	"incidentreporting-header": "Vorfallberichte sortieren",
-	"incidentreporting-header-info": "Du kannst Vorfallberichte nach Ursache und betroffenem Dienst sortieren. Du kannst dir auch Statistiken zu Vorfällen anzeigen lassen.",
+	"incidentreporting-header-info": "Du kannst Meldungen über Vorfälle nach Ursache und betroffenem Dienst sortieren. Zudem kannst du dir Statistiken über Vorfälle anzeigen lassen.",
 	"incidentreporting-label-actionables": "Die folgenden Kennungen sind einklagbare Aufgaben",
 	"incidentreporting-label-aggravation": "Hat sich dieser Vorfall durch etwas verschärft (wie Untersuchungen, Benutzer etc.)?",
 	"incidentreporting-label-cause": "Grundlegende Ursache des Vorfalls",
@@ -67,7 +67,7 @@
 	"incidentreports": "Vorfallsberichte",
 	"log-name-incidentreporting": "Ereignisprotokoll",
 	"log-description-incidentreporting": "Dieses Protokoll verfolgt Ereignisberichte.",
-	"logentry-incidentreporting-modify": "$1 geänderter Vorfallbericht für $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modifizierte}} Meldung eines Vorfalls für $3",
 	"right-viewincidents": "Vorfallsberichte ansehen",
 	"right-editincidents": "Vorfallsberichte bearbeiten"
 }
