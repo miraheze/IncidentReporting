@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
+			"Graineahumus",
 			"MacOS Weed",
 			"Thibaut120094",
 			"Verdy p",
@@ -13,6 +14,8 @@
 	"incidentreporting-create": "Créer un rapport",
 	"incidentreporting-desc": "Formulaires de rapport d’incident dans MediaWiki.",
 	"incidentreporting-edit": "Soumettre les modifications",
+	"incidentreporting-header": "Trier les rapports d'incidents",
+	"incidentreporting-header-info": "Vous pouvez trier les rapports d'incident par cause et par service affecté. Vous pouvez également choisir d'afficher des statistiques sur les incidents.",
 	"incidentreporting-label-actionables": "Les identifiants suivants sont des tâches actionnables",
 	"incidentreporting-label-aggravation": "Cet incident a-t-il été aggravé par quelque chose (comme une investigation, des utilisateurs, etc.) ?",
 	"incidentreporting-label-cause": "Cause de base de l’incident",
