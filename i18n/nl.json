@@ -12,6 +12,8 @@
 	"incidentreporting-create": "Rapport aanmaken",
 	"incidentreporting-desc": "Formulieren voor het melden van incidenten in MediaWiki.",
 	"incidentreporting-edit": "Wijzigingen opslaan",
+	"incidentreporting-header": "Incidentrapporten sorteren",
+	"incidentreporting-header-info": "U kunt incidentrapporten sorteren op oorzaak en getroffen dienst. Ook kunt u statistieken over incidenten inzien.",
 	"incidentreporting-label-actionables": "De volgende ID’s zijn uitvoerbare taken",
 	"incidentreporting-label-aggravation": "Is dit incident door iets verergerd? (Zoals onderzoeken, gebruikers enz.)",
 	"incidentreporting-label-cause": "Grondoorzaak voorval",
