@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BerryAVGN",
+			"Okras",
 			"Romanko Mikhail",
 			"Vlad5250",
 			"WerySkok"
@@ -65,7 +66,7 @@
 	"incidentreports": "Отчёты об инцидентах",
 	"log-name-incidentreporting": "Журнал отчётов об инцидентах",
 	"log-description-incidentreporting": "Этот журнал отслеживает отчёты об инцидентах",
-	"logentry-incidentreporting-modify": "$1 {{GENDER:$1|модифицировал|модифицировала}} отчёт об инциденте $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|модифицировал|модифицировала}} отчёт об инциденте на странице $3",
 	"right-viewincidents": "Посмотреть отчёты об инцидентах",
 	"right-editincidents": "Править отчёты об инцидентах"
 }
