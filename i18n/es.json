@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Agent",
+			"EmicraftNoob",
 			"Fitoschido",
 			"Jakeukalane",
 			"MacFan4000"
@@ -12,6 +13,8 @@
 	"incidentreporting-create": "Crear informe",
 	"incidentreporting-desc": "Formularios para informes de incidentes en MediaWiki.",
 	"incidentreporting-edit": "Enviar cambios",
+	"incidentreporting-header": "Ordenar informes de incidentes",
+	"incidentreporting-header-info": "Puede ordenar los informes de incidentes por causa y servicio afectado. También puede optar por ver estadísticas sobre los incidentes.",
 	"incidentreporting-label-actionables": "Los identificadores siguientes son tareas viables",
 	"incidentreporting-label-aggravation": "¿Alguna cosa ha empeorado el problema (como una investigación, usuarios, etc.)?",
 	"incidentreporting-label-cause": "Causa básica del incidente",
