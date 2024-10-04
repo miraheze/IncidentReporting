@@ -38,9 +38,9 @@ class IncidentReportingPager extends TablePager {
 		static::$services = $irServices;
 
 		static::$causes = [
-			'human' => $this->msg( 'incidentreporting-label-human' )->text(),
-			'technical' => $this->msg( 'incidentreporting-label-technical' )->text(),
-			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->text()
+			'human' => $this->msg( 'incidentreporting-label-human' )->parse(),
+			'technical' => $this->msg( 'incidentreporting-label-technical' )->parse(),
+			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->parse()
 		];
 	}
 
@@ -56,7 +56,7 @@ class IncidentReportingPager extends TablePager {
 		];
 
 		foreach ( $headers as &$msg ) {
-			$msg = $this->msg( $msg )->text();
+			$msg = $this->msg( $msg )->parse();
 		}
 
 		return $headers;

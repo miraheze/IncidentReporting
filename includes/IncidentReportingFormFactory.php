@@ -128,9 +128,9 @@ class IncidentReportingFormFactory {
 				'type' => 'select',
 				'label-message' => 'incidentreporting-label-cause',
 				'options' => [
-					wfMessage( 'incidentreporting-label-human' )->text() => 'human',
-					wfMessage( 'incidentreporting-label-technical' )->text() => 'technical',
-					wfMessage( 'incidentreporting-label-upstream' )->text() => 'upstream'
+					wfMessage( 'incidentreporting-label-human' )->parse() => 'human',
+					wfMessage( 'incidentreporting-label-technical' )->parse() => 'technical',
+					wfMessage( 'incidentreporting-label-upstream' )->parse() => 'upstream'
 				],
 				'section' => 'main',
 				'default' => ( $data !== null ) ? $data->i_cause : 'human'
@@ -217,47 +217,47 @@ class IncidentReportingFormFactory {
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-outage-visible',
 				'section' => 'main',
-				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_visible )->text()
+				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_visible )->parse()
 			],
 			'outage-total' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-outage-total',
 				'section' => 'main',
-				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_total )->text()
+				'default' => wfMessage( 'incidentreporting-label-outage-formatted', $data->i_outage_total )->parse()
 			],
 			'cause' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-cause',
 				'section' => 'main',
-				'default' => wfMessage( "incidentreporting-label-{$data->i_cause}" )->text(),
+				'default' => wfMessage( "incidentreporting-label-{$data->i_cause}" )->parse(),
 			],
 			'aggravation' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-aggravation',
 				'section' => 'main',
 				'raw' => true,
-				'default' => $data->i_aggravation ?? wfMessage( 'incidentreporting-label-na' )->text()
+				'default' => $data->i_aggravation ?? wfMessage( 'incidentreporting-label-na' )->parse()
 			],
 			'known' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-known',
 				'section' => 'main',
 				'raw' => true,
-				'default' => $data->i_known ?? wfMessage( 'incidentreporting-label-na' )->text()
+				'default' => $data->i_known ?? wfMessage( 'incidentreporting-label-na' )->parse()
 			],
 			'preventable' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-preventable',
 				'section' => 'main',
 				'raw' => true,
-				'default' => $data->i_preventable ?? wfMessage( 'incidentreporting-label-na' )->text()
+				'default' => $data->i_preventable ?? wfMessage( 'incidentreporting-label-na' )->parse()
 			],
 			'other' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-other',
 				'section' => 'main',
 				'raw' => true,
-				'default' => $data->i_other ?? wfMessage( 'incidentreporting-label-na' )->text()
+				'default' => $data->i_other ?? wfMessage( 'incidentreporting-label-na' )->parse()
 			],
 			'responders' => [
 				'type' => 'info',
@@ -270,14 +270,14 @@ class IncidentReportingFormFactory {
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-reviewers',
 				'section' => 'main',
-				'default' => wfMessage( 'incidentreporting-label-reviewers-info', $reviewers['reviewed'], $reviewers['unreviewed'] )->text(),
+				'default' => wfMessage( 'incidentreporting-label-reviewers-info', $reviewers['reviewed'], $reviewers['unreviewed'] )->parse(),
 				'raw' => true
 			],
 			'published' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-published',
 				'section' => 'main',
-				'default' => ( $data->i_published !== null ) ? wfTimestamp( TS_RFC2822, (int)$data->i_published ) : wfMessage( 'incidentreporting-label-notpublished' )->text()
+				'default' => ( $data->i_published !== null ) ? wfTimestamp( TS_RFC2822, (int)$data->i_published ) : wfMessage( 'incidentreporting-label-notpublished' )->parse()
 			]
 		];
 
@@ -342,8 +342,8 @@ class IncidentReportingFormFactory {
 						'type' => 'select',
 						'label' => wfMessage( 'incidentreporting-log-actor', $logId )->parse(),
 						'options' => [
-							wfMessage( 'incidentreporting-log-actor-information' )->text() => 'information',
-							wfMessage( 'incidentreporting-log-actor-user' )->text() => 'user'
+							wfMessage( 'incidentreporting-log-actor-information' )->parse() => 'information',
+							wfMessage( 'incidentreporting-log-actor-user' )->parse() => 'user'
 						],
 						'section' => 'logs',
 						'subsection' => (string)$logId,
@@ -371,9 +371,9 @@ class IncidentReportingFormFactory {
 						'type' => 'select',
 						'label' => wfMessage( 'incidentreporting-log-state', $logId )->parse(),
 						'options' => [
-							wfMessage( 'incidentreporting-log-up' )->text() => 'up',
-							wfMessage( 'incidentreporting-log-partial' )->text() => 'partial',
-							wfMessage( 'incidentreporting-log-down' )->text() => 'down'
+							wfMessage( 'incidentreporting-log-up' )->parse() => 'up',
+							wfMessage( 'incidentreporting-log-partial' )->parse() => 'partial',
+							wfMessage( 'incidentreporting-log-down' )->parse() => 'down'
 						],
 						'section' => 'logs',
 						'subsection' => (string)$logId,
@@ -394,8 +394,8 @@ class IncidentReportingFormFactory {
 					'type' => 'select',
 					'label' => wfMessage( 'incidentreporting-log-actor', $newId )->parse(),
 					'options' => [
-						wfMessage( 'incidentreporting-log-actor-information' )->text() => 'information',
-						wfMessage( 'incidentreporting-log-actor-user' )->text() => 'user'
+						wfMessage( 'incidentreporting-log-actor-information' )->parse() => 'information',
+						wfMessage( 'incidentreporting-log-actor-user' )->parse() => 'user'
 					],
 					'section' => 'logs',
 					'subsection' => (string)$newId
@@ -418,11 +418,11 @@ class IncidentReportingFormFactory {
 
 				$buildLog["{$newId}-state"] = [
 					'type' => 'select',
-					'label' => wfMessage( 'incidentreporting-log-state', $newId )->text(),
+					'label' => wfMessage( 'incidentreporting-log-state', $newId )->parse(),
 					'options' => [
-						wfMessage( 'incidentreporting-log-up' )->text() => 'up',
-						wfMessage( 'incidentreporting-log-partial' )->text() => 'partial',
-						wfMessage( 'incidentreporting-log-down' )->text() => 'down'
+						wfMessage( 'incidentreporting-log-up' )->parse() => 'up',
+						wfMessage( 'incidentreporting-log-partial' )->parse() => 'partial',
+						wfMessage( 'incidentreporting-log-down' )->parse() => 'down'
 					],
 					'section' => 'logs',
 					'subsection' => (string)$newId
@@ -450,7 +450,7 @@ class IncidentReportingFormFactory {
 				'label-message' => 'incidentreporting-label-actionables',
 				'section' => 'main',
 				'raw' => true,
-				'default' => ( count( $tasks ) != 0 ) ? implode( "\n", $tasks ) : wfMessage( 'incidentreporting-label-no-actionables' )->text()
+				'default' => ( count( $tasks ) != 0 ) ? implode( "\n", $tasks ) : wfMessage( 'incidentreporting-label-no-actionables' )->parse()
 			];
 		} else {
 			$buildDescriptor['actionables'] = [
@@ -463,14 +463,14 @@ class IncidentReportingFormFactory {
 
 		$buildDescriptor[$action] = [
 			'type' => 'submit',
-			'default' => wfMessage( "incidentreporting-{$action}" )->text(),
+			'default' => wfMessage( "incidentreporting-{$action}" )->parse(),
 			'section' => 'main'
 		];
 
 		if ( $this->permissionManager->userHasRight( $context->getUser(), 'editincidents' ) ) {
 			$viewDescriptor['view'] = [
 				'type' => 'submit',
-				'default' => wfMessage( 'incidentreporting-view' )->text(),
+				'default' => wfMessage( 'incidentreporting-view' )->parse(),
 				'section' => 'main'
 			];
 		}
@@ -715,7 +715,7 @@ class IncidentReportingFormFactory {
 			$irLogEntry->publish( $irLogID );
 		}
 
-		$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->escaped() ) );
+		$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->parse() ) );
 
 		return true;
 	}
