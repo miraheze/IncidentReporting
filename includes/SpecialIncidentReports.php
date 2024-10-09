@@ -81,9 +81,9 @@ class SpecialIncidentReports extends SpecialPage {
 		$quantity = $this->getRequest()->getText( 'quantity' );
 
 		$types = [
-			$this->msg( 'incidentreporting-label-human' )->parse() => 'human',
-			$this->msg( 'incidentreporting-label-technical' )->parse() => 'technical',
-			$this->msg( 'incidentreporting-label-upstream' )->parse() => 'upstream',
+			$this->msg( 'incidentreporting-label-human' )->text() => 'human',
+			$this->msg( 'incidentreporting-label-technical' )->text() => 'technical',
+			$this->msg( 'incidentreporting-label-upstream' )->text() => 'upstream',
 		];
 
 		$irServices = [];
@@ -100,12 +100,12 @@ class SpecialIncidentReports extends SpecialPage {
 			$irServices[$service] = $niceName;
 		}
 
-		$showAll = [ $this->msg( 'incidentreporting-table-all' )->parse() => '' ];
+		$showAll = [ $this->msg( 'incidentreporting-table-all' )->text() => '' ];
 
 		$formDescriptor = [
 			'info' => [
 				'type' => 'info',
-				'default' => $this->msg( 'incidentreporting-header-info' )->parse(),
+				'default' => $this->msg( 'incidentreporting-header-info' )->text(),
 			],
 			'type' => [
 				'type' => 'select',
@@ -130,8 +130,8 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-selector' => [
 				'type' => 'select',
 				'options' => [
-					$this->msg( 'incidentreporting-stats-type' )->parse() => 'type',
-					$this->msg( 'incidentreporting-stats-component' )->parse() => 'component',
+					$this->msg( 'incidentreporting-stats-type' )->text() => 'type',
+					$this->msg( 'incidentreporting-stats-component' )->text() => 'component',
 				],
 				'hide-if' => [ '!==', 'statistics', '1' ],
 				'default' => $selector,
@@ -140,9 +140,9 @@ class SpecialIncidentReports extends SpecialPage {
 			'statistics-quantity' => [
 				'type' => 'select',
 				'options' => [
-					$this->msg( 'incidentreporting-stats-number' )->parse() => 'num',
-					$this->msg( 'incidentreporting-stats-visible' )->parse() => 'visible',
-					$this->msg( 'incidentreporting-stats-total' )->parse() => 'total'
+					$this->msg( 'incidentreporting-stats-number' )->text() => 'num',
+					$this->msg( 'incidentreporting-stats-visible' )->text() => 'visible',
+					$this->msg( 'incidentreporting-stats-total' )->text() => 'total'
 				],
 				'hide-if' => [ '!==', 'statistics', '1' ],
 				'default' => $quantity,
@@ -199,7 +199,7 @@ class SpecialIncidentReports extends SpecialPage {
 							]
 						);
 
-						$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->parse();
+						$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 						$formDescriptor += [
 							"statistics-out-quantity-{$key}" => [
@@ -227,7 +227,7 @@ class SpecialIncidentReports extends SpecialPage {
 					);
 
 					$label = array_flip( $foreach )[$key];
-					$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->parse();
+					$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
 
 					$formDescriptor += [
 						"statistics-out-quantity-{$key}" => [

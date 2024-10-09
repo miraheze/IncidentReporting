@@ -38,9 +38,9 @@ class IncidentReportingPager extends TablePager {
 		static::$services = $irServices;
 
 		static::$causes = [
-			'human' => $this->msg( 'incidentreporting-label-human' )->parse(),
-			'technical' => $this->msg( 'incidentreporting-label-technical' )->parse(),
-			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->parse()
+			'human' => $this->msg( 'incidentreporting-label-human' )->escaped(),
+			'technical' => $this->msg( 'incidentreporting-label-technical' )->escaped(),
+			'upstream' => $this->msg( 'incidentreporting-label-upstream' )->escaped()
 		];
 	}
 
@@ -56,7 +56,7 @@ class IncidentReportingPager extends TablePager {
 		];
 
 		foreach ( $headers as &$msg ) {
-			$msg = $this->msg( $msg )->parse();
+			$msg = $this->msg( $msg )->text();
 		}
 
 		return $headers;
@@ -71,7 +71,7 @@ class IncidentReportingPager extends TablePager {
 				break;
 			case 'i_service':
 				$service = $row->i_service;
-				$formatted = ( static::$services[$service]['url'] ) ? Linker::makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'] ) : static::$services[$service]['name'];
+				$formatted = ( static::$services[$service]['url'] ) ? Linker::makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'] ) : htmlspecialchars( static::$services[$service]['name'], ENT_QUOTES );
 				break;
 			case 'i_cause':
 				$formatted = static::$causes[$row->i_cause];
