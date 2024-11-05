@@ -63,7 +63,7 @@
 	"incidentreports": "تقارير الحوادث",
 	"log-name-incidentreporting": "سجل تقارير الحوادث",
 	"log-description-incidentreporting": "هذا السجل يتتبع تقارير الحوادث.",
-	"logentry-incidentreporting-modify": "$1 تم تعديل تقرير الحادث ل$3",
+	"logentry-incidentreporting-modify": "تقرير حادثة $1 {{GENDER:$2|تم تعديله}} مقابل $3",
 	"right-viewincidents": "عرض تقارير الحوادث",
 	"right-editincidents": "تحرير تقارير الحوادث"
 }
