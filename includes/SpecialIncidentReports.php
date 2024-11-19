@@ -47,7 +47,7 @@ class SpecialIncidentReports extends SpecialPage {
 	public function showForm(
 		int $id,
 		bool $edit,
-		DBConnRef $dbw,
+		IDatabase $dbw,
 		bool $isPublished
 	) {
 		if ( !$isPublished && !$this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
