@@ -3,7 +3,7 @@
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use Wikimedia\Rdbms\DBConnRef;
+use Wikimedia\Rdbms\IDatabase;
 
 class IncidentReportingFormFactory {
 	/** @var Config */
@@ -18,7 +18,7 @@ class IncidentReportingFormFactory {
 	}
 
 	public function getFormDescriptor(
-		DBConnRef $dbw,
+		IDatabase $dbw,
 		int $id,
 		bool $edit,
 		IContextSource $context
@@ -529,7 +529,7 @@ class IncidentReportingFormFactory {
 		array $formData,
 		HTMLForm $form,
 		int $id,
-		DBConnRef $dbw,
+		IDatabase $dbw,
 		IContextSource $context
 	) {
 		if ( isset( $formData['view'] ) && $formData['view'] ) {
