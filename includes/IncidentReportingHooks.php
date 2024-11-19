@@ -1,14 +1,30 @@
 <?php
 
 class IncidentReportingHooks {
+
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionTable( 'incidents',
-			__DIR__ . '/../sql/incidents.sql' );
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-incidentreporting',
+			'addTable',
+			'incidents',
+			__DIR__ . '/../sql/incidents.sql',
+			true,
+		] );
 
-		$updater->addExtensionTable( 'incidents_log',
-			__DIR__ . '/../sql/incidents_log.sql' );
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-incidentreporting',
+			'addTable',
+			'incidents_log',
+			__DIR__ . '/../sql/incidents_log.sql',
+			true,
+		] );
 
-		$updater->addExtensionTable( 'incidents_reviewer',
-			__DIR__ . '/../sql/incidents_reviewer.sql' );
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-incidentreporting',
+			'addTable',
+			'incidents_reviewer',
+			__DIR__ . '/../sql/incidents_reviewer.sql',
+			true,
+		] );
 	}
 }
