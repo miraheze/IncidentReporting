@@ -5,12 +5,12 @@
 		"Universal Omega"
 	],
 	"url": "https://github.com/miraheze/IncidentReporting",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"descriptionmsg": "incidentreporting-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.42.0"
 	},
 	"AvailableRights": [
 		"viewincidents",
@@ -43,14 +43,12 @@
 	"ResourceModules": {
 		"ext.incidentreporting.oouiform": {
 			"scripts": "ext.incidentreporting.oouiform.ooui.js",
-			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
 				"mediawiki.storage",
 				"oojs-ui-widgets"
 			]
 		},
 		"ext.incidentreporting.oouiform.styles": {
-			"targets": [ "desktop", "mobile" ],
 			"styles": "ext.incidentreporting.oouiform.ooui.less"
 		}
 	},
@@ -59,11 +57,6 @@
 		"remoteExtPath": "IncidentReporting/modules"
 	},
 	"config": {
-		"IncidentReportingDatabase": {
-			"description": "Database name where all data is stored.",
-			"public": true,
-			"value": false
-		},
 		"IncidentReportingServices": {
 			"description": "Human readable list of service components with page URLs. Set to false for no link. Format: 'name' => 'url'.",
 			"public": true,
@@ -88,5 +81,8 @@
 	"ConfigRegistry": {
 		"incidentreporting": "GlobalVarConfig::newInstance"
 	},
+	"DatabaseVirtualDomains": [
+		"virtual-incidentreporting"
+	],
 	"manifest_version": 2
 }
