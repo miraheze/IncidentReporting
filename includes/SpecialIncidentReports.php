@@ -2,7 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
-use Wikimedia\Rdbms\DBConnRef;
+use Wikimedia\Rdbms\IDatabase;
 
 class SpecialIncidentReports extends SpecialPage {
 	/** @var Config */
@@ -23,9 +23,8 @@ class SpecialIncidentReports extends SpecialPage {
 
 		$par = explode( '/', $par );
 
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
-			->getMainLB( $this->config->get( 'IncidentReportingDatabase' ) )
-			->getMaintenanceConnectionRef( DB_PRIMARY, [], $this->config->get( 'IncidentReportingDatabase' ) );
+		$dbw = MediaWikiServices::getInstance()->getConnectionProvider()
+			->getPrimaryDatabase( 'virtual-incidentreporting' );
 
 		$inc = $dbw->selectRow(
 			'incidents',
@@ -72,7 +71,7 @@ class SpecialIncidentReports extends SpecialPage {
 		$htmlForm->show();
 	}
 
-	public function showLanding( DBConnRef $dbw ) {
+	public function showLanding( IDatabase $dbw ) {
 		$type = $this->getRequest()->getText( 'type' );
 		$component = $this->getRequest()->getText( 'component' );
 		$published = $this->getRequest()->getText( 'published' );
