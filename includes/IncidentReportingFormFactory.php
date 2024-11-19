@@ -482,7 +482,7 @@ class IncidentReportingFormFactory {
 	public function getForm(
 		int $id,
 		bool $edit,
-		DBConnRef $dbw,
+		IDatabase $dbw,
 		IContextSource $context,
 		$formClass = IncidentReportingOOUIForm::class
 	) {
