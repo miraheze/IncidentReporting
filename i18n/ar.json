@@ -10,6 +10,8 @@
 	"incidentreporting-create": "إنشاء تقرير",
 	"incidentreporting-desc": "نماذج تقارير الحوادث في ميدياويكي.",
 	"incidentreporting-edit": "إرسال التغييرات",
+	"incidentreporting-header": "فرز تقارير الحوادث",
+	"incidentreporting-header-info": "يمكنك فرز تقارير الحوادث حسب السبب والخدمة المتأثرة. كما يمكنك اختيار عرض إحصائيات حول الحوادث.",
 	"incidentreporting-label-actionables": "المعرفات التالية هي مهام قابلة للتنفيذ",
 	"incidentreporting-label-aggravation": "هل تفاقم هذا الحادث بأي شيء؟ (مثل التحقيق، والمستخدمين، وما إلى ذلك)",
 	"incidentreporting-label-cause": "سبب الحادث الأساسي",
