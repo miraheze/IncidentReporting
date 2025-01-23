@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"MITO",
+			"Samoasambia",
 			"Veikk0.ma"
 		]
 	},
@@ -60,7 +61,7 @@
 	"incidentreports": "Häiriöraportit",
 	"log-name-incidentreporting": "Häiriöraporttiloki",
 	"log-description-incidentreporting": "Tämä loki pitää kirjaa häiriötilanteiden raporteista.",
-	"logentry-incidentreporting-modify": "$1 muokkasi häiriötilanteen $3 raporttia",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|muokkasi}} häiriötilanteen $3 raporttia",
 	"right-viewincidents": "Tarkastele häiriötilanteiden raportteja",
 	"right-editincidents": "Muokkaa häiriötilanteiden raportteja"
 }
