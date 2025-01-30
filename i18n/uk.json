@@ -4,7 +4,8 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"action-editincidents": "редагування інцидентів",
@@ -65,7 +66,7 @@
 	"incidentreports": "Звіти про інциденти",
 	"log-name-incidentreporting": "Журнал звітування про інциденти",
 	"log-description-incidentreporting": "Цей журнал відстежує звіти про інциденти.",
-	"logentry-incidentreporting-modify": "$1 {{GENDER:$1|змінив|змінила}} звіт про інцидент для $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|змінив|змінила}} звіт про інцидент для $3",
 	"right-viewincidents": "Перегляд звітів про інциденти",
 	"right-editincidents": "Редагування звітів про інциденти"
 }
