@@ -62,11 +62,11 @@ class IncidentReportingPager extends TablePager {
 
 		switch ( $name ) {
 			case 'i_id':
-				$formatted = Linker::makeExternalLink( SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $row->i_id, $row->i_id );
+				$formatted = LinkRenderer::makeExternalLink( SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $row->i_id, $row->i_id );
 				break;
 			case 'i_service':
 				$service = $row->i_service;
-				$formatted = ( static::$services[$service]['url'] ) ? Linker::makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'] ) : htmlspecialchars( static::$services[$service]['name'], ENT_QUOTES );
+				$formatted = ( static::$services[$service]['url'] ) ? LinkRenderer::makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'] ) : htmlspecialchars( static::$services[$service]['name'], ENT_QUOTES );
 				break;
 			case 'i_cause':
 				$formatted = static::$causes[$row->i_cause];
