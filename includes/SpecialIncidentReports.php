@@ -31,7 +31,8 @@ class SpecialIncidentReports extends SpecialPage {
 			'*',
 			[
 				'i_id' => (int)$par[0]
-			]
+			],
+			__METHOD__
 		);
 
 		$isPublished = ( $inc ) ? (bool)$inc->i_published : false;
@@ -195,7 +196,8 @@ class SpecialIncidentReports extends SpecialPage {
 							$field, [
 								$where => $key,
 								'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
-							]
+							],
+							__METHOD__
 						);
 
 						$minutes = $this->msg( 'incidentreporting-label-outage-formatted', array_sum( $statsData ) )->text();
@@ -222,7 +224,8 @@ class SpecialIncidentReports extends SpecialPage {
 						$field, [
 							$where => $key,
 							'i_published >= ' . ( $published == '' ? '0' : $dbw->timestamp( wfTimestamp( TS_RFC2822, "{$published}T00:00:00.000Z" ) ) )
-						]
+						],
+						__METHOD__
 					);
 
 					$label = array_flip( $foreach )[$key];
