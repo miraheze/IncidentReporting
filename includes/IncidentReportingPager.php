@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 
 class IncidentReportingPager extends TablePager {
