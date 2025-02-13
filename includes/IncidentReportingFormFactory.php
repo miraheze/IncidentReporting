@@ -97,7 +97,8 @@ class IncidentReportingFormFactory {
 				'*',
 				[
 					'r_incident' => $id
-				]
+				],
+				__METHOD__
 			);
 
 			foreach ( $dbReviewers as $db ) {
