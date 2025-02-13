@@ -67,7 +67,7 @@
 	"incidentreports": "Olay Raporları",
 	"log-name-incidentreporting": "Olay raporu günlüğü",
 	"log-description-incidentreporting": "Bu günlük, olay raporlarını izler.",
-	"logentry-incidentreporting-modify": "$1, $3 için olay raporu değiştirdi",
+	"logentry-incidentreporting-modify": "$1, $3 için olay bildirimini {{GENDER:$2|değiştirdi}}",
 	"right-viewincidents": "Olay raporlarını görüntüle",
 	"right-editincidents": "Olay raporlarını düzenle"
 }
