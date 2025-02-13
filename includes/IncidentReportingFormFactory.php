@@ -3,6 +3,7 @@
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\SpecialPage\SpecialPage;
 use Wikimedia\Rdbms\IDatabase;
 
 class IncidentReportingFormFactory {
@@ -44,7 +45,8 @@ class IncidentReportingFormFactory {
 				'*',
 				[
 					'i_id' => $id
-				]
+				],
+				__METHOD__
 			);
 		}
 
@@ -95,7 +97,8 @@ class IncidentReportingFormFactory {
 				'*',
 				[
 					'r_incident' => $id
-				]
+				],
+				__METHOD__
 			);
 
 			foreach ( $dbReviewers as $db ) {
@@ -202,11 +205,13 @@ class IncidentReportingFormFactory {
 			],
 		];
 
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+
 		$viewDescriptor = [
 			'service' => [
 				'type' => 'info',
 				'label-message' => 'incidentreporting-label-service',
-				'default' => ( isset( $irServicesUrl[$data->i_service] ) ) ? Linker::makeExternalLink( $irServicesUrl[$data->i_service], $revServices[$data->i_service] ) : htmlspecialchars( $revServices[$data->i_service], ENT_QUOTES ),
+				'default' => ( isset( $irServicesUrl[$data->i_service] ) ) ? $linkRenderer->makeExternalLink( $irServicesUrl[$data->i_service], $revServices[$data->i_service], SpecialPage::getTitleFor( 'IncidentReports' ) ) : htmlspecialchars( $revServices[$data->i_service], ENT_QUOTES ),
 				'raw' => true,
 				'section' => 'main'
 			],
@@ -506,7 +511,8 @@ class IncidentReportingFormFactory {
 			[
 				'r_user' => $irUser,
 				'r_incident' => $id
-			]
+			],
+			__METHOD__
 		);
 
 		if ( $isReviewer && !$isReviewer->r_timestamp ) {
@@ -518,7 +524,8 @@ class IncidentReportingFormFactory {
 				[
 					'r_user' => $irUser,
 					'r_incident' => $id
-				]
+				],
+				__METHOD__
 			);
 		}
 
@@ -560,18 +567,21 @@ class IncidentReportingFormFactory {
 				$dbIncident,
 				[
 					'i_id' => $id
-				]
+				],
+				__METHOD__
 			);
 		} else {
 			$dbw->insert(
 				'incidents',
-				$dbIncident
+				$dbIncident,
+				__METHOD__
 			);
 
 			$id = $dbw->selectRow(
 				'incidents',
 				'i_id',
-				$dbIncident
+				$dbIncident,
+				__METHOD__
 			)->i_id;
 		}
 
@@ -584,7 +594,8 @@ class IncidentReportingFormFactory {
 				'r_user',
 				[
 					'r_incident' => $id
-				]
+				],
+				__METHOD__
 			);
 
 			foreach ( $dbReviewers as $db ) {
@@ -598,7 +609,8 @@ class IncidentReportingFormFactory {
 						'r_incident' => $id,
 						'r_user' => $reviewer,
 						'r_timestamp' => null
-					]
+					],
+					__METHOD__
 				);
 			}
 		}
@@ -626,7 +638,8 @@ class IncidentReportingFormFactory {
 				[
 					'log_id' => $eId,
 					'log_incident' => $id
-				]
+				],
+				__METHOD__
 			);
 
 			if ( $exists ) {
@@ -636,12 +649,14 @@ class IncidentReportingFormFactory {
 					[
 						'log_id' => $eId,
 						'log_incident' => $id
-					]
+					],
+					__METHOD__
 				);
 			} else {
 				$dbw->insert(
 					'incidents_log',
-					$dbEvent
+					$dbEvent,
+					__METHOD__
 				);
 			}
 		}
@@ -687,7 +702,8 @@ class IncidentReportingFormFactory {
 			],
 			[
 				'i_id' => $id
-			]
+			],
+			__METHOD__
 		);
 
 		$published = $dbw->selectRow(
@@ -695,7 +711,8 @@ class IncidentReportingFormFactory {
 			'*',
 			[
 				'i_id' => $id
-			]
+			],
+			__METHOD__
 		)->i_published;
 
 		if ( $published !== null ) {
