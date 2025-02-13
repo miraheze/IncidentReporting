@@ -1,6 +1,10 @@
 ## ChangeLog for IncidentReporting
 
 
+### 1.3.1 (13-02-2025)
+* Require MediaWiki 1.43.0
+* Replace deprecated `Linker::makeExternalLink` with `LinkRenderer`
+
 ### 1.3.0 (19-11-2024)
 * Require MediaWiki 1.42.0
 * Add support for virtual database domains
