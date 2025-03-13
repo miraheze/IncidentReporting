@@ -13,7 +13,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'IncidentReports', 'viewincidents' );
-		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'incidentreporting' );
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'IncidentReporting' );
 		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 	}
 

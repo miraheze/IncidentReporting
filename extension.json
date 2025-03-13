@@ -79,7 +79,7 @@
 		]
 	},
 	"ConfigRegistry": {
-		"incidentreporting": "GlobalVarConfig::newInstance"
+		"IncidentReporting": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"DatabaseVirtualDomains": [
 		"virtual-incidentreporting"
