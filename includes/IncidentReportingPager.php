@@ -3,8 +3,8 @@
 namespace Miraheze\IncidentReporting;
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Pager\TablePager;
+use MediaWiki\SpecialPage\SpecialPage;
 
 class IncidentReportingPager extends TablePager {
 	/** @var array */
