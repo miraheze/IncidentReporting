@@ -1,9 +1,18 @@
 <?php
 
+namespace Miraheze\IncidentReporting;
+
+use ManualLogEntry;
+use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
 
 class IncidentReportingFormFactory {
