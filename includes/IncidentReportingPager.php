@@ -1,6 +1,9 @@
 <?php
 
+namespace Miraheze\IncidentReporting;
+
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Pager\TablePager;
 use MediaWiki\SpecialPage\SpecialPage;
 
 class IncidentReportingPager extends TablePager {

@@ -17,7 +17,7 @@
 		"editincidents"
 	],
 	"SpecialPages": {
-		"IncidentReports": "SpecialIncidentReports"
+		"IncidentReports": "Miraheze\\IncidentReporting\\Specials\\SpecialIncidentReports"
 	},
 	"LogActionsHandlers": {
 		"incidentreporting/modify": "LogFormatter"
@@ -31,14 +31,10 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"IncidentReportingAliases": "includes/IncidentReportingAliases.php"
+		"IncidentReportingAliases": "IncidentReportingAliases.php"
 	},
-	"AutoloadClasses": {
-		"IncidentReportingFormFactory": "includes/IncidentReportingFormFactory.php",
-		"IncidentReportingHooks": "includes/IncidentReportingHooks.php",
-		"IncidentReportingOOUIForm": "includes/IncidentReportingOOUIForm.php",
-		"IncidentReportingPager": "includes/IncidentReportingPager.php",
-		"SpecialIncidentReports": "includes/SpecialIncidentReports.php"
+	"AutoloadNamespaces": {
+		"Miraheze\\IncidentReporting\\": "includes/"
 	},
 	"ResourceModules": {
 		"ext.incidentreporting.oouiform": {
@@ -75,7 +71,7 @@
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": [
-			"IncidentReportingHooks::onLoadExtensionSchemaUpdates"
+			"Miraheze\\IncidentReporting\\Hooks::onLoadExtensionSchemaUpdates"
 		]
 	},
 	"ConfigRegistry": {
