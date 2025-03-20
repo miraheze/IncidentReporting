@@ -1,5 +1,16 @@
 <?php
 
+namespace Miraheze\IncidentReporting;
+
+use MediaWiki\HTMLForm\OOUIHTMLForm;
+use MediaWiki\Xml\Xml;
+use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\IndexLayout;
+use OOUI\PanelLayout;
+use OOUI\TabPanelLayout;
+use OOUI\Widget;
+
 class IncidentReportingOOUIForm extends OOUIHTMLForm {
 	/** @var bool */
 	protected $mSubSectionBeforeFields = false;
@@ -39,16 +50,16 @@ class IncidentReportingOOUIForm extends OOUIHTMLForm {
 				) .
 				$this->getFooterHtml( $key );
 
-			$tabPanels[] = new \OOUI\TabPanelLayout( 'mw-section-' . $key, [
+			$tabPanels[] = new TabPanelLayout( 'mw-section-' . $key, [
 				'classes' => [ 'mw-htmlform-autoinfuse-lazy' ],
 				'label' => $label,
-				'content' => new \OOUI\FieldsetLayout( [
+				'content' => new FieldsetLayout( [
 					'classes' => [ 'incidentreporting-section-fieldset' ],
 					'id' => "mw-section-{$key}",
 					'label' => $label,
 					'items' => [
-						new \OOUI\Widget( [
-							'content' => new \OOUI\HtmlSnippet( $content )
+						new Widget( [
+							'content' => new HtmlSnippet( $content )
 						] ),
 					],
 				] ),
@@ -57,7 +68,7 @@ class IncidentReportingOOUIForm extends OOUIHTMLForm {
 			] );
 		}
 
-		$indexLayout = new \OOUI\IndexLayout( [
+		$indexLayout = new IndexLayout( [
 			'infusable' => true,
 			'expanded' => false,
 			'autoFocus' => false,
@@ -68,7 +79,7 @@ class IncidentReportingOOUIForm extends OOUIHTMLForm {
 
 		$header = $this->formatFormHeader();
 
-		$form = new \OOUI\PanelLayout( [
+		$form = new PanelLayout( [
 			'framed' => true,
 			'expanded' => false,
 			'classes' => [ 'incidentreporting-tabs-wrapper' ],
