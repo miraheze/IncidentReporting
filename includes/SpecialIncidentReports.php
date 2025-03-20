@@ -1,7 +1,12 @@
 <?php
 
+namespace Miraheze\IncidentReporting;
+
+use MediaWiki\Config\Config;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\SpecialPage\SpecialPage;
 use Wikimedia\Rdbms\IDatabase;
 
 class SpecialIncidentReports extends SpecialPage {
