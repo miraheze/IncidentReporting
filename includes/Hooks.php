@@ -1,6 +1,10 @@
 <?php
 
-class IncidentReportingHooks {
+namespace Miraheze\IncidentReporting;
+
+use MediaWiki\Installer\DatabaseUpdater;
+
+class Hooks {
 
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$updater->addExtensionUpdateOnVirtualDomain( [
