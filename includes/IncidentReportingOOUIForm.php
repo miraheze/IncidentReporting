@@ -2,8 +2,8 @@
 
 namespace Miraheze\IncidentReporting;
 
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\OOUIHTMLForm;
-use MediaWiki\Xml\Xml;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\IndexLayout;
@@ -16,8 +16,7 @@ class IncidentReportingOOUIForm extends OOUIHTMLForm {
 	protected $mSubSectionBeforeFields = false;
 
 	public function wrapForm( $html ) {
-		$html = Xml::tags( 'div', [ 'id' => 'incidentreporting' ], $html );
-
+		$html = Html::rawElement( 'div', [ 'id' => 'incidentreporting' ], $html );
 		return parent::wrapForm( $html );
 	}
 
