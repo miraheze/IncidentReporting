@@ -1,13 +1,12 @@
 ( function () {
-	$( function () {
-		var tabs, previousTab, switchingNoHash;
+	$( () => {
+		let switchingNoHash;
 
-		tabs = OO.ui.infuse( $( '.incidentreporting-tabs' ) );
-
+		const tabs = OO.ui.infuse( $( '.incidentreporting-tabs' ) );
 		tabs.$element.addClass( 'incidentreporting-tabs-infused' );
 
 		function enhancePanel( panel ) {
-			var $infuse = $( panel.$element ).find( '.incidentreporting-infuse' );
+			const $infuse = $( panel.$element ).find( '.incidentreporting-infuse' );
 			$infuse.each( function () {
 				try {
 					OO.ui.infuse( this );
@@ -24,17 +23,15 @@
 		}
 
 		function onTabPanelSet( panel ) {
-			var scrollTop, active;
-
 			if ( switchingNoHash ) {
 				return;
 			}
 			// Handle hash manually to prevent jumping,
 			// therefore save and restore scrollTop to prevent jumping.
-			scrollTop = $( window ).scrollTop();
+			const scrollTop = $( window ).scrollTop();
 			// Changing the hash apparently causes keyboard focus to be lost?
 			// Save and restore it. This makes no sense though.
-			active = document.activeElement;
+			const active = document.activeElement;
 			location.hash = '#' + panel.getName();
 			if ( active ) {
 				active.focus();
@@ -64,8 +61,8 @@
 		// Jump to correct section as indicated by the hash.
 		// This function is called onload and onhashchange.
 		function detectHash() {
-			var hash = location.hash,
-				matchedElement, $parentSection;
+			const hash = location.hash;
+			let matchedElement, $parentSection;
 			if ( hash.match( /^#mw-section-[\w-]+$/ ) ) {
 				mw.storage.session.remove( 'incidentreporting-prevTab' );
 				switchIncidentReportingTab( hash.slice( 1 ) );
@@ -81,8 +78,8 @@
 			}
 		}
 
-		$( window ).on( 'hashchange', function () {
-			var hash = location.hash;
+		$( window ).on( 'hashchange', () => {
+			const hash = location.hash;
 			if ( hash.match( /^#mw-[\w-]+/ ) ) {
 				detectHash();
 			} else if ( hash === '' ) {
@@ -93,15 +90,15 @@
 			.trigger( 'hashchange' );
 
 		// Restore the active tab after saving
-		previousTab = mw.storage.session.get( 'incidentreporting-prevTab' );
+		const previousTab = mw.storage.session.get( 'incidentreporting-prevTab' );
 		if ( previousTab ) {
 			switchIncidentReportingTab( previousTab, true );
 			// Deleting the key, the tab states should be reset until we press Save
 			mw.storage.session.remove( 'incidentreporting-prevTab' );
 		}
 
-		$( '#incidentreporting-form' ).on( 'submit', function () {
-			var value = tabs.getCurrentTabPanelName();
+		$( '#incidentreporting-form' ).on( 'submit', () => {
+			const value = tabs.getCurrentTabPanelName();
 			mw.storage.session.set( 'incidentreporting-prevTab', value );
 		} );
 	} );
