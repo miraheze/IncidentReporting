@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Vlad5250",
 			"Winston Sung"
 		]
@@ -11,7 +12,7 @@
 	"incidentreporting-desc": "Obrasci za izvještavanje incidenta u MediaWikiju.",
 	"incidentreporting-edit": "Podnesi izmjene",
 	"incidentreporting-header": "Razvrstaj izvještaje",
-	"incidentreporting-header-info": "Možete sortirati izvještaje o incidentima prema uzroku i pogođenoj usluzi. Također možete odabrati da vidite statistiku o incidentima.",
+	"incidentreporting-header-info": "Možete sortirati izvještaje o incidentima prema uzroku i pogođenoj usluzi. Također možete izabrari da vidite statistiku o incidentima.",
 	"incidentreporting-label-actionables": "Sledeće naznake su zadatci za ispunjavanje",
 	"incidentreporting-label-aggravation": "Postoji li išta što je otežalo ovaj incident? (npr. istraživanje, korisnici itd.)",
 	"incidentreporting-label-cause": "Osnovni razlog incidenta",
