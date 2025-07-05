@@ -103,7 +103,7 @@ class SpecialIncidentReports extends SpecialPage {
 
 		ksort( $servicesConfig );
 
-		foreach ( $servicesConfig as $service => $url ) {
+		foreach ( $servicesConfig as $service => $_ ) {
 			$niceName = str_replace( ' ', '-', strtolower( $service ) );
 			$irServices[$service] = $niceName;
 		}
@@ -266,9 +266,9 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 	}
 
-	public static function onSubmitRedirectToCreate( $formData ) {
-		header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/create' );
-
-		return true;
+	public static function onSubmitRedirectToCreate(): void {
+		$this->getOutput()->redirect(
+			$this->getPageTitle( 'create' )->getFullURL()
+		);
 	}
 }

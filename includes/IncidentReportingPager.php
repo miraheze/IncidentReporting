@@ -61,48 +61,49 @@ class IncidentReportingPager extends TablePager {
 		return $headers;
 	}
 
-	public function formatValue( $name, $value ) {
-		$row = $this->mCurrentRow;
+	public function formatValue( $field, $value ) {
+		if ( $value === null ) {
+			return '';
+		}
 
-		switch ( $name ) {
+		switch ( $field ) {
 			case 'i_id':
-				$formatted = $this->getLinkRenderer()->makeExternalLink( SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $row->i_id, $row->i_id, SpecialPage::getTitleFor( 'IncidentReports' ) );
+				$formatted = $this->getLinkRenderer()->makeExternalLink( SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $value, $value, SpecialPage::getTitleFor( 'IncidentReports' ) );
 				break;
 			case 'i_service':
-				$service = $row->i_service;
-				$formatted = ( static::$services[$service]['url'] ) ? $this->getLinkRenderer()->makeExternalLink( static::$services[$service]['url'], static::$services[$service]['name'], SpecialPage::getTitleFor( 'IncidentReports' ) ) : htmlspecialchars( static::$services[$service]['name'], ENT_QUOTES );
+				$formatted = ( static::$services[$value]['url'] ) ? $this->getLinkRenderer()->makeExternalLink( static::$services[$value]['url'], static::$services[$value]['name'], SpecialPage::getTitleFor( 'IncidentReports' ) ) : htmlspecialchars( static::$services[$value]['name'], ENT_QUOTES );
 				break;
 			case 'i_cause':
-				$formatted = static::$causes[$row->i_cause];
+				$formatted = static::$causes[$value];
 				break;
 			case 'i_tasks':
-				$taskArray = json_decode( $row->i_tasks, true );
+				$taskArray = json_decode( $value, true );
 				$formatted = is_array( $taskArray ) ? count( $taskArray ) : 0;
 				break;
 			case 'i_published':
-				$formatted = wfTimestamp( TS_RFC2822, (int)$row->i_published );
+				$formatted = wfTimestamp( TS_RFC2822, (int)$value );
 				break;
 			default:
-				$formatted = "Unable to format $name";
-				break;
+				$formatted = "Unable to format $field";
 		}
+
 		return $formatted;
 	}
 
 	public function getQueryInfo() {
 		$info = [
 			'tables' => [
-				'incidents'
+				'incidents',
 			],
 			'fields' => [
 				'i_id',
 				'i_service',
 				'i_cause',
 				'i_published',
-				'i_tasks'
+				'i_tasks',
 			],
 			'conds' => [
-				'i_published IS NOT NULL'
+				'i_published IS NOT NULL',
 			],
 			'joins_conds' => [],
 		];
@@ -122,7 +123,7 @@ class IncidentReportingPager extends TablePager {
 		return 'i_id';
 	}
 
-	public function isFieldSortable( $name ) {
-		return true;
+	public function isFieldSortable( $field ) {
+		return $field !== 'i_tasks';
 	}
 }

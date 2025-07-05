@@ -482,8 +482,6 @@ class IncidentReportingFormFactory {
 			];
 		}
 
-		$formDescriptor = [];
-
 		if ( $action == 'view' ) {
 			$formDescriptor = array_merge( $viewDescriptor, $buildLog );
 		} else {
