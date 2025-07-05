@@ -266,7 +266,7 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 	}
 
-	public static function onSubmitRedirectToCreate(): void {
+	public function onSubmitRedirectToCreate(): void {
 		$this->getOutput()->redirect(
 			$this->getPageTitle( 'create' )->getFullURL()
 		);
