@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"action-editincidents": "хийца инциденташ",
+	"action-viewincidents": "инциденташ хьажа",
+	"incidentreporting-create": "Отчет кхоллар",
+	"incidentreporting-edit": "Бакъбе хийцамаш",
+	"incidentreporting-label-actionables": "РогӀера идентификаторш — кхочушдан дезаш долу гӀуллакхаш",
+	"incidentreporting-label-cause": "Инцидентан коьрта бахьана",
+	"incidentreporting-label-explain": "Дийца, хӀунда оьшу и",
+	"incidentreporting-label-human": "Стаг",
+	"incidentreporting-label-known": "Цхьа а йевзаш йолу проблемаш йуй оцу сервисца?",
+	"incidentreporting-label-na": "Дакъа лелаш дац",
+	"incidentreporting-label-outage-formatted": "$1 {{PLURAL:$1|минот}}",
+	"incidentreporting-label-technical": "Техникин",
+	"incidentreporting-label-upstream": "Карладаккха",
+	"incidentreporting-log-action": "Хилам $1 — ХӀун хилла?",
+	"incidentreporting-log-actor-information": "Информаци",
+	"incidentreporting-log-actor-user": "Декъашхо",
+	"incidentreporting-log-down": "Лаха",
+	"incidentreporting-log-partial": "Дуьззина доцуш",
+	"incidentreporting-log-up": "Лаккха",
+	"incidentreporting-logs": "Инцидентийн журнал",
+	"incidentreporting-main": "Коьрта деталаш",
+	"incidentreporting-table-all": "Гайта йерриге",
+	"incidentreporting-table-id": "Инцидентан ID",
+	"incidentreporting-table-service": "Ӏаткъам хилла сервис",
+	"incidentreporting-table-cause": "Бахьана",
+	"incidentreporting-table-tasks": "Кхочушден гӀуллакхаш",
+	"incidentreporting-table-published": "Публикацин терахь",
+	"incidentreporting-view": "Хаам хийца",
+	"incidentreports": "Инцидентах лаьцна хаам",
+	"log-name-incidentreporting": "Инцидентан хаамийн журнал",
+	"log-description-incidentreporting": "ХӀокху журналехь лела инцидентийн хаамаш.",
+	"right-viewincidents": "Инцидентах лаьцна хаамаш хьажа",
+	"right-editincidents": "Инцидентах лаьцна хаамаш хийца"
+}
