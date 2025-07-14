@@ -15,6 +15,8 @@
 	"incidentreporting-label-known": "Цхьа а йевзаш йолу проблемаш йуй оцу сервисца?",
 	"incidentreporting-label-na": "Дакъа лелаш дац",
 	"incidentreporting-label-outage-formatted": "$1 {{PLURAL:$1|минот}}",
+	"incidentreporting-label-published": "Хаам дӀайазбина",
+	"incidentreporting-label-responders": "Хьан жоп делира оцу хиламна?",
 	"incidentreporting-label-technical": "Техникин",
 	"incidentreporting-label-upstream": "Карладаккха",
 	"incidentreporting-log-action": "Хилам $1 — ХӀун хилла?",
