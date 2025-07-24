@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chaiwan2009",
+			"Hide on Rosé",
 			"NguyenHung",
 			"Pisceskaze",
 			"SongNgu.xyz"
@@ -66,8 +67,8 @@
 	"incidentreporting-view": "Chỉnh sửa báo cáo",
 	"incidentreports": "Báo cáo sự cố",
 	"log-name-incidentreporting": "Nhật ký báo cáo sự cố",
-	"log-description-incidentreporting": "Nhật ký này theo dõi các báo cáo sự cố.",
-	"logentry-incidentreporting-modify": "$1 {{GENDER:$2| đã sửa đổi}} báo cáo sự cố với giá $3",
-	"right-viewincidents": "Sắp xếp báo cáo sự cố",
-	"right-editincidents": "Sắp xếp báo cáo sự cố"
+	"log-description-incidentreporting": "Nhật trình này theo dõi các báo cáo sự cố.",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|đã sửa đổi}} báo cáo sự cố cho $3",
+	"right-viewincidents": "Xem báo cáo sự cố",
+	"right-editincidents": "Sửa đổi báo cáo sự cố"
 }
