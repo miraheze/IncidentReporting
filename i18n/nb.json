@@ -64,7 +64,7 @@
 	"incidentreports": "Hendelsesrapporter",
 	"log-name-incidentreporting": "Logg over hendelsesrapporter",
 	"log-description-incidentreporting": "Denne loggen sporer hendelsesrapporter.",
-	"logentry-incidentreporting-modify": "$1 modifiserte hendelsesrapporten for $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modifiserte}} hendelsesrapporten for $3",
 	"right-viewincidents": "Vise hendelsesrapporter",
 	"right-editincidents": "Redigere hendelsesrapporter"
 }
