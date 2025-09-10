@@ -12,7 +12,6 @@ use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use MediaWiki\User\UserIdentityValue;
 use Wikimedia\Rdbms\IDatabase;
 
 class IncidentReportingFormFactory {
@@ -91,7 +90,7 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = $userLinkRenderer->userLink( new UserIdentityValue( $userFactory->newFromName( $resp )->getId(), $resp ), $context );
+					$responders[] = $userLinkRenderer->userLink( $userFactory->newFromName( $resp ), $context );
 				}
 			}
 		}
@@ -114,9 +113,9 @@ class IncidentReportingFormFactory {
 
 			foreach ( $dbReviewers as $db ) {
 				if ( $db->r_timestamp ) {
-					$reviewers['reviewed'][] = $userLinkRenderer->userLink( new UserIdentityValue( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user ), $context );
+					$reviewers['reviewed'][] = $userLinkRenderer->userLink( $userFactory->newFromName( $db->r_user ), $context );
 				} else {
-					$reviewers['unreviewed'][] = $userLinkRenderer->userLink( new UserIdentityValue( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user ), $context );
+					$reviewers['unreviewed'][] = $userLinkRenderer->userLink( $userFactory->newFromName( $db->r_user ), $context );
 				}
 
 				$reviewers['all'][] = $db->r_user;
