@@ -7,7 +7,6 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\UserLinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
