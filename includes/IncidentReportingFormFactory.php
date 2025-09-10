@@ -117,7 +117,7 @@ class IncidentReportingFormFactory {
 
 			foreach ( $dbReviewers as $db ) {
 				$user = $userFactory->newFromName( $db->r_user );
-				if ( $user )
+				if ( $user ) {
 					if ( $db->r_timestamp ) {
 						$reviewers['reviewed'][] = $userLinkRenderer->userLink( $user, $context );
 					} else {
@@ -125,14 +125,15 @@ class IncidentReportingFormFactory {
 					}
 				}
 			}
+		}
 
 				$reviewers['all'][] = $db->r_user;
-			}
+	}
 
 			$reviewers['reviewed'] = ( count( $reviewers['reviewed'] ) != 0 ) ? implode( ', ', $reviewers['reviewed'] ) : 'None';
 			$reviewers['unreviewed'] = ( count( $reviewers['unreviewed'] ) != 0 ) ? implode( ', ', $reviewers['unreviewed'] ) : 'None';
 
-		}
+}
 
 		$buildDescriptor = [
 			'service' => [
@@ -498,30 +499,30 @@ class IncidentReportingFormFactory {
 		}
 
 		return $formDescriptor;
-	}
+		}
 
-	public function getForm(
+		public function getForm(
 		int $id,
 		bool $edit,
 		IDatabase $dbw,
 		IContextSource $context,
 		$formClass = IncidentReportingOOUIForm::class
-	) {
-		$formDescriptor = $this->getFormDescriptor( $dbw, $id, $edit, $context );
+		) {
+			$formDescriptor = $this->getFormDescriptor( $dbw, $id, $edit, $context );
 
-		$htmlForm = new $formClass( $formDescriptor, $context, 'incidentreporting' );
+			$htmlForm = new $formClass( $formDescriptor, $context, 'incidentreporting' );
 
-		$htmlForm->setId( 'incidentreporting-form' );
-		$htmlForm->suppressDefaultSubmit();
-		$htmlForm->setSubmitCallback(
+			$htmlForm->setId( 'incidentreporting-form' );
+			$htmlForm->suppressDefaultSubmit();
+			$htmlForm->setSubmitCallback(
 			function ( array $formData, HTMLForm $form ) use ( $id, $dbw, $context ) {
 				return $this->submitForm( $formData, $form, $id, $dbw, $context );
 			}
-		);
+			);
 
-		$irUser = $context->getUser()->getName();
+			$irUser = $context->getUser()->getName();
 
-		$isReviewer = $dbw->selectRow(
+			$isReviewer = $dbw->selectRow(
 			'incidents_reviewer',
 			'*',
 			[
@@ -529,10 +530,10 @@ class IncidentReportingFormFactory {
 				'r_incident' => $id
 			],
 			__METHOD__
-		);
+			);
 
-		if ( $isReviewer && !$isReviewer->r_timestamp ) {
-			$dbw->update(
+			if ( $isReviewer && !$isReviewer->r_timestamp ) {
+				$dbw->update(
 				'incidents_reviewer',
 				[
 					'r_timestamp' => $dbw->timestamp()
@@ -542,27 +543,27 @@ class IncidentReportingFormFactory {
 					'r_incident' => $id
 				],
 				__METHOD__
-			);
+				);
+			}
+
+			return $htmlForm;
 		}
 
-		return $htmlForm;
-	}
-
-	protected function submitForm(
+		protected function submitForm(
 		array $formData,
 		HTMLForm $form,
 		int $id,
 		IDatabase $dbw,
 		IContextSource $context
-	) {
-		if ( isset( $formData['view'] ) && $formData['view'] ) {
-			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $id . '/edit' );
+		) {
+			if ( isset( $formData['view'] ) && $formData['view'] ) {
+				header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $id . '/edit' );
 
-			return true;
-		}
+				return true;
+			}
 
-		// Handle main data for the incident
-		$dbIncident = [
+			// Handle main data for the incident
+			$dbIncident = [
 			'i_service' => $formData['service'],
 			'i_cause' => $formData['cause'],
 			'i_aggravation' => ( $formData['control-aggravation'] ) ? $formData['aggravation'] : null,
@@ -571,55 +572,55 @@ class IncidentReportingFormFactory {
 			'i_other' => ( $formData['control-other'] ) ? $formData['other'] : null,
 			'i_responders' => $formData['responders'],
 			'i_tasks' => ( $formData['actionables'] ) ? json_encode( explode( "\n", $formData['actionables'] ) ) : "[]"
-		];
+			];
 
-		if ( isset( $formData['publish'] ) && $formData['publish'] ) {
-			$dbIncident['i_published'] = $dbw->timestamp();
-		}
+			if ( isset( $formData['publish'] ) && $formData['publish'] ) {
+				$dbIncident['i_published'] = $dbw->timestamp();
+			}
 
-		if ( $id != 0 ) {
-			$dbw->update(
+			if ( $id != 0 ) {
+				$dbw->update(
 				'incidents',
 				$dbIncident,
 				[
 					'i_id' => $id
 				],
 				__METHOD__
-			);
-		} else {
-			$dbw->insert(
+				);
+			} else {
+				$dbw->insert(
 				'incidents',
 				$dbIncident,
 				__METHOD__
-			);
+				);
 
-			$id = $dbw->selectRow(
+				$id = $dbw->selectRow(
 				'incidents',
 				'i_id',
 				$dbIncident,
 				__METHOD__
-			)->i_id;
-		}
+				)->i_id;
+			}
 
-		// Handle reviewers
-		if ( $formData['review'] ) {
-			$reviewers = explode( "\n", $formData['review'] );
+			// Handle reviewers
+			if ( $formData['review'] ) {
+				$reviewers = explode( "\n", $formData['review'] );
 
-			$dbReviewers = $dbw->select(
+				$dbReviewers = $dbw->select(
 				'incidents_reviewer',
 				'r_user',
 				[
 					'r_incident' => $id
 				],
 				__METHOD__
-			);
+				);
 
-			foreach ( $dbReviewers as $db ) {
-				$reviewers = array_diff( $reviewers, (array)$db->r_user );
-			}
+				foreach ( $dbReviewers as $db ) {
+					$reviewers = array_diff( $reviewers, (array)$db->r_user );
+				}
 
-			foreach ( $reviewers as $reviewer ) {
-				$dbw->insert(
+				foreach ( $reviewers as $reviewer ) {
+					$dbw->insert(
 					'incidents_reviewer',
 					[
 						'r_incident' => $id,
@@ -627,28 +628,28 @@ class IncidentReportingFormFactory {
 						'r_timestamp' => null
 					],
 					__METHOD__
-				);
-			}
-		}
-
-		// Handle events
-		$eventNumber = (int)$formData['logs-number'];
-
-		for ( $eId = 1; $eId < $eventNumber; $eId++ ) {
-			if ( !(bool)$formData["{$eId}-timestamp"] ) {
-				continue;
+					);
+				}
 			}
 
-			$dbEvent = [
+			// Handle events
+			$eventNumber = (int)$formData['logs-number'];
+
+			for ( $eId = 1; $eId < $eventNumber; $eId++ ) {
+				if ( !(bool)$formData["{$eId}-timestamp"] ) {
+					continue;
+				}
+
+				$dbEvent = [
 				'log_incident' => $id,
 				'log_id' => $eId,
 				'log_actor' => ( $formData["{$eId}-user"] ) ?? $formData["{$eId}-actor"],
 				'log_action' => $formData["{$eId}-action"],
 				'log_timestamp' => wfTimestamp( TS_UNIX, $formData["{$eId}-timestamp"] ),
 				'log_state' => $formData["{$eId}-state"]
-			];
+				];
 
-			$exists = $dbw->selectRow(
+				$exists = $dbw->selectRow(
 				'incidents_log',
 				'*',
 				[
@@ -656,29 +657,29 @@ class IncidentReportingFormFactory {
 					'log_incident' => $id
 				],
 				__METHOD__
-			);
+				);
 
-			if ( $exists ) {
-				$dbw->update(
-					'incidents_log',
-					$dbEvent,
-					[
+				if ( $exists ) {
+					$dbw->update(
+						'incidents_log',
+						$dbEvent,
+						[
 						'log_id' => $eId,
 						'log_incident' => $id
-					],
-					__METHOD__
-				);
-			} else {
-				$dbw->insert(
+						],
+						__METHOD__
+					);
+				} else {
+					$dbw->insert(
 					'incidents_log',
 					$dbEvent,
 					__METHOD__
-				);
+					);
+				}
 			}
-		}
 
-		// Outage data
-		$logData = $dbw->select(
+			// Outage data
+			$logData = $dbw->select(
 			'incidents_log',
 			'*',
 			[
@@ -688,29 +689,29 @@ class IncidentReportingFormFactory {
 			[
 				'ORDER BY' => 'log_timestamp ASC'
 			]
-		);
+			);
 
-		$outageTotal = 0;
-		$outageVisible = 0;
-		$curState = null;
-		$curTime = null;
+			$outageTotal = 0;
+			$outageVisible = 0;
+			$curState = null;
+			$curTime = null;
 
-		foreach ( $logData as $odata ) {
-			$workTime = ( ( $curTime !== null ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
+			foreach ( $logData as $odata ) {
+				$workTime = ( ( $curTime !== null ) ? $odata->log_timestamp - $curTime : 0 ) / 60;
 
-			if ( $odata->log_state == 'down' || ( $odata->log_state != 'down' && $curState == 'down' ) ) {
-				$outageVisible += $workTime;
+				if ( $odata->log_state == 'down' || ( $odata->log_state != 'down' && $curState == 'down' ) ) {
+					$outageVisible += $workTime;
+				}
+
+				if ( $curState != 'up' ) {
+					$outageTotal += $workTime;
+				}
+
+				$curState = $odata->log_state;
+				$curTime = $odata->log_timestamp;
 			}
 
-			if ( $curState != 'up' ) {
-				$outageTotal += $workTime;
-			}
-
-			$curState = $odata->log_state;
-			$curTime = $odata->log_timestamp;
-		}
-
-		$dbw->update(
+			$dbw->update(
 			'incidents',
 			[
 				'i_outage_total' => round( $outageTotal ),
@@ -720,29 +721,29 @@ class IncidentReportingFormFactory {
 				'i_id' => $id
 			],
 			__METHOD__
-		);
+			);
 
-		$published = $dbw->selectRow(
+			$published = $dbw->selectRow(
 			'incidents',
 			'*',
 			[
 				'i_id' => $id
 			],
 			__METHOD__
-		)->i_published;
+			)->i_published;
 
-		if ( $published !== null ) {
-			$mainTitle = substr( $form->getTitle()->getText(), 0, -5 );
+			if ( $published !== null ) {
+				$mainTitle = substr( $form->getTitle()->getText(), 0, -5 );
 
-			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
-			$irLogEntry->setPerformer( $form->getContext()->getUser() );
-			$irLogEntry->setTarget( Title::newFromText( $mainTitle, NS_SPECIAL ) );
-			$irLogID = $irLogEntry->insert();
-			$irLogEntry->publish( $irLogID );
+				$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
+				$irLogEntry->setPerformer( $form->getContext()->getUser() );
+				$irLogEntry->setTarget( Title::newFromText( $mainTitle, NS_SPECIAL ) );
+				$irLogID = $irLogEntry->insert();
+				$irLogEntry->publish( $irLogID );
+			}
+
+			$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->parse() ) );
+
+			return true;
 		}
-
-		$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->parse() ) );
-
-		return true;
-	}
-}
+		}
