@@ -88,10 +88,9 @@ class IncidentReportingFormFactory {
 		if ( $data !== null ) {
 			$respArray = explode( "\n", $data->i_responders );
 
-			$user = $userFactory->newFromName( $resp );
-
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
+					$user = $userFactory->newFromName( $resp );
 					if ( $user ) {
 						$responders[] = $userLinkRenderer->userLink( $user, $context );
 					}
