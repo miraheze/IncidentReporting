@@ -505,7 +505,7 @@ class IncidentReportingFormFactory {
 		IDatabase $dbw,
 		IContextSource $context,
 		$formClass = IncidentReportingOOUIForm::class
-		) {
+	) {
 		$formDescriptor = $this->getFormDescriptor( $dbw, $id, $edit, $context );
 
 		$htmlForm = new $formClass( $formDescriptor, $context, 'incidentreporting' );
@@ -518,9 +518,9 @@ class IncidentReportingFormFactory {
 			}
 		);
 
-			$irUser = $context->getUser()->getName();
+		$irUser = $context->getUser()->getName();
 
-			$isReviewer = $dbw->selectRow(
+		$isReviewer = $dbw->selectRow(
 			'incidents_reviewer',
 			'*',
 			[
@@ -740,7 +740,7 @@ class IncidentReportingFormFactory {
 			$irLogEntry->publish( $irLogID );
 		}
 
-			$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->parse() ) );
+		$context->getOutput()->addHTML( Html::successBox( wfMessage( 'incidentreporting-success' )->parse() ) );
 
 		return true;
 	}
