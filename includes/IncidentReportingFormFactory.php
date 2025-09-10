@@ -123,6 +123,7 @@ class IncidentReportingFormFactory {
 					} else {
 						$reviewers['unreviewed'][] = $userLinkRenderer->userLink( $user, $context );
 					}
+				}
 			}
 
 				$reviewers['all'][] = $db->r_user;
