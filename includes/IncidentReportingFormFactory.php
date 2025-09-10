@@ -8,6 +8,7 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Linker\UserLinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
@@ -89,7 +90,7 @@ class IncidentReportingFormFactory {
 
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = Linker::userLink( $userFactory->newFromName( $resp )->getId(), $resp );
+					$responders[] = UserLinkRenderer::userLink( new UserIdentityValue( $userFactory->newFromName( $resp )->getId(), $resp ), $context );
 				}
 			}
 		}
@@ -112,9 +113,9 @@ class IncidentReportingFormFactory {
 
 			foreach ( $dbReviewers as $db ) {
 				if ( $db->r_timestamp ) {
-					$reviewers['reviewed'][] = Linker::userLink( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user );
+					$reviewers['reviewed'][] = UserLinkRenderer::userLink( new UserIdentityValue( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user ), $context );
 				} else {
-					$reviewers['unreviewed'][] = Linker::userLink( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user );
+					$reviewers['unreviewed'][] = UserLinkRenderer::userLink( new UserIdentityValue( $userFactory->newFromName( $db->r_user )->getId(), $db->r_user ), $context );
 				}
 
 				$reviewers['all'][] = $db->r_user;
