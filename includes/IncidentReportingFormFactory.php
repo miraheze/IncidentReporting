@@ -88,9 +88,13 @@ class IncidentReportingFormFactory {
 		if ( $data !== null ) {
 			$respArray = explode( "\n", $data->i_responders );
 
+			$user = $userFactory->newFromName( $resp )
+
 			if ( count( $respArray ) != 0 ) {
 				foreach ( $respArray as $resp ) {
-					$responders[] = $userLinkRenderer->userLink( ( UserIdentity ) $userFactory->newFromName( $resp ), $context );
+					if ( $user ) {
+						$responders[] = $userLinkRenderer->userLink( $user, $context );
+					}
 				}
 			}
 		}
@@ -112,11 +116,14 @@ class IncidentReportingFormFactory {
 			);
 
 			foreach ( $dbReviewers as $db ) {
-				if ( $db->r_timestamp ) {
-					$reviewers['reviewed'][] = $userLinkRenderer->userLink( ( UserIdentity ) $userFactory->newFromName( $db->r_user ), $context );
-				} else {
-					$reviewers['unreviewed'][] = $userLinkRenderer->userLink( ( UserIdentity ) $userFactory->newFromName( $db->r_user ), $context );
-				}
+				$user = $userFactory->newFromName( $db->r_user );
+				if ( $user )
+					if ( $db->r_timestamp ) {
+						$reviewers['reviewed'][] = $userLinkRenderer->userLink( $user, $context );
+					} else {
+						$reviewers['unreviewed'][] = $userLinkRenderer->userLink( $user, $context );
+					}
+			}
 
 				$reviewers['all'][] = $db->r_user;
 			}
