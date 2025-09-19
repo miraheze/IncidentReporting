@@ -540,8 +540,8 @@ class IncidentReportingFormFactory {
 		array $formData,
 		HTMLForm $form,
 		int $id,
-		IDatabase $dbw,
-		IContextSource $context
+		IContextSource $context,
+		IDatabase $dbw
 	) {
 		if ( isset( $formData['view'] ) && $formData['view'] ) {
 			header( 'Location: ' . SpecialPage::getTitleFor( 'IncidentReports' )->getFullURL() . '/' . $id . '/edit' );
