@@ -699,16 +699,14 @@ class IncidentReportingFormFactory {
 			->caller( __METHOD__ )
 			->execute();
 
-		$published = $dbw->selectRow(
-			'incidents',
-			'*',
-			[
-				'i_id' => $id
-			],
-			__METHOD__
-		)->i_published;
+		$published = $dbw->newSelectQueryBuilder()
+			->select( 'i_published' )
+			->from( 'incidents' )
+			->where( [ 'i_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
-		if ( $published !== null ) {
+		if ( $published ) {
 			$mainTitle = substr( $form->getTitle()->getText(), 0, -5 );
 
 			$irLogEntry = new ManualLogEntry( 'incidentreporting', 'modify' );
