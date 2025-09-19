@@ -661,17 +661,13 @@ class IncidentReportingFormFactory {
 		}
 
 		// Outage data
-		$logData = $dbw->select(
-			'incidents_log',
-			'*',
-			[
-				'log_incident' => $id
-			],
-			__METHOD__,
-			[
-				'ORDER BY' => 'log_timestamp ASC'
-			]
-		);
+		$logData = $dbw->newSelectQueryBuilder()
+			->select( ISQLPlatform::ALL_ROWS )
+			->from( 'incidents_log' )
+			->where( [ 'log_incident' => $id ] )
+			->orderBy( 'log_timestamp', SelectQueryBuilder::SORT_ASC )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$outageTotal = 0;
 		$outageVisible = 0;
@@ -693,17 +689,15 @@ class IncidentReportingFormFactory {
 			$curTime = $odata->log_timestamp;
 		}
 
-		$dbw->update(
-			'incidents',
-			[
+		$dbw->newUpdateQueryBuilder()
+			->update( 'incidents' )
+			->set( [
 				'i_outage_total' => round( $outageTotal ),
-				'i_outage_visible' => round( $outageVisible )
-			],
-			[
-				'i_id' => $id
-			],
-			__METHOD__
-		);
+				'i_outage_visible' => round( $outageVisible ),
+			] )
+			->where( [ 'i_id' => $id ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$published = $dbw->selectRow(
 			'incidents',
