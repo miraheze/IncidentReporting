@@ -20,7 +20,7 @@
 		"IncidentReports": "Miraheze\\IncidentReporting\\Specials\\SpecialIncidentReports"
 	},
 	"LogActionsHandlers": {
-		"incidentreporting/modify": "LogFormatter"
+		"incidentreporting/modify": "MediaWiki\\Logging\\LogFormatter"
 	},
 	"LogTypes": [
 		"incidentreporting"

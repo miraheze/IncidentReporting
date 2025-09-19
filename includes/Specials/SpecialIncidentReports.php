@@ -3,13 +3,13 @@
 namespace Miraheze\IncidentReporting\Specials;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use Miraheze\IncidentReporting\IncidentReportingFormFactory;
 use Miraheze\IncidentReporting\IncidentReportingPager;
-use PermissionsError;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\Platform\ISQLPlatform;
 
@@ -52,6 +52,7 @@ class SpecialIncidentReports extends SpecialPage {
 		}
 	}
 
+	/** @throws PermissionsError */
 	public function showForm( int $id, bool $edit, bool $isPublished ) {
 		if ( !$isPublished && !$this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			throw new PermissionsError( 'editincidents' );
