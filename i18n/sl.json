@@ -10,6 +10,8 @@
 	"incidentreporting-create": "Ustvari poročilo",
 	"incidentreporting-desc": "Obrazci za poročila o incidentih v MediaWikiju.",
 	"incidentreporting-edit": "Pošlji spremembe",
+	"incidentreporting-header": "Razvrščanje poročil o incidentih",
+	"incidentreporting-header-info": "Poročila o incidentih lahko razvrstite po vzroku in storitvi. Izberete lahko tudi ogled statističnih podatkov o incidentih.",
 	"incidentreporting-label-actionables": "Naslednji ID-ji so izvedljiva opravila",
 	"incidentreporting-label-aggravation": "Ali je ta incident kaj poslabšalo (npr. preiskava, uporabniki idr.)?",
 	"incidentreporting-label-cause": "Osnovni vzrok incidenta",
@@ -63,7 +65,7 @@
 	"incidentreports": "Poročila o incidentih",
 	"log-name-incidentreporting": "Dnevnik poročil o incidentih",
 	"log-description-incidentreporting": "Ta dnevnik sledi poročila o incidentih.",
-	"logentry-incidentreporting-modify": "$1 je spremenil_a poročilo o incidentu za $3",
+	"logentry-incidentreporting-modify": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} poročilo o incidentu za $3",
 	"right-viewincidents": "Ogled poročil o incidentih",
 	"right-editincidents": "Urejanje poročil o incidentih"
 }
