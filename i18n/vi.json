@@ -4,6 +4,7 @@
 			"Chaiwan2009",
 			"Hide on Rosé",
 			"NguyenHung",
+			"Nvdtn19",
 			"Pisceskaze",
 			"SongNgu.xyz"
 		]
@@ -48,7 +49,7 @@
 	"incidentreporting-log-timestamp": "Sự kiện $1 - Sự kiện này diễn ra khi nào?",
 	"incidentreporting-log-up": "Ổn định",
 	"incidentreporting-log-user": "Sự kiện $1 - Ai đã làm điều này?",
-	"incidentreporting-logs": "Nhật ký sự cố",
+	"incidentreporting-logs": "Nhật trình sự cố",
 	"incidentreporting-main": "Thông tin chi tiết Tiết kiệm",
 	"incidentreporting-stats": "Hiển thị số liệu thống kê sự cố",
 	"incidentreporting-stats-component": "Hiển thị số liệu thống kê cho dịch vụ",
@@ -66,7 +67,7 @@
 	"incidentreporting-table-published": "Ngày xuất bản",
 	"incidentreporting-view": "Chỉnh sửa báo cáo",
 	"incidentreports": "Báo cáo sự cố",
-	"log-name-incidentreporting": "Nhật ký báo cáo sự cố",
+	"log-name-incidentreporting": "Nhật trình báo cáo sự cố",
 	"log-description-incidentreporting": "Nhật trình này theo dõi các báo cáo sự cố.",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|đã sửa đổi}} báo cáo sự cố cho $3",
 	"right-viewincidents": "Xem báo cáo sự cố",
