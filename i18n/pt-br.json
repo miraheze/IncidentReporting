@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bartomelow",
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad"
 		]
@@ -63,7 +64,7 @@
 	"incidentreports": "Relatórios de incidentes",
 	"log-name-incidentreporting": "Registro de relatório de incidentes",
 	"log-description-incidentreporting": "Este registro rastreia os relatórios de incidentes.",
-	"logentry-incidentreporting-modify": "$1 modificou o relatório de incidente para $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modificou] o relatório de incidente para $3",
 	"right-viewincidents": "Visualizar relatórios de incidentes",
 	"right-editincidents": "Editar relatórios de incidentes"
 }
