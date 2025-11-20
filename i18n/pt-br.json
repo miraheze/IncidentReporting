@@ -32,7 +32,7 @@
 	"incidentreporting-label-reviewers-info": "Revisado: $1. Não Revisado: $2",
 	"incidentreporting-label-service": "Componente de serviço afetado",
 	"incidentreporting-label-technical": "Técnica",
-	"incidentreporting-label-upstream": "Rio acima",
+	"incidentreporting-label-upstream": "Upstream",
 	"incidentreporting-log-action": "Evento $1 - O que aconteceu?",
 	"incidentreporting-log-actor": "Evento $1 - Este é um usuário ou informação?",
 	"incidentreporting-log-actor-information": "Informações",
