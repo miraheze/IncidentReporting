@@ -6,6 +6,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
 use Miraheze\IncidentReporting\IncidentReportingFormFactory;
@@ -255,7 +256,9 @@ class SpecialIncidentReports extends SpecialPage {
 			->prepareForm()
 			->displayForm( false );
 
-		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
+		$table = $pager->getFullOutput();
+		$parserOptions = ParserOptions::newFromContext( $this->getContext() );
+		$this->getOutput()->addParserOutputContent( $table, $parserOptions );
 
 		if ( $this->permissionManager->userHasRight( $this->getContext()->getUser(), 'editincidents' ) ) {
 			$createForm = HTMLForm::factory( 'ooui', [], $this->getContext() );
