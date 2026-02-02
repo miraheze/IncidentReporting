@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Woytecr"
 		]
 	},
 	"action-editincidents": "edytowania incydentów",
@@ -10,6 +11,9 @@
 	"incidentreporting-create": "Stwórz zgłoszenie",
 	"incidentreporting-desc": "Formularz zgłaszania incydentów w MediaWiki",
 	"incidentreporting-edit": "Prześlij zmiany",
+	"incidentreporting-header": "Sortuj zgłoszenia incydentów",
+	"incidentreporting-header-info": "Możesz sortować zgłoszenia incydentów według przyczyny i usługi, której dotyczą. Możesz również wyświetlić statystyki dotyczące incydentów.",
+	"incidentreporting-label-actionables": "Poniższe identyfikatory to zadania możliwe do wykonania",
 	"incidentreporting-label-notpublished": "Zgłoszenie nie zostało jeszcze opublikowane!",
 	"incidentreporting-label-other": "Czy są jeszcze jakieś informacje, które mogłyby być użyteczne w tym zgłoszeniu?",
 	"incidentreporting-label-outage-formatted": "$1 {{PLURAL:$1|minuta|minuty|minut}}",

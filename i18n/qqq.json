@@ -7,7 +7,8 @@
 			"Mar(c)",
 			"McDutchie",
 			"Shirayuki",
-			"Universal Omega"
+			"Universal Omega",
+			"Woytecr"
 		]
 	},
 	"action-editincidents": "{{doc-action|editincidents}}",
@@ -17,7 +18,7 @@
 	"incidentreporting-edit": "Submit button text",
 	"incidentreporting-header": "Legend header for Special:IncidentReporting",
 	"incidentreporting-header-info": "Information text under legend header.",
-	"incidentreporting-label-actionables": "Used as a ;abel for tasks field",
+	"incidentreporting-label-actionables": "Used as a label for tasks field",
 	"incidentreporting-label-aggravation": "label for incident aggravation field",
 	"incidentreporting-label-cause": "label for cause field",
 	"incidentreporting-label-explain": "label for explanation field",
