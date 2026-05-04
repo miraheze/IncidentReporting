@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tensama0415",
+			"Ykhwong"
+		]
+	},
+	"action-editincidents": "사건을 편집할",
+	"action-viewincidents": "사건을 볼",
+	"incidentreporting-create": "보고서 만들기",
+	"incidentreporting-edit": "바뀐 내용 제출",
+	"incidentreporting-header": "사건 보고서 정렬",
+	"incidentreporting-label-cause": "기본 사고 원인",
+	"incidentreporting-label-human": "인간",
+	"incidentreporting-label-known": "이 서비스에 알려진 문제가 있습니까?",
+	"incidentreporting-label-outage-formatted": "$1분",
+	"incidentreporting-label-technical": "기술적",
+	"incidentreporting-label-upstream": "업스트림",
+	"incidentreporting-log-action": "이벤트 $1 - 무엇이 발생했습니까?",
+	"incidentreporting-log-actor": "이벤트 $1 - 사용자입니까 정보입니까?",
+	"incidentreporting-log-actor-information": "정보",
+	"incidentreporting-log-actor-user": "사용자",
+	"incidentreporting-log-down": "다운됨",
+	"incidentreporting-log-state": "이벤트 $1 - 이 이벤트의 서비스 상태는 무엇입니까?",
+	"incidentreporting-log-timestamp": "이벤트 $1 - 이 이벤트가 어넺 발생했습니까?",
+	"incidentreporting-log-up": "정상",
+	"incidentreporting-log-user": "이벤트 $1 - 누가 이 일을 했습니까?",
+	"incidentreporting-logs": "사건 기록",
+	"incidentreporting-stats": "사건 통계 보기",
+	"incidentreporting-stats-component": "서비스 통계 보기",
+	"incidentreporting-stats-number": "사건 수 보기",
+	"incidentreporting-table-all": "모두 보기",
+	"incidentreporting-table-id": "사건 ID",
+	"incidentreporting-table-service": "영향받은 서비스",
+	"incidentreporting-table-cause": "이유",
+	"incidentreporting-table-tasks": "실행 가능한 작업",
+	"incidentreporting-view": "보고서 편집",
+	"incidentreports": "사건 보고서",
+	"log-name-incidentreporting": "사건 보고 로그",
+	"log-description-incidentreporting": "이 로그는 사건 보고를 추적합니다.",
+	"right-viewincidents": "사건 보고서 보기",
+	"right-editincidents": "사건 보고서 편집"
+}
