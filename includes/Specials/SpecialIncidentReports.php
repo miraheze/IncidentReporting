@@ -22,7 +22,12 @@ class SpecialIncidentReports extends SpecialPage {
 	private $permissionManager;
 
 	public function __construct() {
-		parent::__construct( 'IncidentReports', 'viewincidents' );
+		if ( version_compare( MW_VERSION, '1.46', '>=' ) ) {
+			parent::__construct( 'IncidentReports' );
+		} else {
+			parent::__construct( 'IncidentReports', 'viewincidents' );
+		}
+
 		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'IncidentReporting' );
 		$this->permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 	}
@@ -270,5 +275,10 @@ class SpecialIncidentReports extends SpecialPage {
 		$this->getOutput()->redirect(
 			$this->getPageTitle( 'create' )->getFullURL()
 		);
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'viewincidents';
 	}
 }
