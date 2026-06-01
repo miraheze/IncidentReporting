@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Brightt11",
+			"HakanIST",
 			"Hedda",
 			"Joseph",
 			"Mirzali",
@@ -16,6 +17,7 @@
 	"incidentreporting-desc": "MediaWiki'de Olay Raporu formları.",
 	"incidentreporting-edit": "Değişiklikleri Gönder",
 	"incidentreporting-header": "Olay raporlarını grupla",
+	"incidentreporting-header-info": "Olay raporlarını nedene ve etkilenen hizmete göre sıralayabilirsiniz. Ayrıca olaylarla ilgili istatistikleri görmeyi seçebilirsiniz.",
 	"incidentreporting-label-actionables": "Aşağıdaki kimlikler işlem yapılabilir görevlerdir",
 	"incidentreporting-label-aggravation": "Bu olay herhangi bir şeyle ağırlaştı mı? (Araştırma, kullanıcı vb.)",
 	"incidentreporting-label-cause": "Temel Olay Nedeni",
