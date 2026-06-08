@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Wizzard",
 			"Yardom78"
 		]
 	},
@@ -62,7 +63,7 @@
 	"incidentreports": "Hlásenia incidentov",
 	"log-name-incidentreporting": "Denník hlásenia incidentov",
 	"log-description-incidentreporting": "Tento denník zaznamenáva hlásenia incidentov.",
-	"logentry-incidentreporting-modify": "$1 upravil/a hlásenie incidentu pre $3",
+	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|upravil|upravila}} hlásenie incidentu pre $3",
 	"right-viewincidents": "Zobraziť hlásenia incidentov",
 	"right-editincidents": "Upraviť hlásenia incidentov"
 }
