@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"PanWor",
 			"Rail",
 			"Railfail536",
 			"Woytecr"
@@ -27,7 +28,7 @@
 	"incidentreports": "Zgłoszenia incydentów",
 	"log-name-incidentreporting": "Rejestr zgłoszeń incydentów",
 	"log-description-incidentreporting": "Ten rejestr śledzi zgłoszenia incydentów.",
-	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|zmodyfikował|zmodyfikowała|zmodyfikował(a)}} zgłoszenie incydentu dla $3",
+	"logentry-incidentreporting-modify": "{{GENDER:$2|$1 zmodyfikował|$1 zmodyfikowała|Konto $1 zmodyfikowało}} zgłoszenie incydentu dla $3",
 	"right-viewincidents": "Podgląd zgłoszeń incydentów",
 	"right-editincidents": "Edytowanie zgłoszeń incydentów"
 }
