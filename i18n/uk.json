@@ -3,6 +3,7 @@
 		"authors": [
 			"DDPAT",
 			"Ice bulldog",
+			"Movses",
 			"Piramidion",
 			"Vlad5250",
 			"Ата"
@@ -13,6 +14,8 @@
 	"incidentreporting-create": "Створити звіт",
 	"incidentreporting-desc": "Форми звітування про інциденти в MediaWiki.",
 	"incidentreporting-edit": "Надіслати зміни",
+	"incidentreporting-header": "Сортування звітів про інциденти",
+	"incidentreporting-header-info": "Ви можете сортувати звіти про інциденти за причиною та службою, на яку вони вплинули. Також можна переглянути статистику інцидентів.",
 	"incidentreporting-label-actionables": "Вказані ідентифікатори є завданнями, щодо яких можна вжити заходів",
 	"incidentreporting-label-aggravation": "Чи цей інцидент було будь-яким чином загострено? (Наприклад, через розслідування, дії користувачів тощо)",
 	"incidentreporting-label-cause": "Основна причина інциденту",
