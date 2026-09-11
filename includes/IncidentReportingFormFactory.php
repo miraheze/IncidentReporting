@@ -358,6 +358,7 @@ class IncidentReportingFormFactory {
 						'type' => 'user',
 						'label' => wfMessage( 'incidentreporting-log-user', $logId )->text(),
 						'exists' => true,
+						'excludetemp' => true,
 						'section' => 'logs',
 						'subsection' => (string)$logId,
 						'default' => $ldata->log_actor,
