@@ -79,7 +79,7 @@ class IncidentReportingFormFactory {
 
 		$responders = [];
 
-		$userLinkRenderer = MediaWikiServices::getInstance()->getUserLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		if ( $data !== null ) {
 			$respArray = explode( "\n", $data->i_responders );
@@ -88,7 +88,7 @@ class IncidentReportingFormFactory {
 				foreach ( $respArray as $resp ) {
 					$user = $userFactory->newFromName( $resp );
 					if ( $user ) {
-						$responders[] = $userLinkRenderer->userLink( $user, $context );
+						$responders[] = $linkRenderer->makeUserLink( $user, $context );
 					}
 				}
 			}
@@ -112,9 +112,9 @@ class IncidentReportingFormFactory {
 				$user = $userFactory->newFromName( $db->r_user );
 				if ( $user ) {
 					if ( $db->r_timestamp ) {
-						$reviewers['reviewed'][] = $userLinkRenderer->userLink( $user, $context );
+						$reviewers['reviewed'][] = $linkRenderer->makeUserLink( $user, $context );
 					} else {
-						$reviewers['unreviewed'][] = $userLinkRenderer->userLink( $user, $context );
+						$reviewers['unreviewed'][] = $linkRenderer->makeUserLink( $user, $context );
 					}
 				}
 
@@ -214,8 +214,6 @@ class IncidentReportingFormFactory {
 				'exists' => true
 			],
 		];
-
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		$viewDescriptor = [
 			'service' => [
