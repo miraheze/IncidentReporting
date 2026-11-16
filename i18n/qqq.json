@@ -62,16 +62,16 @@
 	"incidentreporting-stats-visible": "Show Visible Outage Times",
 	"incidentreporting-success": "Changes saved successfully",
 	"incidentreporting-table-all": "Show all",
-	"incidentreporting-table-id": "Incident ID",
-	"incidentreporting-table-service": "Service Affected",
 	"incidentreporting-table-cause": "Cause",
-	"incidentreporting-table-tasks": "Actionable Tasks",
+	"incidentreporting-table-id": "Incident ID",
 	"incidentreporting-table-published": "Date of Publishing",
+	"incidentreporting-table-service": "Service Affected",
+	"incidentreporting-table-tasks": "Actionable Tasks",
 	"incidentreporting-view": "Edit Report",
 	"incidentreports": "Incident Reports",
-	"log-name-incidentreporting": "Name of 'Incident report log'",
 	"log-description-incidentreporting": "Description of incident reporting log",
+	"log-name-incidentreporting": "Name of 'Incident report log'",
 	"logentry-incidentreporting-modify": "{{logentry}}\nUsed as a log message",
-	"right-viewincidents": "{{doc-right|viewincidents}}",
-	"right-editincidents": "{{doc-right|editincidents}}"
+	"right-editincidents": "{{doc-right|editincidents}}",
+	"right-viewincidents": "{{doc-right|viewincidents}}"
 }
