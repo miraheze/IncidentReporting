@@ -57,16 +57,16 @@
 	"incidentreporting-stats-visible": "Prikaži vremena vidljivih prekida",
 	"incidentreporting-success": "Promjene su sačuvane",
 	"incidentreporting-table-all": "Prikaži sve",
-	"incidentreporting-table-id": "ID incidenta",
-	"incidentreporting-table-service": "Utjecana usluga",
 	"incidentreporting-table-cause": "Počinitelj",
-	"incidentreporting-table-tasks": "Zadaci za ispunjavanje",
+	"incidentreporting-table-id": "ID incidenta",
 	"incidentreporting-table-published": "Datum objave",
+	"incidentreporting-table-service": "Utjecana usluga",
+	"incidentreporting-table-tasks": "Zadaci za ispunjavanje",
 	"incidentreporting-view": "Uredi izvještaj",
 	"incidentreports": "Izvještaji incidenta",
-	"log-name-incidentreporting": "Dnevnik prijavljenih incidenata",
 	"log-description-incidentreporting": "Ovaj dnevnik slijedi prijavljene incidente.",
+	"log-name-incidentreporting": "Dnevnik prijavljenih incidenata",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|promijenio|promijenila|promijenio(la)}} je izvještaj incidenta za $3",
-	"right-viewincidents": "Pogl. izvještaji incidenta",
-	"right-editincidents": "Uredi izvještaji incidenta"
+	"right-editincidents": "Uredi izvještaji incidenta",
+	"right-viewincidents": "Pogl. izvještaji incidenta"
 }

@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Monstrar le tempores de interruption visibile",
 	"incidentreporting-success": "Cambiamentos correctemente salveguardate",
 	"incidentreporting-table-all": "Monstrar toto",
-	"incidentreporting-table-id": "ID del incidente",
-	"incidentreporting-table-service": "Servicio affectate",
 	"incidentreporting-table-cause": "Causa",
-	"incidentreporting-table-tasks": "Cargas actionabile",
+	"incidentreporting-table-id": "ID del incidente",
 	"incidentreporting-table-published": "Data de publication",
+	"incidentreporting-table-service": "Servicio affectate",
+	"incidentreporting-table-tasks": "Cargas actionabile",
 	"incidentreporting-view": "Modificar reporto",
 	"incidentreports": "Reportos de incidentes",
-	"log-name-incidentreporting": "Registro de reportos de incidentes",
 	"log-description-incidentreporting": "Iste registro tracia le reportos de incidentes.",
+	"log-name-incidentreporting": "Registro de reportos de incidentes",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|ha modificate}} le reporto de incidente pro $3",
-	"right-viewincidents": "Vider reportos de incidentes",
-	"right-editincidents": "Modificar reportos de incidentes"
+	"right-editincidents": "Modificar reportos de incidentes",
+	"right-viewincidents": "Vider reportos de incidentes"
 }

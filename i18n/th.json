@@ -53,16 +53,16 @@
 	"incidentreporting-stats-visible": "แสดงเวลาขัดข้องที่มองเห็นได้",
 	"incidentreporting-success": "บันทึกการเปลี่ยนแปลงเรียบร้อยแล้ว",
 	"incidentreporting-table-all": "แสดงทั้งหมด",
-	"incidentreporting-table-id": "รหัสเหตุการณ์",
-	"incidentreporting-table-service": "การบริการที่ได้รับผลกระทบ",
 	"incidentreporting-table-cause": "สาเหตุ",
-	"incidentreporting-table-tasks": "งานที่ดำเนินการได้",
+	"incidentreporting-table-id": "รหัสเหตุการณ์",
 	"incidentreporting-table-published": "วันที่เผยแพร่",
+	"incidentreporting-table-service": "การบริการที่ได้รับผลกระทบ",
+	"incidentreporting-table-tasks": "งานที่ดำเนินการได้",
 	"incidentreporting-view": "แก้ไขรายงาน",
 	"incidentreports": "รายงานเหตุการณ์",
-	"log-name-incidentreporting": "ปูมรายงานเหตุการณ์",
 	"log-description-incidentreporting": "ปูมนี้จะติดตามรายงานเหตุการณ์",
+	"log-name-incidentreporting": "ปูมรายงานเหตุการณ์",
 	"logentry-incidentreporting-modify": "$1 แก้ไขรายงานเหตุการณ์ $3",
-	"right-viewincidents": "ดูรายงานเหตุการณ์",
-	"right-editincidents": "แก้ไขรายงานเหตุการณ์"
+	"right-editincidents": "แก้ไขรายงานเหตุการณ์",
+	"right-viewincidents": "ดูรายงานเหตุการณ์"
 }

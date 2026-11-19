@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Muuji Waqtiyada La Arki Karo ee Ciladaha",
 	"incidentreporting-success": "Isbeddellada si guul leh ayaa loo kaydiyey",
 	"incidentreporting-table-all": "Muuji dhammaan",
-	"incidentreporting-table-id": "Aqoonsiga Dhacdada",
-	"incidentreporting-table-service": "Adeegga Saameeyay",
 	"incidentreporting-table-cause": "Sababta",
-	"incidentreporting-table-tasks": "Hawlaha La Fulin Karo",
+	"incidentreporting-table-id": "Aqoonsiga Dhacdada",
 	"incidentreporting-table-published": "Taariikhda Daabacaadda",
+	"incidentreporting-table-service": "Adeegga Saameeyay",
+	"incidentreporting-table-tasks": "Hawlaha La Fulin Karo",
 	"incidentreporting-view": "Wax ka beddel Warbixinta",
 	"incidentreports": "Warbixinnada Dhacdooyinka",
-	"log-name-incidentreporting": "Diiwaanka Warbixinnada Dhacdooyinka",
 	"log-description-incidentreporting": "Diiwaankani wuxuu raadraacaa warbixinnada dhacdooyinka.",
+	"log-name-incidentreporting": "Diiwaanka Warbixinnada Dhacdooyinka",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|wax ka beddelay}} warbixinta dhacdada ee $3",
-	"right-viewincidents": "Arag warbixinnada dhacdooyinka",
-	"right-editincidents": "Wax ka beddel warbixinnada dhacdooyinka"
+	"right-editincidents": "Wax ka beddel warbixinnada dhacdooyinka",
+	"right-viewincidents": "Arag warbixinnada dhacdooyinka"
 }

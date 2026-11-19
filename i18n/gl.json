@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Mostrar os tempos de interrupción visibles",
 	"incidentreporting-success": "Os cambios gardáronse correctamente",
 	"incidentreporting-table-all": "Mostrar todo",
-	"incidentreporting-table-id": "Identificador da incidencia",
-	"incidentreporting-table-service": "Servizo afectado",
 	"incidentreporting-table-cause": "Causa",
-	"incidentreporting-table-tasks": "Tarefas procesables",
+	"incidentreporting-table-id": "Identificador da incidencia",
 	"incidentreporting-table-published": "Data de publicación",
+	"incidentreporting-table-service": "Servizo afectado",
+	"incidentreporting-table-tasks": "Tarefas procesables",
 	"incidentreporting-view": "Editar o informe",
 	"incidentreports": "Informes de incidencias",
-	"log-name-incidentreporting": "Rexistro de informes de incidencias",
 	"log-description-incidentreporting": "Este rexistro leva conta dos informes de incidencias.",
+	"log-name-incidentreporting": "Rexistro de informes de incidencias",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modificou}} o informe de incidencias de «$3»",
-	"right-viewincidents": "Ver os informes de incidencias",
-	"right-editincidents": "Editar os informes de incidencias"
+	"right-editincidents": "Editar os informes de incidencias",
+	"right-viewincidents": "Ver os informes de incidencias"
 }

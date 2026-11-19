@@ -58,16 +58,16 @@
 	"incidentreporting-stats-visible": "Zeiten sichtbarer Ausfälle anzeigen",
 	"incidentreporting-success": "Änderungen erfolgreich gespeichert",
 	"incidentreporting-table-all": "Alle anzeigen",
-	"incidentreporting-table-id": "Vorfallskennung",
-	"incidentreporting-table-service": "Betroffener Dienst",
 	"incidentreporting-table-cause": "Ursache",
-	"incidentreporting-table-tasks": "Einklagbare Aufgaben",
+	"incidentreporting-table-id": "Vorfallskennung",
 	"incidentreporting-table-published": "Datum der Veröffentlichung",
+	"incidentreporting-table-service": "Betroffener Dienst",
+	"incidentreporting-table-tasks": "Einklagbare Aufgaben",
 	"incidentreporting-view": "Bericht bearbeiten",
 	"incidentreports": "Vorfallsberichte",
-	"log-name-incidentreporting": "Ereignisprotokoll",
 	"log-description-incidentreporting": "Dieses Protokoll verfolgt Ereignisberichte.",
+	"log-name-incidentreporting": "Ereignisprotokoll",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modifizierte}} Meldung eines Vorfalls für $3",
-	"right-viewincidents": "Vorfallsberichte ansehen",
-	"right-editincidents": "Vorfallsberichte bearbeiten"
+	"right-editincidents": "Vorfallsberichte bearbeiten",
+	"right-viewincidents": "Vorfallsberichte ansehen"
 }

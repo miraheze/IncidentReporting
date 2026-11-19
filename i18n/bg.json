@@ -50,13 +50,13 @@
 	"incidentreporting-stats-visible": "Показване на времената на видими прекъсвания",
 	"incidentreporting-success": "Промените са успешно съхранени",
 	"incidentreporting-table-all": "Показване на всички",
-	"incidentreporting-table-id": "Идентификация на инцидента",
-	"incidentreporting-table-service": "Засегната услуга",
 	"incidentreporting-table-cause": "Причина",
-	"incidentreporting-table-tasks": "Задачи за изпълняване",
+	"incidentreporting-table-id": "Идентификация на инцидента",
 	"incidentreporting-table-published": "Дата на публикуване",
+	"incidentreporting-table-service": "Засегната услуга",
+	"incidentreporting-table-tasks": "Задачи за изпълняване",
 	"incidentreporting-view": "Редактиране на доклад",
 	"incidentreports": "Доклади за инциденти",
-	"right-viewincidents": "Преглед на доклади за инциденти",
-	"right-editincidents": "Редактиране на доклади за инциденти"
+	"right-editincidents": "Редактиране на доклади за инциденти",
+	"right-viewincidents": "Преглед на доклади за инциденти"
 }

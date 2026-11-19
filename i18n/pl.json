@@ -26,9 +26,9 @@
 	"incidentreporting-table-published": "Data publikacji",
 	"incidentreporting-view": "Edytuj zgłoszenie",
 	"incidentreports": "Zgłoszenia incydentów",
-	"log-name-incidentreporting": "Rejestr zgłoszeń incydentów",
 	"log-description-incidentreporting": "Ten rejestr śledzi zgłoszenia incydentów.",
+	"log-name-incidentreporting": "Rejestr zgłoszeń incydentów",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|zmodyfikował|zmodyfikowała|zmodyfikował(a)}} zgłoszenie incydentu dla $3",
-	"right-viewincidents": "Podgląd zgłoszeń incydentów",
-	"right-editincidents": "Edytowanie zgłoszeń incydentów"
+	"right-editincidents": "Edytowanie zgłoszeń incydentów",
+	"right-viewincidents": "Podgląd zgłoszeń incydentów"
 }

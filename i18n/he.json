@@ -57,16 +57,16 @@
 	"incidentreporting-stats-visible": "הצגת זמן ההשבתה הגלוי",
 	"incidentreporting-success": "השינויים נשמרו בהצלחה",
 	"incidentreporting-table-all": "להציג הכול",
-	"incidentreporting-table-id": "מזהה תקרית",
-	"incidentreporting-table-service": "השירות הושפע",
 	"incidentreporting-table-cause": "גורם",
-	"incidentreporting-table-tasks": "משימות לביצוע",
+	"incidentreporting-table-id": "מזהה תקרית",
 	"incidentreporting-table-published": "תאריך הפרסום",
+	"incidentreporting-table-service": "השירות הושפע",
+	"incidentreporting-table-tasks": "משימות לביצוע",
 	"incidentreporting-view": "עריכת דו\"ח",
 	"incidentreports": "דו\"חות תקרית",
-	"log-name-incidentreporting": "יומן דו\"חות תקרית",
 	"log-description-incidentreporting": "היומן הזה עוקב אחר דו\"חות תקרית.",
+	"log-name-incidentreporting": "יומן דו\"חות תקרית",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|שינה|שינתה}} את דו\"ח התקרית עבור $3",
-	"right-viewincidents": "הצגת דו\"חות תקרית",
-	"right-editincidents": "עריכת דו\"חות תקרית"
+	"right-editincidents": "עריכת דו\"חות תקרית",
+	"right-viewincidents": "הצגת דו\"חות תקרית"
 }

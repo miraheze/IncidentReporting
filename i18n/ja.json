@@ -58,16 +58,16 @@
 	"incidentreporting-stats-visible": "可視化された障害時間を表示",
 	"incidentreporting-success": "変更の保存に成功",
 	"incidentreporting-table-all": "すべて表示",
-	"incidentreporting-table-id": "インシデントID",
-	"incidentreporting-table-service": "影響を受けるサービス",
 	"incidentreporting-table-cause": "原因",
-	"incidentreporting-table-tasks": "実行可能なタスク",
+	"incidentreporting-table-id": "インシデントID",
 	"incidentreporting-table-published": "発行日",
+	"incidentreporting-table-service": "影響を受けるサービス",
+	"incidentreporting-table-tasks": "実行可能なタスク",
 	"incidentreporting-view": "レポートの編集",
 	"incidentreports": "インシデントレポート",
-	"log-name-incidentreporting": "インシデントレポート記録",
 	"log-description-incidentreporting": "この記録はインシデントレポートを追跡します。",
+	"log-name-incidentreporting": "インシデントレポート記録",
 	"logentry-incidentreporting-modify": "$1 が $3 のインシデントレポートを{{GENDER:$2|編集しました}}",
-	"right-viewincidents": "インシデントレポートを閲覧",
-	"right-editincidents": "インシデントレポートを編集"
+	"right-editincidents": "インシデントレポートを編集",
+	"right-viewincidents": "インシデントレポートを閲覧"
 }

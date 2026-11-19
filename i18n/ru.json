@@ -57,16 +57,16 @@
 	"incidentreporting-stats-visible": "Отобразить время видимых перерывов в работе",
 	"incidentreporting-success": "Изменения успешно сохранены",
 	"incidentreporting-table-all": "Показать все",
-	"incidentreporting-table-id": "Номер инцидента",
-	"incidentreporting-table-service": "Затронутый сервис",
 	"incidentreporting-table-cause": "Причина",
-	"incidentreporting-table-tasks": "Выполнимые задачи",
+	"incidentreporting-table-id": "Номер инцидента",
 	"incidentreporting-table-published": "Дата публикации",
+	"incidentreporting-table-service": "Затронутый сервис",
+	"incidentreporting-table-tasks": "Выполнимые задачи",
 	"incidentreporting-view": "Редактировать отчёт",
 	"incidentreports": "Отчёты об инцидентах",
-	"log-name-incidentreporting": "Журнал отчётов об инцидентах",
 	"log-description-incidentreporting": "Этот журнал отслеживает отчёты об инцидентах",
+	"log-name-incidentreporting": "Журнал отчётов об инцидентах",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|модифицировал|модифицировала}} отчёт об инциденте на странице $3",
-	"right-viewincidents": "Посмотреть отчёты об инцидентах",
-	"right-editincidents": "Править отчёты об инцидентах"
+	"right-editincidents": "Править отчёты об инцидентах",
+	"right-viewincidents": "Посмотреть отчёты об инцидентах"
 }

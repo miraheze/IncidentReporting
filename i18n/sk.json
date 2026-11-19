@@ -56,16 +56,16 @@
 	"incidentreporting-stats-visible": "Zobraziť viditeľné časy výpadkov",
 	"incidentreporting-success": "Zmeny boli úspešne uložené",
 	"incidentreporting-table-all": "Zobraziť všetko",
-	"incidentreporting-table-id": "ID incidentu",
-	"incidentreporting-table-service": "Postihnutá služba",
 	"incidentreporting-table-cause": "Príčina",
-	"incidentreporting-table-tasks": "Žalovateľné úlohy",
+	"incidentreporting-table-id": "ID incidentu",
 	"incidentreporting-table-published": "Dátum zverejnenia",
+	"incidentreporting-table-service": "Postihnutá služba",
+	"incidentreporting-table-tasks": "Žalovateľné úlohy",
 	"incidentreporting-view": "Úprava hlásenia",
 	"incidentreports": "Hlásenia incidentov",
-	"log-name-incidentreporting": "Denník hlásenia incidentov",
 	"log-description-incidentreporting": "Tento denník zaznamenáva hlásenia incidentov.",
+	"log-name-incidentreporting": "Denník hlásenia incidentov",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|upravil|upravila}} hlásenie incidentu pre $3",
-	"right-viewincidents": "Zobraziť hlásenia incidentov",
-	"right-editincidents": "Upraviť hlásenia incidentov"
+	"right-editincidents": "Upraviť hlásenia incidentov",
+	"right-viewincidents": "Zobraziť hlásenia incidentov"
 }

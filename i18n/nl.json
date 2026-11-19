@@ -58,16 +58,16 @@
 	"incidentreporting-stats-visible": "Zichtbare uitvaltijden weergeven",
 	"incidentreporting-success": "De wijzigingen zijn opgeslagen",
 	"incidentreporting-table-all": "Alles weergeven",
-	"incidentreporting-table-id": "Incident-ID",
-	"incidentreporting-table-service": "Betroffen dienst",
 	"incidentreporting-table-cause": "Oorzaak",
-	"incidentreporting-table-tasks": "Uitvoerbare taken",
+	"incidentreporting-table-id": "Incident-ID",
 	"incidentreporting-table-published": "Publicatiedatum",
+	"incidentreporting-table-service": "Betroffen dienst",
+	"incidentreporting-table-tasks": "Uitvoerbare taken",
 	"incidentreporting-view": "Rapport bewerken",
 	"incidentreports": "Incidentmeldingen",
-	"log-name-incidentreporting": "Logboek incidentrapport",
 	"log-description-incidentreporting": "Dit logboek houdt incidentrapporten bij.",
+	"log-name-incidentreporting": "Logboek incidentrapport",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|heeft}} het incidentrapport voor $3 gewijzigd",
-	"right-viewincidents": "Incidentrapporten bekijken",
-	"right-editincidents": "Incidentrapporten wijzigen"
+	"right-editincidents": "Incidentrapporten wijzigen",
+	"right-viewincidents": "Incidentrapporten bekijken"
 }

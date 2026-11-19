@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Прикажи времиња на видливи прекини",
 	"incidentreporting-success": "Промените се успешно зачувани",
 	"incidentreporting-table-all": "Прикажи ги сите",
-	"incidentreporting-table-id": "Назнака на инцидентот",
-	"incidentreporting-table-service": "Засегната служба",
 	"incidentreporting-table-cause": "Причинител",
-	"incidentreporting-table-tasks": "Задачи за исполнување",
+	"incidentreporting-table-id": "Назнака на инцидентот",
 	"incidentreporting-table-published": "Датум на објавување",
+	"incidentreporting-table-service": "Засегната служба",
+	"incidentreporting-table-tasks": "Задачи за исполнување",
 	"incidentreporting-view": "Уреди пријава",
 	"incidentreports": "Пријави на инциденти",
-	"log-name-incidentreporting": "Дневник на пријавени инциденти",
 	"log-description-incidentreporting": "Овој дневник ги следи пријавените инциденти.",
+	"log-name-incidentreporting": "Дневник на пријавени инциденти",
 	"logentry-incidentreporting-modify": "$1 ја {{GENDER:$2|измени}} пријавата на инцидент за $3",
-	"right-viewincidents": "Погл. пријави на инциденти",
-	"right-editincidents": "Уреди пријави на инциденти"
+	"right-editincidents": "Уреди пријави на инциденти",
+	"right-viewincidents": "Погл. пријави на инциденти"
 }

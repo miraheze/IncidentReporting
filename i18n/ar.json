@@ -56,16 +56,16 @@
 	"incidentreporting-stats-visible": "إظهار أوقات انقطاع المرئية",
 	"incidentreporting-success": "تم حفظ التغييرات بنجاح",
 	"incidentreporting-table-all": "عرض الكل",
-	"incidentreporting-table-id": "معرف الحدث",
-	"incidentreporting-table-service": "الخدمة المتأثرة",
 	"incidentreporting-table-cause": "السبب",
-	"incidentreporting-table-tasks": "مهام قابلة للتنفيذ",
+	"incidentreporting-table-id": "معرف الحدث",
 	"incidentreporting-table-published": "تاريخ النشر",
+	"incidentreporting-table-service": "الخدمة المتأثرة",
+	"incidentreporting-table-tasks": "مهام قابلة للتنفيذ",
 	"incidentreporting-view": "تحرير التقرير",
 	"incidentreports": "تقارير الحوادث",
-	"log-name-incidentreporting": "سجل تقارير الحوادث",
 	"log-description-incidentreporting": "هذا السجل يتتبع تقارير الحوادث.",
+	"log-name-incidentreporting": "سجل تقارير الحوادث",
 	"logentry-incidentreporting-modify": "تقرير حادثة $1 {{GENDER:$2|تم تعديله}} مقابل $3",
-	"right-viewincidents": "عرض تقارير الحوادث",
-	"right-editincidents": "تحرير تقارير الحوادث"
+	"right-editincidents": "تحرير تقارير الحوادث",
+	"right-viewincidents": "عرض تقارير الحوادث"
 }

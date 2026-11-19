@@ -61,16 +61,16 @@
 	"incidentreporting-stats-visible": "Hiển thị thời gian mất điện có thể nhìn thấy",
 	"incidentreporting-success": "Đã lưu thay đổi thành công",
 	"incidentreporting-table-all": "Hiển thị tất cả",
-	"incidentreporting-table-id": "ID sự cố",
-	"incidentreporting-table-service": "Dịch vụ bị ảnh hưởng",
 	"incidentreporting-table-cause": "Nguyên nhân",
-	"incidentreporting-table-tasks": "Nhiệm vụ có thể thực hiện",
+	"incidentreporting-table-id": "ID sự cố",
 	"incidentreporting-table-published": "Ngày xuất bản",
+	"incidentreporting-table-service": "Dịch vụ bị ảnh hưởng",
+	"incidentreporting-table-tasks": "Nhiệm vụ có thể thực hiện",
 	"incidentreporting-view": "Chỉnh sửa báo cáo",
 	"incidentreports": "Báo cáo sự cố",
-	"log-name-incidentreporting": "Nhật trình báo cáo sự cố",
 	"log-description-incidentreporting": "Nhật trình này theo dõi các báo cáo sự cố.",
+	"log-name-incidentreporting": "Nhật trình báo cáo sự cố",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|đã sửa đổi}} báo cáo sự cố cho $3",
-	"right-viewincidents": "Xem báo cáo sự cố",
-	"right-editincidents": "Sửa đổi báo cáo sự cố"
+	"right-editincidents": "Sửa đổi báo cáo sự cố",
+	"right-viewincidents": "Xem báo cáo sự cố"
 }

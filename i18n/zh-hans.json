@@ -59,16 +59,16 @@
 	"incidentreporting-stats-visible": "显示可见中断次数",
 	"incidentreporting-success": "更改保存成功",
 	"incidentreporting-table-all": "显示全部",
-	"incidentreporting-table-id": "事件ID",
-	"incidentreporting-table-service": "受影响的服务",
 	"incidentreporting-table-cause": "起因",
-	"incidentreporting-table-tasks": "可操作任务",
+	"incidentreporting-table-id": "事件ID",
 	"incidentreporting-table-published": "发布日期",
+	"incidentreporting-table-service": "受影响的服务",
+	"incidentreporting-table-tasks": "可操作任务",
 	"incidentreporting-view": "编辑报告",
 	"incidentreports": "事件报告",
-	"log-name-incidentreporting": "事件报告日志",
 	"log-description-incidentreporting": "这个日志追踪事件报告。",
+	"log-name-incidentreporting": "事件报告日志",
 	"logentry-incidentreporting-modify": "$1因$3{{GENDER:$2|修改}}了事件报告",
-	"right-viewincidents": "查看事件报告",
-	"right-editincidents": "编辑事件报告"
+	"right-editincidents": "编辑事件报告",
+	"right-viewincidents": "查看事件报告"
 }

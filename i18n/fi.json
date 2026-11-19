@@ -52,16 +52,16 @@
 	"incidentreporting-stats-visible": "Näytä näkyvien katkosten kestot",
 	"incidentreporting-success": "Muutokset tallennettu",
 	"incidentreporting-table-all": "Näytä kaikki",
-	"incidentreporting-table-id": "Häiriötilanteen tunniste",
-	"incidentreporting-table-service": "Palvelu",
 	"incidentreporting-table-cause": "Syy",
-	"incidentreporting-table-tasks": "Toimenpiteitä",
+	"incidentreporting-table-id": "Häiriötilanteen tunniste",
 	"incidentreporting-table-published": "Julkaisuajankohta",
+	"incidentreporting-table-service": "Palvelu",
+	"incidentreporting-table-tasks": "Toimenpiteitä",
 	"incidentreporting-view": "Muokkaa raporttia",
 	"incidentreports": "Häiriöraportit",
-	"log-name-incidentreporting": "Häiriöraporttiloki",
 	"log-description-incidentreporting": "Tämä loki pitää kirjaa häiriötilanteiden raporteista.",
+	"log-name-incidentreporting": "Häiriöraporttiloki",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|muokkasi}} häiriötilanteen $3 raporttia",
-	"right-viewincidents": "Tarkastele häiriötilanteiden raportteja",
-	"right-editincidents": "Muokkaa häiriötilanteiden raportteja"
+	"right-editincidents": "Muokkaa häiriötilanteiden raportteja",
+	"right-viewincidents": "Tarkastele häiriötilanteiden raportteja"
 }

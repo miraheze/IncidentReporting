@@ -42,15 +42,15 @@
 	"incidentreporting-stats-published": "Rodyti incidentų statistiką, paskelbtą tam tikrą datą arba po...",
 	"incidentreporting-success": "Pakeitimai išsaugoti sėkmingai",
 	"incidentreporting-table-all": "Rodyti viską",
-	"incidentreporting-table-id": "Incidento ID",
-	"incidentreporting-table-service": "Paveikta paslauga",
 	"incidentreporting-table-cause": "Priežastis",
+	"incidentreporting-table-id": "Incidento ID",
 	"incidentreporting-table-published": "Paskelbimo data",
+	"incidentreporting-table-service": "Paveikta paslauga",
 	"incidentreporting-view": "Redaguoti ataskaitą",
 	"incidentreports": "Incidentų ataskaitos",
-	"log-name-incidentreporting": "Incidento pranešimų žurnalas",
 	"log-description-incidentreporting": "Šis žurnalas seka pranešimus apie įvykius.",
+	"log-name-incidentreporting": "Incidento pranešimų žurnalas",
 	"logentry-incidentreporting-modify": "$1 pakeitė incidento $3 ataskaitą",
-	"right-viewincidents": "Peržiūrėti incidentų ataskaitas",
-	"right-editincidents": "Redaguoti incidentų ataskaitas"
+	"right-editincidents": "Redaguoti incidentų ataskaitas",
+	"right-viewincidents": "Peržiūrėti incidentų ataskaitas"
 }

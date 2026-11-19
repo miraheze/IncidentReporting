@@ -60,16 +60,16 @@
 	"incidentreporting-stats-visible": "Показати видимий обсяг неробочого часу",
 	"incidentreporting-success": "Зміни успішно збережено",
 	"incidentreporting-table-all": "Показати все",
-	"incidentreporting-table-id": "Ідентифікатор інцидента",
-	"incidentreporting-table-service": "Сервіс, який зазнав впливу",
 	"incidentreporting-table-cause": "Причина",
-	"incidentreporting-table-tasks": "Завдання, щодо яких можна вжити заходів",
+	"incidentreporting-table-id": "Ідентифікатор інцидента",
 	"incidentreporting-table-published": "Дата публікації",
+	"incidentreporting-table-service": "Сервіс, який зазнав впливу",
+	"incidentreporting-table-tasks": "Завдання, щодо яких можна вжити заходів",
 	"incidentreporting-view": "Редагувати звіт",
 	"incidentreports": "Звіти про інциденти",
-	"log-name-incidentreporting": "Журнал звітування про інциденти",
 	"log-description-incidentreporting": "Цей журнал відстежує звіти про інциденти.",
+	"log-name-incidentreporting": "Журнал звітування про інциденти",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|змінив|змінила}} звіт про інцидент для $3",
-	"right-viewincidents": "Перегляд звітів про інциденти",
-	"right-editincidents": "Редагування звітів про інциденти"
+	"right-editincidents": "Редагування звітів про інциденти",
+	"right-viewincidents": "Перегляд звітів про інциденти"
 }

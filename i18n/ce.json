@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Гуш йолчу белхан садаӀаран хан гайта",
 	"incidentreporting-success": "Хийцамаш кхиамца Ӏалашбина",
 	"incidentreporting-table-all": "Гайта йерриге",
-	"incidentreporting-table-id": "Инцидентан ID",
-	"incidentreporting-table-service": "Ӏаткъам хилла сервис",
 	"incidentreporting-table-cause": "Бахьана",
-	"incidentreporting-table-tasks": "Кхочушден гӀуллакхаш",
+	"incidentreporting-table-id": "Инцидентан ID",
 	"incidentreporting-table-published": "Публикацин терахь",
+	"incidentreporting-table-service": "Ӏаткъам хилла сервис",
+	"incidentreporting-table-tasks": "Кхочушден гӀуллакхаш",
 	"incidentreporting-view": "Хаам хийца",
 	"incidentreports": "Инцидентах лаьцна хаам",
-	"log-name-incidentreporting": "Инцидентан хаамийн журнал",
 	"log-description-incidentreporting": "ХӀокху журналехь лела инцидентийн хаамаш.",
+	"log-name-incidentreporting": "Инцидентан хаамийн журнал",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|модификаци йина}} инцидентан хаамна агӀонан тӀехь $3",
-	"right-viewincidents": "Инцидентах лаьцна хаамаш хьажа",
-	"right-editincidents": "Инцидентах лаьцна хаамаш хийца"
+	"right-editincidents": "Инцидентах лаьцна хаамаш хийца",
+	"right-viewincidents": "Инцидентах лаьцна хаамаш хьажа"
 }

@@ -62,16 +62,16 @@
 	"incidentreporting-stats-visible": "Görünür Kesinti Süresini Göster",
 	"incidentreporting-success": "Değişiklikler başarıyla kaydedildi",
 	"incidentreporting-table-all": "Hepsini göster",
-	"incidentreporting-table-id": "Olay kimliği",
-	"incidentreporting-table-service": "Etkilenen Servis",
 	"incidentreporting-table-cause": "Sebep",
-	"incidentreporting-table-tasks": "İşlem Görevleri",
+	"incidentreporting-table-id": "Olay kimliği",
 	"incidentreporting-table-published": "Yayın Tarihi",
+	"incidentreporting-table-service": "Etkilenen Servis",
+	"incidentreporting-table-tasks": "İşlem Görevleri",
 	"incidentreporting-view": "Raporu değiştir",
 	"incidentreports": "Olay Raporları",
-	"log-name-incidentreporting": "Olay raporu günlüğü",
 	"log-description-incidentreporting": "Bu günlük, olay raporlarını izler.",
+	"log-name-incidentreporting": "Olay raporu günlüğü",
 	"logentry-incidentreporting-modify": "$1, $3 için olay bildirimini {{GENDER:$2|değiştirdi}}",
-	"right-viewincidents": "Olay raporlarını görüntüle",
-	"right-editincidents": "Olay raporlarını düzenle"
+	"right-editincidents": "Olay raporlarını düzenle",
+	"right-viewincidents": "Olay raporlarını görüntüle"
 }

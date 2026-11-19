@@ -59,16 +59,16 @@
 	"incidentreporting-stats-visible": "El espectáculo Visible Outage Tiempo",
 	"incidentreporting-success": "Se guardaron los cambios correctamente",
 	"incidentreporting-table-all": "Mostrar todo",
-	"incidentreporting-table-id": "Id. de incidente",
-	"incidentreporting-table-service": "Servicio afectado",
 	"incidentreporting-table-cause": "Causa",
-	"incidentreporting-table-tasks": "Actionable Tareas",
+	"incidentreporting-table-id": "Id. de incidente",
 	"incidentreporting-table-published": "Fecha de publicación",
+	"incidentreporting-table-service": "Servicio afectado",
+	"incidentreporting-table-tasks": "Actionable Tareas",
 	"incidentreporting-view": "Editar informe",
 	"incidentreports": "Informes de incidente",
-	"log-name-incidentreporting": "Registro de informes de incidentes",
 	"log-description-incidentreporting": "Este registro guarda los informes de incidentes.",
+	"log-name-incidentreporting": "Registro de informes de incidentes",
 	"logentry-incidentreporting-modify": "$1 modificó el informe de incidente para $3",
-	"right-viewincidents": "Informes de incidente de la vista",
-	"right-editincidents": "Edita informes de incidente"
+	"right-editincidents": "Edita informes de incidente",
+	"right-viewincidents": "Informes de incidente de la vista"
 }

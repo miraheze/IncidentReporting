@@ -56,16 +56,16 @@
 	"incidentreporting-stats-visible": "Mostra Tempi d’interruzione Visibili",
 	"incidentreporting-success": "Cambiamenti salvati con successo",
 	"incidentreporting-table-all": "Mostra tutto",
-	"incidentreporting-table-id": "ID dell’Incidente",
-	"incidentreporting-table-service": "Servizio Affetto",
 	"incidentreporting-table-cause": "Causa",
-	"incidentreporting-table-tasks": "Compiti Attuabili",
+	"incidentreporting-table-id": "ID dell’Incidente",
 	"incidentreporting-table-published": "Data di Pubblicazione",
+	"incidentreporting-table-service": "Servizio Affetto",
+	"incidentreporting-table-tasks": "Compiti Attuabili",
 	"incidentreporting-view": "Rapporto di Modifica",
 	"incidentreports": "Rapporti dell’Incidente",
-	"log-name-incidentreporting": "Registro rapporto dell’incidente",
 	"log-description-incidentreporting": "Questo registro traccia rapporti di incidente.",
+	"log-name-incidentreporting": "Registro rapporto dell’incidente",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|ha modificato}} il rapporto sull'incidente per $3",
-	"right-viewincidents": "Vedere  rapporti dell’incidente",
-	"right-editincidents": "Rapporti incidente di modifica"
+	"right-editincidents": "Rapporti incidente di modifica",
+	"right-viewincidents": "Vedere  rapporti dell’incidente"
 }

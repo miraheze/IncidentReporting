@@ -55,16 +55,16 @@
 	"incidentreporting-stats-visible": "Vis synlige nedetider",
 	"incidentreporting-success": "Endringene ble lagret",
 	"incidentreporting-table-all": "Vis alle",
-	"incidentreporting-table-id": "Hendelses-ID",
-	"incidentreporting-table-service": "Påvirket tjeneste",
 	"incidentreporting-table-cause": "Årsak",
-	"incidentreporting-table-tasks": "Oppgaver det kan gjøres noe med",
+	"incidentreporting-table-id": "Hendelses-ID",
 	"incidentreporting-table-published": "Publiseringsdato",
+	"incidentreporting-table-service": "Påvirket tjeneste",
+	"incidentreporting-table-tasks": "Oppgaver det kan gjøres noe med",
 	"incidentreporting-view": "Rediger rapport",
 	"incidentreports": "Hendelsesrapporter",
-	"log-name-incidentreporting": "Logg over hendelsesrapporter",
 	"log-description-incidentreporting": "Denne loggen sporer hendelsesrapporter.",
+	"log-name-incidentreporting": "Logg over hendelsesrapporter",
 	"logentry-incidentreporting-modify": "$1 {{GENDER:$2|modifiserte}} hendelsesrapporten for $3",
-	"right-viewincidents": "Vise hendelsesrapporter",
-	"right-editincidents": "Redigere hendelsesrapporter"
+	"right-editincidents": "Redigere hendelsesrapporter",
+	"right-viewincidents": "Vise hendelsesrapporter"
 }

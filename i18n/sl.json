@@ -56,16 +56,16 @@
 	"incidentreporting-stats-visible": "Prikaži čas vidnih motenj",
 	"incidentreporting-success": "Spremembe so uspešno shranjene",
 	"incidentreporting-table-all": "Prikaži vse",
-	"incidentreporting-table-id": "ID incidenta",
-	"incidentreporting-table-service": "Prizadeta storitev",
 	"incidentreporting-table-cause": "Vzrok",
-	"incidentreporting-table-tasks": "Izvedljiva opravila",
+	"incidentreporting-table-id": "ID incidenta",
 	"incidentreporting-table-published": "Datum objave",
+	"incidentreporting-table-service": "Prizadeta storitev",
+	"incidentreporting-table-tasks": "Izvedljiva opravila",
 	"incidentreporting-view": "Uredi poročilo",
 	"incidentreports": "Poročila o incidentih",
-	"log-name-incidentreporting": "Dnevnik poročil o incidentih",
 	"log-description-incidentreporting": "Ta dnevnik sledi poročila o incidentih.",
+	"log-name-incidentreporting": "Dnevnik poročil o incidentih",
 	"logentry-incidentreporting-modify": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} poročilo o incidentu za $3",
-	"right-viewincidents": "Ogled poročil o incidentih",
-	"right-editincidents": "Urejanje poročil o incidentih"
+	"right-editincidents": "Urejanje poročil o incidentih",
+	"right-viewincidents": "Ogled poročil o incidentih"
 }
